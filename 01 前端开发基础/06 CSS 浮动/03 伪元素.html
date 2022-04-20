@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+
+        div::before {
+            content: '我是伪元素';
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 伪元素，通过 css 创建标签，装饰性的不重要的小图 -->
+    <!-- 找父级，在这个父级里面创建子级标签 -->
+    <div>呵呵哒</div>
+</body>
+
+</html>
