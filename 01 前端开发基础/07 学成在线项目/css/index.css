@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* .clearfix::before 作用：解决外边距塌陷问题 */
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+}
+
+/* 真正清除浮动的标签 */
+.clearfix::after {
+    clear: both;
+}
