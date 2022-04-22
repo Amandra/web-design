@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>单伪元素标签法</title>
+    <title>双伪元素标签法</title>
     <style>
         .top {
             margin: 0 auto;
@@ -28,15 +28,16 @@
             background-color: skyblue;
         }
 
-        /* 单伪元素标签法 */
+        .clearfix::before,
         .clearfix::after {
             content: '';
-            display: block;
-            clear: both;
-            /*  补充代码，使得在网页中看不到伪元素 */
-            height: 0;
-            visibility: hidden;
+            display: table;
         }
+
+        .clearfix::after {
+            clear: both;
+        }
+
 
         .bottom {
             height: 100px;
