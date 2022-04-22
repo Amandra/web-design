@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
 /* .clearfix::before 作用：解决外边距塌陷问题 */
 .clearfix::before,
 .clearfix::after {
@@ -13,4 +21,16 @@
 /* 真正清除浮动的标签 */
 .clearfix::after {
     clear: both;
+}
+
+/* 版心 */
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+/* 头部 */
+.header {
+    height: 100px;
+    background-color: pink;
 }
