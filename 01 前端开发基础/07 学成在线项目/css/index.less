@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 自动内减 */
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+/* .clearfix::before 作用：解决外边距塌陷问题 */
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+}
+
+/* 真正清除浮动的标签 */
+.clearfix::after {
+    clear: both;
+}
+
+body {
+    background-color: #f3f5f7;
+    min-width: 1200px;
+}
+
+/* 版心 */
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 头部 */
+.header {
+    margin: 30px auto;
+    height: 42px;
+    background-color: pink;
+
+    /* logo */
+    h1 {
+        float: left;
+    }
+
+    /* 导航 */
+    .nav {
+        float: left;
+        margin-left: 70px;
+        height: 42px;
+
+        li {
+            float: left;
+            line-height: 42px;
+            margin-right: 26px;
+
+            a {
+                display: block;
+                padding: 0 9px;
+                font-size: 18px;
+                color: #050505;
+
+                &:hover {
+                    border-bottom: 2px solid #00a4ff;
+                }
+            }
+
+        }
+    }
+
+    /* 搜索 */
+    .search {
+        float: left;
+        margin-left: 59px;
+        border: 1px solid #00a4ff;
+        width: 412px;
+        height: 42px;
+
+        input {
+            float: left;
+            width: 360px;
+            height: 40px;
+            border: 0;
+            padding-left: 20px;
+
+            &::placeholder {
+                font-size: 14px;
+                color: #bfbfbf;
+            }
+        }
+
+        button {
+            float: left;
+            border: 0;
+            width: 50px;
+            height: 40px;
+            background: url(../images/btn.png) no-repeat;
+        }
+    }
+
+    /* 用户 */
+    .user {
+        float: right;
+        height: 42px;
+        margin-right: 35px;
+        line-height: 42px;
+
+        img {
+            /* 调节图片垂直方向对齐方式 */
+            vertical-align: middle;
+        }
+
+    }
+}
