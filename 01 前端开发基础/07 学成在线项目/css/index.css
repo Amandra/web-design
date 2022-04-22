@@ -27,6 +27,7 @@ li {
 
 body {
     background-color: #f3f5f7;
+    min-width: 1200px;
 }
 
 /* 版心 */
