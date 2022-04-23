@@ -175,4 +175,43 @@ body {
   line-height: 41px;
   border: 1px solid #00a4ff;
   text-align: center;
+  font-size: 16px;
+  color: #00a4ff;
+  font-weight: bold;
+}
+/* 精品推荐 */
+.goods {
+  margin-top: 8px;
+  padding-left: 34px;
+  padding-right: 26px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  box-shadow: 0px 2px 3px 0px rgba(118, 118, 118, 0.2);
+}
+.goods h2 {
+  float: left;
+  color: #00a4ff;
+  font-size: 16px;
+  font-weight: normal;
+}
+.goods ul {
+  float: left;
+  margin-left: 30px;
+}
+.goods ul li {
+  float: left;
+  padding: 0 20px;
+}
+.goods ul li a {
+  padding-left: 35px;
+  border-left: 1px solid #000;
+  text-align: center;
+  font-size: 16px;
+  color: #050505;
+}
+.goods .modify {
+  float: right;
+  color: #00a4ff;
+  font-size: 14px;
 }
