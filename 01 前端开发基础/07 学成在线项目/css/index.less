@@ -292,6 +292,7 @@ body {
     .content {
         li {
             float: left;
+            position: relative;
             margin-right: 15px;
             margin-bottom: 15px;
             width: 228px;
@@ -315,6 +316,13 @@ body {
                 span {
                     color: #ff7c2d;
                 }
+            }
+
+            /* 定位的 hot 小图 */
+            .hot {
+                position: absolute;
+                right: -4px;
+                top: 4px;
             }
         }
 
@@ -368,7 +376,7 @@ body {
                 margin-top: 2px;
                 font-size: 12px;
 
-                a{
+                a {
                     color: #333;
                 }
             }
