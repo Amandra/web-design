@@ -215,3 +215,55 @@ body {
   color: #00a4ff;
   font-size: 14px;
 }
+/* 精品推荐课程 */
+.course {
+  margin-top: 35px;
+}
+.course .title {
+  height: 40px;
+  line-height: 40px;
+}
+.course .title h1 {
+  float: left;
+  width: 80px;
+  height: 19px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #494949;
+}
+.course .title a {
+  float: right;
+  margin-right: 30px;
+  width: 48px;
+  height: 11px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #a5a5a5;
+}
+.course .content li {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  width: 228px;
+  height: 270px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(118, 118, 118, 0.5);
+}
+.course .content li h3 {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #050505;
+}
+.course .content li p {
+  font-size: 12px;
+  padding: 0 20px;
+  color: #999;
+}
+.course .content li p span {
+  color: #ff7c2d;
+}
+.course .content li:nth-child(5n) {
+  margin-right: 0;
+}
