@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 
+                绝对定位：
+                    先找已经定位的父级，如果有这样的父级，就以这个父级为参照物进行定位。
+                    有父级，但是父级没有定位，以浏览器窗口为参照进行定位。
+            */
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            /* 
+                ① 脱标。
+                ② 改变标签的显示模式特点：行内块元素的特点。
+            */
+
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi minima voluptatibus quos rem facere nemo
+        cupiditate, in fuga atque illum numquam, soluta minus ducimus maxime dolorum voluptates. Nihil, voluptatum quod?
+    </p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos cumque consectetur nam libero perferendis
+        eligendi necessitatibus quasi ad dolores repudiandae tempora, molestias corrupti sequi harum asperiores impedit
+        ab, modi omnis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium corrupti tenetur quo. Officia quod, eum,
+        doloribus quisquam voluptatum qui illo consequatur enim, a debitis illum voluptas corporis saepe. Nihil.</p>
+    <div class="box">box</div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos cumque consectetur nam libero perferendis
+        eligendi necessitatibus quasi ad dolores repudiandae tempora, molestias corrupti sequi harum asperiores impedit
+        ab, modi omnis.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos cumque consectetur nam libero perferendis
+        eligendi necessitatibus quasi ad dolores repudiandae tempora, molestias corrupti sequi harum asperiores impedit
+        ab, modi omnis.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis animi nesciunt delectus tempora doloribus in
+        corrupti voluptas reprehenderit aspernatur. Fugit saepe vitae nihil commodi necessitatibus nesciunt aut cum,
+        illum nam.</p>
+</body>
+
+</html>
