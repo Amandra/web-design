@@ -267,3 +267,46 @@ body {
 .course .content li:nth-child(5n) {
   margin-right: 0;
 }
+/* 版权 */
+.copyright {
+  margin-top: 40px;
+  padding-top: 30px;
+  height: 417px;
+  background-color: #fff;
+}
+.copyright .left {
+  float: left;
+}
+.copyright .left p {
+  margin: 20px 0 10px;
+  font-size: 12px;
+  color: #666;
+}
+.copyright .left a {
+  display: block;
+  border: 1px solid #00a4ff;
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: #00a4ff;
+}
+.copyright .right {
+  float: right;
+}
+.copyright .right dl {
+  float: left;
+  margin-left: 120px;
+}
+.copyright .right dl dt {
+  margin-bottom: 14px;
+  height: 17px;
+  color: #333;
+}
+.copyright .right dl dd {
+  margin-top: 2px;
+  font-size: 12px;
+}
+.copyright .right dl dd a {
+  color: #333;
+}
