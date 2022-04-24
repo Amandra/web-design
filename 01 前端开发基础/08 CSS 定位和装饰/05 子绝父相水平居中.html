@@ -15,9 +15,15 @@
         }
 
         .box2 {
-            /* 绝对定位的盒子不能使用左右 margin:0 auto; 居中 */
-            margin: 0 auto;
+            /* 绝对定位的盒子不能使用 margin:0 auto; 居中 */
+            /* margin: 0 auto; */
             position: absolute;
+            /* left: 50%; 表示将盒子移动到父级元素中间偏右的位置 */
+            left: 50%;
+            /* margin-left: -50px; 表示将盒子向左移动到宽度的一半 */
+            margin-left: -50px;
+            top: 50%;
+            margin-top: -50px;
             width: 100px;
             height: 100px;
             background-color: blue;
