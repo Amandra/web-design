@@ -1,5 +1,65 @@
 /* 网页多个网页相同模块的重复样式，如：头部、底部 */
 
+/* 版心 */
+.wrapper {
+    margin: 0 auto;
+    width: 1240px;
+    min-width: 1240px;
+}
+
+/* 快捷导航 */
+.shortcut {
+    height: 52px;
+    background-color: #333;
+
+    .wrapper {
+        height: 52px;
+
+        .fr {
+            li {
+                float: left;
+                line-height: 52px;
+
+                a {
+                    padding: 0 16px;
+                    border-right: 1px solid #666;
+                    color: #dcdcdc;
+                    font-size: 14px;
+                }
+
+                &:last-child {
+                    a {
+                        border-right: 0;
+
+                        i {
+                            display: inline-block;
+                            margin-right: 8px;
+                            width: 11px;
+                            height: 16px;
+                            background-image: url(../images/sprites.png);
+                            background-position: -160px -70px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 头部 */
 .header {
-    
+    margin: 30px 0;
+    height: 70px;
+    background-color:pink;
+
+    .wrapper{
+
+        h1 {
+            img{
+                width: 205px;
+                height: 70px;
+            }
+        }
+    }
 }
