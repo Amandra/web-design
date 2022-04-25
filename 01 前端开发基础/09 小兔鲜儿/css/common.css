@@ -23,6 +23,9 @@
   color: #dcdcdc;
   font-size: 14px;
 }
+.shortcut .wrapper .fr li a:hover {
+  color: #27ba9b;
+}
 .shortcut .wrapper .fr li:last-child a {
   border-right: 0;
 }
@@ -143,10 +146,7 @@
   height: 58px;
   line-height: 58px;
 }
-.copyright .wrapper .top li:last-child {
-  margin-right: 0;
-}
-.copyright .wrapper .top .price::before {
+.copyright .wrapper .top li:first-child::before {
   content: '';
   display: inline-block;
   width: 58px;
@@ -155,7 +155,7 @@
   background-image: url(../images/sprites.png);
   background-position: 0 0;
 }
-.copyright .wrapper .top .logistics::before {
+.copyright .wrapper .top li:nth-child(2)::before {
   content: '';
   display: inline-block;
   width: 58px;
@@ -164,7 +164,10 @@
   background-image: url(../images/sprites.png);
   background-position: -64px 0;
 }
-.copyright .wrapper .top .quality::before {
+.copyright .wrapper .top li:last-child {
+  margin-right: 0;
+}
+.copyright .wrapper .top li:last-child::before {
   content: '';
   display: inline-block;
   width: 58px;

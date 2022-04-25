@@ -25,6 +25,10 @@
                     border-right: 1px solid #666;
                     color: #dcdcdc;
                     font-size: 14px;
+
+                    &:hover {
+                        color: #27ba9b;
+                    }
                 }
 
                 &:last-child {
@@ -169,49 +173,45 @@
                 height: 58px;
                 line-height: 58px;
 
+                &:first-child {
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 58px;
+                        height: 58px;
+                        vertical-align: middle;
+                        background-image: url(../images/sprites.png);
+                        background-position: 0 0;
+
+                    }
+                }
+
+                &:nth-child(2) {
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 58px;
+                        height: 58px;
+                        vertical-align: middle;
+                        background-image: url(../images/sprites.png);
+                        background-position: -64px 0;
+
+                    }
+                }
+
                 &:last-child {
                     margin-right: 0;
-                }
-            }
 
-            .price {
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 58px;
+                        height: 58px;
+                        vertical-align: middle;
+                        background-image: url(../images/sprites.png);
+                        background-position: -128px 0;
 
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 58px;
-                    height: 58px;
-                    vertical-align: middle;
-                    background-image: url(../images/sprites.png);
-                    background-position: 0 0;
-
-                }
-
-            }
-
-            .logistics {
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 58px;
-                    height: 58px;
-                    vertical-align: middle;
-                    background-image: url(../images/sprites.png);
-                    background-position: -64px 0;
-
-                }
-            }
-
-            .quality {
-
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    width: 58px;
-                    height: 58px;
-                    vertical-align: middle;
-                    background-image: url(../images/sprites.png);
-                    background-position: -128px 0;
+                    }
 
                 }
             }
