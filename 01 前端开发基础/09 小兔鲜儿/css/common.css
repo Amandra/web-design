@@ -41,6 +41,9 @@
   height: 70px;
   background-color: pink;
 }
+.header .wrapper {
+  background-color: red;
+}
 .header .wrapper h1 img {
   width: 205px;
   height: 70px;
