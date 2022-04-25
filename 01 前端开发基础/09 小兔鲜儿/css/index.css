@@ -39,7 +39,7 @@
   width: 6px;
   height: 11px;
   background-image: url(../images/sprites.png);
-  background-position: -40px -110px;
+  background-position: -80px -110px;
 }
 .banner .wrapper .aside li a:hover {
   background-color: #27ba9b;
