@@ -120,8 +120,48 @@
   text-align: center;
   line-height: 15px;
 }
-/* banner */
-.banner {
-  height: 500px;
-  background-color: #f5f5f5;
+/* 版权 */
+.copyright {
+  height: 340px;
+  background-color: #333;
+  color: #fff;
+}
+.copyright .wrapper {
+  width: 1393px;
+}
+.copyright .wrapper .top {
+  height: 175px;
+  line-height: 175px;
+  border-bottom: 2px solid #434343;
+  font-size: 28px;
+}
+.copyright .wrapper .top .price {
+  margin-left: 135px;
+}
+.copyright .wrapper .top .price i {
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  vertical-align: middle;
+  background-image: url(../images/sprites.png);
+  background-position: 0 0;
+}
+.copyright .wrapper .top .logistics {
+  margin: 0 306px;
+}
+.copyright .wrapper .top .logistics i {
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  vertical-align: middle;
+  background-image: url(../images/sprites.png);
+  background-position: -64px 0;
+}
+.copyright .wrapper .top .quality i {
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  vertical-align: middle;
+  background-image: url(../images/sprites.png);
+  background-position: -128px 0;
 }
