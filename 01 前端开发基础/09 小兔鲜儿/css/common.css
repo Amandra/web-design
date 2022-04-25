@@ -5,6 +5,13 @@
   width: 1240px;
   min-width: 1240px;
 }
+.searchfix {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
 /* 快捷导航 */
 .shortcut {
   height: 52px;
@@ -40,7 +47,7 @@
 }
 /* 头部 */
 .header {
-  margin: 30px auto;
+  margin: 80px auto;
   height: 70px;
   /* logo */
   /* 导航栏 */
