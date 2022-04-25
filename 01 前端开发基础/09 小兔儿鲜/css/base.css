@@ -1,1 +1,29 @@
 /* 基础公共样式 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 自动内减 */
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+i {
+  font-style: normal;
+}
+input {
+  outline: none;
+}
+/* .clearfix::before 作用：解决外边距塌陷问题 */
+.clearfix::before,
+.clearfix::after {
+  content: '';
+  display: table;
+}
+/* 真正清除浮动的标签 */
+.clearfix::after {
+  clear: both;
+}
