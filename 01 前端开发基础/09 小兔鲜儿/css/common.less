@@ -156,46 +156,63 @@
         width: 1393px;
 
         .top {
+            padding-top: 59px;
+            padding-left: 135px;
             height: 175px;
-            line-height: 175px;
             border-bottom: 2px solid #434343;
             font-size: 28px;
 
-            .price {
-                margin-left: 135px;
+            li {
+                float: left;
+                margin-right: 300px;
+                width: 195px;
+                height: 58px;
+                line-height: 58px;
 
-                i {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            .price {
+
+                &::before {
+                    content: '';
                     display: inline-block;
                     width: 58px;
                     height: 58px;
                     vertical-align: middle;
                     background-image: url(../images/sprites.png);
                     background-position: 0 0;
+
                 }
+
             }
 
             .logistics {
-                margin: 0 306px;
-
-                i {
+                &::before {
+                    content: '';
                     display: inline-block;
                     width: 58px;
                     height: 58px;
                     vertical-align: middle;
                     background-image: url(../images/sprites.png);
                     background-position: -64px 0;
+
                 }
             }
 
             .quality {
 
-                i {
+                &::before {
+                    content: '';
                     display: inline-block;
                     width: 58px;
                     height: 58px;
                     vertical-align: middle;
                     background-image: url(../images/sprites.png);
                     background-position: -128px 0;
+
                 }
             }
         }

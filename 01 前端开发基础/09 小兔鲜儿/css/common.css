@@ -130,15 +130,24 @@
   width: 1393px;
 }
 .copyright .wrapper .top {
+  padding-top: 59px;
+  padding-left: 135px;
   height: 175px;
-  line-height: 175px;
   border-bottom: 2px solid #434343;
   font-size: 28px;
 }
-.copyright .wrapper .top .price {
-  margin-left: 135px;
+.copyright .wrapper .top li {
+  float: left;
+  margin-right: 300px;
+  width: 195px;
+  height: 58px;
+  line-height: 58px;
 }
-.copyright .wrapper .top .price i {
+.copyright .wrapper .top li:last-child {
+  margin-right: 0;
+}
+.copyright .wrapper .top .price::before {
+  content: '';
   display: inline-block;
   width: 58px;
   height: 58px;
@@ -146,10 +155,8 @@
   background-image: url(../images/sprites.png);
   background-position: 0 0;
 }
-.copyright .wrapper .top .logistics {
-  margin: 0 306px;
-}
-.copyright .wrapper .top .logistics i {
+.copyright .wrapper .top .logistics::before {
+  content: '';
   display: inline-block;
   width: 58px;
   height: 58px;
@@ -157,7 +164,8 @@
   background-image: url(../images/sprites.png);
   background-position: -64px 0;
 }
-.copyright .wrapper .top .quality i {
+.copyright .wrapper .top .quality::before {
+  content: '';
   display: inline-block;
   width: 58px;
   height: 58px;
