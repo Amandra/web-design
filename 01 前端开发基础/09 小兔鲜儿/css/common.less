@@ -49,18 +49,84 @@
 
 /* 头部 */
 .header {
-    margin: 30px 0;
+    margin: 30px auto;
     height: 70px;
-    background-color: pink;
+    // background-color: pink;
 
-    .wrapper {
-        background-color: red;
+    /* logo */
+    .logo {
+        padding: 0 19px 0 25px;
+        width: 251px;
+        height: 70px;
 
-        h1 {
-            img {
-                width: 205px;
-                height: 70px;
+        a {
+            display: block;
+            width: 207px;
+            height: 70px;
+            background-image: url(../images/logo.png);
+            background-size: contain;
+            /* 字号设置为 0 ，目的是为了让标签中的文字隐藏 */
+            font-size: 0;
+        }
+    }
+
+    /* 导航栏 */
+    .nav {
+        margin-left: 18px;
+        height: 70px;
+
+        li {
+            line-height: 70px;
+
+            a {
+                margin-right: 46px;
+                padding: 0 1px 8px;
+
+                &:hover {
+                    color: #27ba9b;
+                    border-bottom: 1px solid #000;
+                }
             }
         }
+    }
+
+    /* 搜索 */
+    .search {
+        position: relative;
+        margin: 24px 15px 0 34px;
+        width: 172px;
+        height: 30px;
+        background-color: greenyellow;
+        border-bottom: 1px solid #e7e7e7;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding-left: 29px;
+
+            &::placeholder {
+                font-size: 14px;
+                color: #ccc;
+            }
+        }
+
+        i {
+            position: absolute;
+            left: 0;
+            top: 25%;
+            display: block;
+            width: 18px;
+            height: 18px;
+            background-image: url(../images/sprites.png);
+            background-position: -160px -70px;
+        }
+    }
+
+    /* 购物车 */
+    .car {
+        margin: 28px 0 19px 0;
+        width: 23px;
+        height: 23px;
+        background-color: red;
     }
 }
