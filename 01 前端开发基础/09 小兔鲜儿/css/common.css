@@ -149,6 +149,7 @@
 .copyright .wrapper .top li:first-child::before {
   content: '';
   display: inline-block;
+  margin-right: 20px;
   width: 58px;
   height: 58px;
   vertical-align: middle;
@@ -158,6 +159,7 @@
 .copyright .wrapper .top li:nth-child(2)::before {
   content: '';
   display: inline-block;
+  margin-right: 20px;
   width: 58px;
   height: 58px;
   vertical-align: middle;
@@ -169,6 +171,7 @@
 }
 .copyright .wrapper .top li:last-child::before {
   content: '';
+  margin-right: 20px;
   display: inline-block;
   width: 58px;
   height: 58px;
