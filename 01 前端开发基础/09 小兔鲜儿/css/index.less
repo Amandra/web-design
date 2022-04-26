@@ -102,6 +102,40 @@
         }
 
         /* 圆点 */
+        ol {
+            position: absolute;
+            left: 680px;
+            bottom: 30px;
+            width: 200px;
+            height: 10px;
+
+            li {
+                float: left;
+                margin: 0 15px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, .4);
+                cursor: pointer;
+            }
+
+            /* 当前状态 */
+            .current {
+
+                &::before {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    content: '';
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                }
+            }
+        }
 
     }
 }
