@@ -230,12 +230,37 @@
 .fresh_goods .bd .left {
   float: left;
   width: 240px;
-  height: 610px;
-  background-color: pink;
 }
 .fresh_goods .bd .right {
   float: right;
   width: 1000px;
-  height: 610px;
-  background-color: skyblue;
+}
+.fresh_goods .bd .right li {
+  float: left;
+}
+.fresh_goods .bd .right li a {
+  display: block;
+  margin-left: 8px;
+  margin-bottom: 3px;
+  width: 242px;
+  height: 300px;
+  text-align: center;
+}
+.fresh_goods .bd .right li a img {
+  width: 183px;
+}
+.fresh_goods .bd .right li a h3 {
+  margin-top: 11px;
+  font-size: 16px;
+}
+.fresh_goods .bd .right li a p {
+  font-weight: bold;
+}
+.fresh_goods .bd .right li a p span {
+  font-size: 17px;
+  color: #9a2e1f;
+}
+.fresh_goods .bd .right li a p:last-child {
+  font-size: 22px;
+  color: #9a2e1f;
 }
