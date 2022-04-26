@@ -118,3 +118,72 @@
   background-color: #fff;
   border-radius: 50%;
 }
+/* 新鲜好物 */
+.goods {
+  /* 标题 */
+  /* 主体 */
+}
+.goods .hd {
+  height: 114px;
+  line-height: 114px;
+}
+.goods .hd h2 {
+  float: left;
+  height: 114px;
+  margin-right: 34px;
+  font-weight: normal;
+  font-size: 29px;
+}
+.goods .hd h2 span {
+  color: #999;
+  font-size: 16px;
+}
+.goods .hd a {
+  position: relative;
+  float: right;
+  margin-right: 22px;
+  color: #999;
+}
+.goods .hd a::after {
+  position: absolute;
+  top: 50px;
+  right: -22px;
+  content: '';
+  width: 7px;
+  height: 13px;
+  color: #999;
+  background-image: url(../images/sprites.png);
+  background-position: 0 -110px;
+}
+.goods .bd li {
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  width: 304px;
+  height: 405px;
+  background-color: #f0f9f4;
+}
+.goods .bd li:last-child {
+  margin-right: 0;
+}
+.goods .bd li img {
+  width: 100%;
+  height: 305px;
+}
+.goods .bd li dl {
+  text-align: center;
+  font-weight: bold;
+}
+.goods .bd li dl dt {
+  font-size: 20px;
+  line-height: 50px;
+}
+.goods .bd li dl dd {
+  font-size: 23px;
+  line-height: 50px;
+  color: #9a2e1f;
+}
+.goods .bd li dl dd span {
+  font-size: 14px;
+}
+/* 生鲜 */
