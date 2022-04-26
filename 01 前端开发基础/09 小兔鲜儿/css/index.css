@@ -159,6 +159,7 @@
   float: left;
   width: 304px;
   margin-right: 8px;
+  margin-bottom: 8px;
   text-align: center;
   font-weight: bold;
   background-color: #f0f9f4;
@@ -183,3 +184,58 @@
   font-size: 14px;
 }
 /* 生鲜 */
+.fresh_goods {
+  /* 标题 */
+  /* 主体 */
+}
+.fresh_goods .hd {
+  height: 96px;
+  line-height: 96px;
+}
+.fresh_goods .hd h2 {
+  float: left;
+  font-size: 29px;
+}
+.fresh_goods .hd li {
+  float: right;
+  color: #fefbfc;
+  margin: 0 5px;
+}
+.fresh_goods .hd li a {
+  padding: 2px 7px;
+  font-weight: bold;
+}
+.fresh_goods .hd li a:hover {
+  background-color: #27ba9b;
+  color: #fff;
+}
+.fresh_goods .hd .more {
+  position: relative;
+  float: right;
+  margin-left: 58px;
+  margin-right: 22px;
+  color: #999;
+}
+.fresh_goods .hd .more::after {
+  position: absolute;
+  top: 43px;
+  right: -22px;
+  content: '';
+  width: 7px;
+  height: 13px;
+  color: #999;
+  background-image: url(../images/sprites.png);
+  background-position: 0 -110px;
+}
+.fresh_goods .bd .left {
+  float: left;
+  width: 240px;
+  height: 610px;
+  background-color: pink;
+}
+.fresh_goods .bd .right {
+  float: right;
+  width: 1000px;
+  height: 610px;
+  background-color: skyblue;
+}

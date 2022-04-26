@@ -186,6 +186,7 @@
             float: left;
             width: 304px;
             margin-right: 8px;
+            margin-bottom: 8px;
             text-align: center;
             font-weight: bold;
             background-color: #f0f9f4;
@@ -217,5 +218,72 @@
     }
 }
 
-
 /* 生鲜 */
+.fresh_goods {
+
+    /* 标题 */
+    .hd {
+        height: 96px;
+        line-height: 96px;
+
+        h2 {
+            float: left;
+            font-size: 29px;
+        }
+
+        li {
+            float: right;
+            color: #fefbfc;
+            margin: 0 5px;
+
+            a {
+                padding: 2px 7px;
+                font-weight: bold;
+
+                &:hover {
+                    background-color: #27ba9b;
+                    color: #fff;
+                }
+            }
+        }
+
+        .more {
+            position: relative;
+            float: right;
+            margin-left: 58px;
+            margin-right: 22px;
+            color: #999;
+
+            &::after {
+                position: absolute;
+                top: 43px;
+                right: -22px;
+                content: '';
+                width: 7px;
+                height: 13px;
+                color: #999;
+                background-image: url(../images/sprites.png);
+                background-position: 0 -110px;
+            }
+        }
+    }
+
+    /* 主体 */
+    .bd {
+
+        .left {
+            float: left;
+            width: 240px;
+            height: 610px;
+            background-color: pink;
+        }
+
+        .right {
+            float: right;
+            width: (1240px-240);
+            height: 610px;
+            background-color: skyblue;
+        }
+
+    }
+}
