@@ -119,32 +119,32 @@
   border-radius: 50%;
 }
 /* 新鲜好物 */
-.goods {
+.new_goods {
   /* 标题 */
   /* 主体 */
 }
-.goods .hd {
+.new_goods .hd {
   height: 114px;
   line-height: 114px;
 }
-.goods .hd h2 {
+.new_goods .hd h2 {
   float: left;
   height: 114px;
   margin-right: 34px;
   font-weight: normal;
   font-size: 29px;
 }
-.goods .hd h2 span {
+.new_goods .hd h2 span {
   color: #999;
   font-size: 16px;
 }
-.goods .hd a {
+.new_goods .hd a {
   position: relative;
   float: right;
   margin-right: 22px;
   color: #999;
 }
-.goods .hd a::after {
+.new_goods .hd a::after {
   position: absolute;
   top: 50px;
   right: -22px;
@@ -155,7 +155,7 @@
   background-image: url(../images/sprites.png);
   background-position: 0 -110px;
 }
-.goods .bd li {
+.new_goods .bd li {
   float: left;
   margin-right: 8px;
   margin-bottom: 8px;
@@ -165,23 +165,23 @@
   font-weight: bold;
   background-color: #f0f9f4;
 }
-.goods .bd li:last-child {
+.new_goods .bd li:last-child {
   margin-right: 0;
 }
-.goods .bd li img {
+.new_goods .bd li img {
   width: 100%;
   height: 305px;
 }
-.goods .bd li h3 {
+.new_goods .bd li h3 {
   font-size: 20px;
   line-height: 50px;
 }
-.goods .bd li p {
+.new_goods .bd li p {
   font-size: 23px;
   line-height: 50px;
   color: #9a2e1f;
 }
-.goods .bd li p span {
+.new_goods .bd li p span {
   font-size: 14px;
 }
 /* 生鲜 */
