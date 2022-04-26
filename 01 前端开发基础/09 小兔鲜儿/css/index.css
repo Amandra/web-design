@@ -157,8 +157,6 @@
 }
 .new_goods .bd li {
   float: left;
-  margin-right: 8px;
-  margin-bottom: 8px;
   width: 304px;
   text-align: center;
   font-weight: bold;
@@ -172,13 +170,13 @@
   height: 305px;
 }
 .new_goods .bd li h3 {
+  margin-top: 22px;
   font-size: 20px;
-  line-height: 50px;
 }
 .new_goods .bd li p {
   font-size: 23px;
-  line-height: 50px;
   color: #9a2e1f;
+  margin-bottom: 22px;
 }
 .new_goods .bd li p span {
   font-size: 14px;
