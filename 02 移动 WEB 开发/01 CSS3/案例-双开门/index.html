@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1366px;
+            height: 600px;
+            margin: 20px auto;
+            background: url("./images/bg.jpg") no-repeat;
+        }
+
+        .box::before,
+        .box::after {
+            float: left;
+            content: '';
+            width: 50%;
+            height: 100%;
+            background-image: url('./images/fm.jpg');
+        }
+
+        .box::after {
+            background-position: right 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
