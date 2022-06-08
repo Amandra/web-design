@@ -22,7 +22,10 @@
 
         /* 当鼠标移入到父盒子，son 改变位置 */
         .father:hover .son {
-            transform: translate(100px, 50px);
+            /*transform: translate(100px, 50px);*/
+
+            /* 百分比是相对于盒子自身的尺寸 */
+            transform: translate(100%, 50%);
         }
     </style>
 </head>
