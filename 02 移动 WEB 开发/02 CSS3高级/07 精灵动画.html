@@ -17,7 +17,15 @@
             }
             to {
                 background-position: -1680px 0;
-                transform: translateX(1680px);
+            }
+        }
+
+        @keyframes move {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(800px);
             }
         }
 
@@ -26,7 +34,8 @@
             height: 140px;
             background-image: url(./images/bg.png);
 
-            animation: run 3s steps(12) infinite forwards;
+
+            animation: run 1s steps(12) infinite, move 2s forwards;
         }
     </style>
 </head>
