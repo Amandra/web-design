@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /* 视觉效果：子级水平排列。 */
+            /* 水平排列的原因：默认主轴在水平方向，弹性盒子都是沿着主轴排列的。 */
+            display: flex;
+            /* 居中 */
+            /*justify-content: center;*/
+            /* 间距在弹性盒子（子级）之间 */
+            /*justify-content: space-between;*/
+            /* 所有弹性盒子（子级）之间的间距都相等 */
+            /*justify-content: space-evenly;*/
+            /* 间距加在子级的两侧，视觉效果：自己之间的距离是父级两头距离的 2 倍 */
+            justify-content: space-around;
+
+            height: 200px;
+            border: 1px solid #000;
+        }
+
+        .box div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
