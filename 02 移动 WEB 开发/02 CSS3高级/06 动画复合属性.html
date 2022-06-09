@@ -12,23 +12,24 @@
             background-color: pink;
 
             /* 使用动画 */
-            /*animation: change 1s linear;*/
-            /* steps 是分步动画 */
-            /*animation: change 1s steps(3) 1s;*/
-            /* 无限循环 */
-            animation: change 1s steps(3) 1s infinite;
+            animation: change 1s;
         }
 
-        /* 定义动画：宽度从 200 变大到 600 */
+        /* 定义动画：宽度为 200 到 500*300 到 800*500 */
+        /* 百分比指的是动画总时长的占比 */
         @keyframes change {
-            from {
+            0% {
                 width: 200px;
             }
-            to {
-                width: 600px;
+            50% {
+                width: 500px;
+                height: 300px;
+            }
+            100% {
+                width: 800px;
+                height: 500px;
             }
         }
-
     </style>
 </head>
 <body>
