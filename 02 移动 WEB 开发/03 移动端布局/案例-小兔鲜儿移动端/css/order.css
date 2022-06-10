@@ -128,6 +128,25 @@ body {
     line-height: 44px;
 }
 
+.main .other {
+    padding: 15px;
+}
+
+.main .other div {
+    display: flex;
+    font-size: 13px;
+    font-weight: normal;
+    color: #262626;
+}
+
+.main .other div:nth-child(odd) {
+    justify-content: space-between;
+}
+
+.main .other div:nth-child(2) h5 {
+    margin-right: 19px;
+}
+
 /* 底部支付 */
 .pay {
     display: flex;
