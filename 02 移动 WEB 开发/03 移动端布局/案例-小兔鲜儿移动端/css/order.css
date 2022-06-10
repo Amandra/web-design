@@ -106,6 +106,15 @@ body {
     background-color: #f7f7f8;
 }
 
+.main .goods .info .price span:first-child {
+    font-size: 12px;
+}
+
+.main .goods .info .price span:first-child i {
+    font-size: 16px;
+    margin-right: 1px;
+}
+
 .main .goods .info .price span:last-child {
     font-size: 12px;
     color: #999;
