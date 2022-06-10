@@ -24,7 +24,16 @@ body {
 }
 
 .pay .left {
+    font-size: 12px;
+    color: #1e1e1e;
+}
 
+.pay .left span {
+    color: #cf4444;
+}
+
+.pay .left span i {
+    font-size: 20px;
 }
 
 .pay .right {
