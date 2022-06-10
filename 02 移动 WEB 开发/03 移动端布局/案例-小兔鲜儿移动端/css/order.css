@@ -37,8 +37,9 @@ body {
     font-size: 20px;
 }
 
-.pay .right {
-    width: 91px;
+.pay .right a {
+    display: block;
+    width: 90px;
     height: 35px;
     text-align: center;
     line-height: 35px;
