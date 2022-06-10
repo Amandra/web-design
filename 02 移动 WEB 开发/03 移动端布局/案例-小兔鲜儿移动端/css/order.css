@@ -83,10 +83,33 @@ body {
 
 .main .goods .pic {
     width: 85px;
+    margin-right: 10px;
 }
 
 .main .goods .info {
     flex: 1;
+}
+
+.main .goods .info .title {
+    font-size: 13px;
+    color: #262626;
+    font-weight: normal;
+}
+
+.main .goods .info .desc {
+    margin: 5px 0;
+    width: 95px;
+    height: 16px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #f7f7f8;
+}
+
+.main .goods .info .price:last-child {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
 }
 
 .main .goods .count {
