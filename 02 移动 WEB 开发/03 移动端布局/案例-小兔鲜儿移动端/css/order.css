@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0 11px;
+    padding: 15px 0 0 11px;
     /*background-color: pink;*/
 }
 
@@ -71,6 +71,22 @@ body {
 
 .main .user_msg .more:active {
     background-color: #dff8ff;
+}
+
+.main .goods {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px;
+    background-color: pink;
+}
+
+.main .goods .pic {
+    width: 85px;
+}
+
+.main .goods .info {
+    flex: 1;
 }
 
 /* 底部支付 */
