@@ -106,7 +106,7 @@ body {
     background-color: #f7f7f8;
 }
 
-.main .goods .info .price:last-child {
+.main .goods .info .price span:last-child {
     font-size: 12px;
     color: #999;
     text-decoration: line-through;
