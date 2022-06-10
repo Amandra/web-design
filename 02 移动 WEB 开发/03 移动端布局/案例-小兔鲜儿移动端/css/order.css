@@ -64,10 +64,13 @@ body {
 .main .user_msg .more {
     width: 44px;
     height: 44px;
-    background-color: #dff8ff;
     text-align: center;
     line-height: 44px;
     color: #808080;
+}
+
+.main .user_msg .more:active {
+    background-color: #dff8ff;
 }
 
 /* 底部支付 */
