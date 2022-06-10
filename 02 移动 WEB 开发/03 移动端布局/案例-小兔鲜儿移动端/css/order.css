@@ -77,7 +77,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 11px;
+    padding: 11px 0 11px 11px;
     background-color: pink;
 }
 
@@ -87,6 +87,14 @@ body {
 
 .main .goods .info {
     flex: 1;
+}
+
+.main .goods .count {
+    width: 44px;
+    height: 44px;
+    background-color: #dff8ff;
+    text-align: center;
+    line-height: 44px;
 }
 
 /* 底部支付 */
