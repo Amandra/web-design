@@ -1,1 +1,50 @@
 /* 公共样式 */
+/* 版心 */
+.wrapper {
+  width: 1240px;
+  min-width: 1240px;
+}
+
+/* 顶部导航 */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  height: 53px;
+  background-color: #333;
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+
+      a {
+        padding: 0 16px;
+        color: #dcdcdc;
+        font-size: 14px;
+        line-height: 14px;
+        border-right: 1px solid #666;
+
+        &:hover {
+          color: #5eb69c;
+        }
+      }
+    }
+
+    li:last-child {
+      a {
+        border-right: 0;
+
+        i {
+          display: inline-block;
+          margin-right: 8px;
+          width: 11px;
+          height: 16px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+  }
+}
