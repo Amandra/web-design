@@ -48,3 +48,33 @@
 
   }
 }
+
+/* 头部 */
+.header {
+  display: flex;
+  justify-content: center;
+  height: 180px;
+  background-color: pink;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      a {
+        display: block;
+        width: 143px;
+        height: 129px;
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        /* 设置为 0 ，主要是为了让文字隐藏 */
+        font-size: 0;
+      }
+    }
+
+  }
+}
+
+
+
