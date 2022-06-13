@@ -132,6 +132,9 @@
   text-align: center;
   font-size: 14px;
   color: #333333;
+  border: 1px solid #e8e8e8;
+  border-top: 0;
+  border-bottom: 0;
 }
 .body .wrapper .content .order .content li .pay .price {
   color: #9a2e1f;
