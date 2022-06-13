@@ -23,15 +23,21 @@
 }
 .body .wrapper .content .overview {
   display: flex;
+  padding: 20px 0;
   height: 132px;
   background-color: #fff;
-  margin-bottom: 18px;
-  padding: 20px 0;
 }
 .body .wrapper .content .overview div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   flex: 1;
+  text-align: center;
 }
-.body .wrapper .content .overview div :first-child {
-  background-color: #f4f4f4;
+.body .wrapper .content .overview div:first-child {
+  border-right: 1px solid #f4f4f4;
+}
+.body .wrapper .content .overview div img {
+  width: 25px;
 }
 /*# sourceMappingURL=center.css.map */
