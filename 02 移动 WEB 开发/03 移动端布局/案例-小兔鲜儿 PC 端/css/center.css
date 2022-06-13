@@ -24,6 +24,7 @@
 .body .wrapper .content .overview {
   display: flex;
   padding: 20px 0;
+  margin-bottom: 10px;
   height: 132px;
   background-color: #fff;
 }
