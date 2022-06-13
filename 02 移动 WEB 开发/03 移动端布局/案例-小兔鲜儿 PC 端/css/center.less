@@ -5,6 +5,28 @@
   margin-bottom: 20px;
 }
 
+.card-title {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: pink;
+    margin-bottom: 22px;
+
+    h4 {
+      font-size: 22px;
+      color: #333;
+      font-weight: normal;
+    }
+
+    a {
+      font-size: 16px;
+      color: #999;
+    }
+
+  }
+}
+
 /* 内容 */
 .body {
   display: flex;
@@ -67,35 +89,22 @@
       .order {
         .card();
 
-        .title {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          background-color: pink;
-          margin-bottom: 22px;
+        .card-title();
 
-          h4 {
-            font-size: 22px;
-            color: #333;
-            font-weight: normal;
-          }
-
-          a {
-            font-size: 16px;
-            color: #999;
-          }
-
-        }
       }
 
       // 商品
       .goods {
         .card();
+
+        .card-title();
       }
 
       // 足迹
       .pug {
         .card();
+
+        .card-title();
       }
     }
 
