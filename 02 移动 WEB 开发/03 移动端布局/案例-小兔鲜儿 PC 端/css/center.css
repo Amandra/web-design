@@ -105,15 +105,20 @@
 }
 .body .wrapper .content .order .content li .desc {
   flex: 2;
+  width: 0;
 }
 .body .wrapper .content .order .content li .desc h4 {
   font-weight: normal;
   font-size: 16px;
-  color: #333333;
+  color: #333;
+  /* 文字超出省略号 */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .body .wrapper .content .order .content li .desc p {
   font-size: 14px;
-  color: #999999;
+  color: #999;
 }
 .body .wrapper .content .order .content li .status {
   flex: 1;
