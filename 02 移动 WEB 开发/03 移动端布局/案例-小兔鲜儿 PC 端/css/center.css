@@ -105,7 +105,7 @@
 }
 .body .wrapper .content .order .content li .desc {
   flex: 2;
-  /* 文字超出省略号 */
+  /* 溢出的时候显示省略号 */
   width: 0;
 }
 .body .wrapper .content .order .content li .desc h4 {
