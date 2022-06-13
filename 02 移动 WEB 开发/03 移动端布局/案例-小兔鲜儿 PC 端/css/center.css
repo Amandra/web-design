@@ -1,3 +1,9 @@
+/* 公共样式抽取 */
+.card {
+  padding: 28px 18px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
 /* 内容 */
 .body {
   display: flex;
@@ -7,8 +13,6 @@
 }
 .body .wrapper {
   display: flex;
-  /* 侧边栏 */
-  /* 主体内容 */
 }
 .body .wrapper .aside {
   width: 227px;
@@ -18,8 +22,6 @@
 }
 .body .wrapper .content {
   flex: 1;
-  min-height: 600px;
-  /* 用户账户概览 */
 }
 .body .wrapper .content .overview {
   display: flex;
@@ -47,5 +49,36 @@
 .body .wrapper .content .overview div:last-child span {
   font-size: 25px;
   color: #e05e30;
+}
+.body .wrapper .content .order {
+  padding: 28px 18px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.body .wrapper .content .order .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: pink;
+  margin-bottom: 22px;
+}
+.body .wrapper .content .order .title h4 {
+  font-size: 22px;
+  color: #333;
+  font-weight: normal;
+}
+.body .wrapper .content .order .title a {
+  font-size: 16px;
+  color: #999;
+}
+.body .wrapper .content .goods {
+  padding: 28px 18px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+.body .wrapper .content .pug {
+  padding: 28px 18px;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=center.css.map */
