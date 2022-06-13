@@ -90,6 +90,9 @@
   border: solid 1px #f4f4f4;
   margin-bottom: 20px;
 }
+.body .wrapper .content .order .content li:last-child {
+  margin-bottom: 0;
+}
 .body .wrapper .content .goods {
   padding: 28px 18px;
   background-color: #fff;
