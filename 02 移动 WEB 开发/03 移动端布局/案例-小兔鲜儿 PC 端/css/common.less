@@ -54,14 +54,14 @@
   display: flex;
   justify-content: center;
   height: 180px;
-  //background-color: pink;
 
   .wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     .logo {
+      flex: 1;
+
       a {
         display: block;
         width: 143px;
@@ -74,22 +74,35 @@
     }
 
     .nav {
+      flex: 4;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 16px;
       color: #333333;
+      margin-right: 50px;
 
       li {
-        margin-left: 50px;
 
         &:first-child {
           margin-left: 88px;
         }
+
+        a {
+          display: inline-block;
+          padding: 0 2px;
+
+          &:hover {
+            color: #5eb69c;
+            border-bottom: 1px solid #5eb69c;
+          }
+        }
+
       }
     }
 
     .search {
+      flex: 2;
       position: relative;
 
       .icon-search {
