@@ -93,6 +93,8 @@
         .content {
 
           li {
+            display: flex;
+            align-items: center;
             height: 137px;
             border: solid 1px #f4f4f4;
             margin-bottom: 20px;
@@ -100,6 +102,32 @@
             &:last-child {
               margin-bottom: 0;
             }
+
+            .desc {
+              display: flex;
+              justify-content: center;
+              flex: 1;
+
+              img {
+                width: 107px;
+              }
+            }
+
+            .status {
+              flex: 3;
+              background-color: skyblue;
+            }
+
+            .pay {
+              flex: 1;
+              background-color: pink;
+            }
+
+            .action {
+              flex: 1;
+              background-color: blue;
+            }
+
           }
         }
       }

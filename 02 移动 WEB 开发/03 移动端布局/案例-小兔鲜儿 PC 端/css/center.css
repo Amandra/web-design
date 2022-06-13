@@ -86,12 +86,34 @@
   color: #999;
 }
 .body .wrapper .content .order .content li {
+  display: flex;
+  align-items: center;
   height: 137px;
   border: solid 1px #f4f4f4;
   margin-bottom: 20px;
 }
 .body .wrapper .content .order .content li:last-child {
   margin-bottom: 0;
+}
+.body .wrapper .content .order .content li .desc {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+.body .wrapper .content .order .content li .desc img {
+  width: 107px;
+}
+.body .wrapper .content .order .content li .status {
+  flex: 3;
+  background-color: skyblue;
+}
+.body .wrapper .content .order .content li .pay {
+  flex: 1;
+  background-color: pink;
+}
+.body .wrapper .content .order .content li .action {
+  flex: 1;
+  background-color: blue;
 }
 .body .wrapper .content .goods {
   padding: 28px 18px;
