@@ -1,0 +1,37 @@
+/* 内容 */
+.body {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 85px;
+  background-color: #f6f6f6;
+}
+.body .wrapper {
+  display: flex;
+  /* 侧边栏 */
+  /* 主体内容 */
+}
+.body .wrapper .aside {
+  width: 227px;
+  min-height: 500px;
+  margin-right: 18px;
+  background-color: #fff;
+}
+.body .wrapper .content {
+  flex: 1;
+  min-height: 600px;
+  /* 用户账户概览 */
+}
+.body .wrapper .content .overview {
+  display: flex;
+  height: 132px;
+  background-color: #fff;
+  margin-bottom: 18px;
+  padding: 20px 0;
+}
+.body .wrapper .content .overview div {
+  flex: 1;
+}
+.body .wrapper .content .overview div :first-child {
+  background-color: #f4f4f4;
+}
+/*# sourceMappingURL=center.css.map */

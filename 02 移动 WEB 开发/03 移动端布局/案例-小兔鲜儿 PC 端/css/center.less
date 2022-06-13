@@ -1,0 +1,48 @@
+/* 内容 */
+.body {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 85px;
+  background-color: #f6f6f6;
+
+  .wrapper {
+    display: flex;
+
+
+    /* 侧边栏 */
+
+    .aside {
+      width: 227px;
+      min-height: 500px;
+      margin-right: 18px;
+      background-color: #fff;
+    }
+
+    /* 主体内容 */
+
+    .content {
+      flex: 1;
+      min-height: 600px;
+      /* 用户账户概览 */
+
+      .overview {
+        display: flex;
+        height: 132px;
+        background-color: #fff;
+        margin-bottom: 18px;
+        padding: 20px 0;
+
+        div {
+          flex: 1;
+
+          :first-child {
+            background-color: #f4f4f4;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
