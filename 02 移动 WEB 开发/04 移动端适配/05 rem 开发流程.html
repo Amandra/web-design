@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 使用媒体查询，根据不同的视口宽度，设置不同的根字号。 */
+        /* 视口宽度为 375px,根字号的就是 37.5px */
+        @media (width: 375px) {
+            html {
+                font-size: 37.5px;
+            }
+        }
+
+        /* 视口宽度为 320px,根字号的就是 32px */
+        @media (width: 320px) {
+            html {
+                font-size: 32px;
+            }
+        }
+
+        /* 视口宽度为 414px,根字号的就是 41.4px */
+        @media (width: 414px) {
+            html {
+                font-size: 41.4px;
+            }
+        }
+
+        .box {
+            /* 68 / 37.5 */
+            width: 1.81rem;
+            /* 29 / 37.5 */
+            height: 0.77rem;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
