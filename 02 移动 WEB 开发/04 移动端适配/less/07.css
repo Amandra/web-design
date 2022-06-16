@@ -1,0 +1,12 @@
+.father {
+  color: red;
+  width: 1.81333333rem;
+  height: 0.77333333rem;
+  background-color: pink;
+}
+.father .son {
+  width: 1.06666667rem;
+  height: 0.4rem;
+  background-color: skyblue;
+}
+/*# sourceMappingURL=07.css.map */
