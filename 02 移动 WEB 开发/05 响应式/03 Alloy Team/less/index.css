@@ -1,2 +1,6 @@
 /* 样式 */
+/* banner */
+.carousel img {
+  height: 100% !important;
+}
 /*# sourceMappingURL=index.css.map */
