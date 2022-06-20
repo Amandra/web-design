@@ -8,12 +8,14 @@
 </head>
 <body>
     <script>
-        /* 抓换为字符串 */
-        let numStr = '123';
-        console.log(typeof (Number.parseInt(numStr))); // number
+        /* 转换为字符串 */
+        console.log(typeof (Number.parseInt('123'))); // number
+        console.log(typeof (Number('123'))); // number
+        console.log(typeof (Number.parseFloat('123.13'))); // number
 
-        let num = 18;
-        console.log(String)
+        /* 转换为字符串 */
+        console.log(typeof (String(18))); // string
+
     </script>
 </body>
 </html>
