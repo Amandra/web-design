@@ -8,6 +8,26 @@
 </head>
 <body>
     <script>
+        let num1 = Number.parseInt(prompt('请输入第一个数字'));
+        let num2 = Number.parseInt(prompt('请输入第二个数字'));
+        let operator = prompt('请输入运算符');
+        switch (operator) {
+            case '+':
+                alert(`${num1} + ${num2} = ${num1 + num2}`);
+                break;
+            case '-':
+                alert(`${num1} - ${num2} = ${num1 - num2}`);
+                break;
+            case '*':
+                alert(`${num1} * ${num2} = ${num1 * num2}`);
+                break;
+            case '/':
+                alert(`${num1} / ${num2} = ${num1 / num2}`);
+                break;
+            case '%':
+                alert(`${num1} % ${num2} = ${num1 % num2}`);
+                break;
+        }
 
     </script>
 </body>
