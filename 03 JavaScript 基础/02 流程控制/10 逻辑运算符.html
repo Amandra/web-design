@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        let num = Number.parseInt(prompt('请输入一个整数'));
+        let num = Number.parseInt(prompt('请输入一个整数') || 0);
         if (num % 4 === 0 && num % 100 === 0) {
             console.log(`${num}能被4整除并且能被100整除`);
         }
