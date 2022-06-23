@@ -10,6 +10,8 @@
     <script>
         /* 有参数的函数声明 */
         function fn(num1, num2) {
+            num1 = num1 || 0;
+            num2 = num2 || 0;
             console.log(num1 + num2);
         }
 
