@@ -16,10 +16,15 @@
         ];
 
         for (let student of students) {
-            for (let key in student) {
-                console.log(key);
-                console.log(student[key]);
-            }
+            let name = student.name;
+            let age = student.age;
+            let gender = student.gender;
+            let hometown = student.hometown;
+
+            console.log(name);
+            console.log(age);
+            console.log(gender);
+            console.log(hometown);
         }
     </script>
 </body>
