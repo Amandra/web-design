@@ -85,13 +85,14 @@
         // 记录图片的张数
         let i = 0;
         setInterval(function () {
-            if (i === 9) {
-                i = 0;
+            if (i === data.length - 1) {
+                i = -1;
             }
-            i++;
             // 修改图片的 src 属性
+            i++;
             pic.src = data[i].imgSrc;
-            // 修改文字
+            console.log(data[i].imgSrc);
+            // 设置文字
             text.innerText = data[i].title;
         }, 1000);
 
