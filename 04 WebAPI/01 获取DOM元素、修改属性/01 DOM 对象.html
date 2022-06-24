@@ -7,11 +7,15 @@
     <title>Title</title>
 </head>
 <body>
+    <!-- 标签或元素 -->
     <button>点击</button>
 
     <script>
+        /* btn 就是 DOM 对象 */
         let btn = document.querySelector('button');
         console.log(typeof btn); // object
+        console.dir(btn); // object
+        btn.innerHTML = '呵呵哒';
     </script>
 </body>
 </html>
