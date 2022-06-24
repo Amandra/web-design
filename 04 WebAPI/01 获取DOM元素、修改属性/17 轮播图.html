@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Document</title>
     <style>
         .img-box {
@@ -32,52 +32,68 @@
 <body>
 
     <div class="img-box">
-        <img class="pic" src="./images/b01.jpg" alt="轮播图">
+        <img alt="轮播图" class="pic" src="./images/b01.jpg">
         <div class="tip">
             <h3 class="text">挑战云歌单，欢迎你来</h3>
         </div>
     </div>
 
     <script>
-        // 定义数据
+        /* 定义数据 */
         let data = [
             {
-                "imgSrc": "./images/b01.jpg",
-                "title": "挑战云歌单，欢迎你来"
+                'imgSrc': './images/b01.jpg',
+                'title': '挑战云歌单，欢迎你来'
             },
             {
-                "imgSrc": "./images/b02.jpg",
-                "title": "田园日记，上演上京记"
+                'imgSrc': './images/b02.jpg',
+                'title': '田园日记，上演上京记'
             },
             {
-                "imgSrc": "./images/b03.jpg",
-                "title": "甜蜜攻势再次回归"
+                'imgSrc': './images/b03.jpg',
+                'title': '甜蜜攻势再次回归'
             },
             {
-                "imgSrc": "./images/b04.jpg",
-                "title": "我为歌狂，生为歌王"
+                'imgSrc': './images/b04.jpg',
+                'title': '我为歌狂，生为歌王'
             },
             {
-                "imgSrc": "./images/b05.jpg",
-                "title": "年度校园主题活动"
+                'imgSrc': './images/b05.jpg',
+                'title': '年度校园主题活动'
             },
             {
-                "imgSrc": "./images/b06.jpg",
-                "title": "pink老师新歌发布，5月10号正式推出"
+                'imgSrc': './images/b06.jpg',
+                'title': 'pink老师新歌发布，5月10号正式推出'
             },
             {
-                "imgSrc": "./images/b07.jpg",
-                "title": "动力火车来到西安"
+                'imgSrc': './images/b07.jpg',
+                'title': '动力火车来到西安'
             },
             {
-                "imgSrc": "./images/b08.jpg",
-                "title": "钢铁侠3，英雄镇东风"
+                'imgSrc': './images/b08.jpg',
+                'title': '钢铁侠3，英雄镇东风'
             },
             {
-                "imgSrc": "./images/b09.jpg",
-                "title": "我用整颗心来等你"
+                'imgSrc': './images/b09.jpg',
+                'title': '我用整颗心来等你'
             }
         ];
+        /* 获取元素：图片和文字 */
+        let pic = document.querySelector('.pic');
+        let text = document.querySelector('.text');
+        /* 设置定时器 */
+        // 记录图片的张数
+        let i = 0;
+        setInterval(function () {
+            if (i === 9) {
+                i = 0;
+            }
+            i++;
+            // 修改图片的 src 属性
+            pic.src = data[i].imgSrc;
+            // 修改文字
+            text.innerText = data[i].title;
+        }, 1000);
 
     </script>
 </body>
