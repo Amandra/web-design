@@ -99,9 +99,9 @@
         });
         // 注册失去焦点事件
         search.addEventListener('blur', function () {
-            // 搜索框变色
+            // 搜索框移除颜色
             this.classList.remove('search');
-            // 下拉菜单显示
+            // 下拉菜单隐藏
             let resultList = document.querySelector('.result-list');
             resultList.classList.add('hidden');
             resultList.classList.remove('visible');
