@@ -81,7 +81,7 @@
         let conent = document.querySelector('.content');
         // 注册事件
         let timer = 0;
-        let random = null;
+        let random = 0;
         startBtn.addEventListener('click', function () {
             timer = setInterval(function () {
                 // 获取随机数
@@ -90,8 +90,6 @@
                 let ele = arr[random];
                 // 将姓名设置到页面的内容区域
                 conent.innerHTML = ele;
-                // 从数组中删除选中的元素
-                arr.splice(random, 1);
                 // 如果数组中没有元素，就清空定时器，并且禁止开始按钮和结束按钮
                 if (arr.length === 0) {
                     clearInterval(timer);
@@ -101,10 +99,10 @@
             }, 500);
         });
         endBtn.addEventListener('click', function () {
+            // 清除定时器
             clearInterval(timer);
-            if (null != random) {
-                arr.splice(random, 1);
-            }
+            // 删除元素
+            arr.splice(random, 1);
         })
 
     </script>
