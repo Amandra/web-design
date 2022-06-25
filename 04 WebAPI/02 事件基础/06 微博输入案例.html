@@ -38,15 +38,11 @@
                 ③ 将获得的数字给下面的文本框
         */
         let textarea = document.querySelector('#area');
-        // 用来存储文字的数组
-        let arr = [];
         textarea.addEventListener('input', function (e) {
             console.log(e);
-            // 将用户输入的文字存储到数组中
-            arr.push(this.value);
             // 回显用户输入的文字数量
             let useCount = document.querySelector('.useCount');
-            useCount.innerHTML = arr.length;
+            useCount.innerHTML = this.value.length;
         })
     </script>
 
