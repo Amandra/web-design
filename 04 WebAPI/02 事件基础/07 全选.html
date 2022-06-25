@@ -95,19 +95,24 @@
             }
         });
         // 其余按钮添加点击事件，一旦有一个没有选中，全选取消
-        cks.forEach(ck => {
+        for (let i = 0; i < cks.length; i++) {
+            let ck = cks[i];
             // 给每个按钮添加点击事件
             ck.addEventListener('click', function () {
-                // 遍历所有按钮，如果有一个按钮没有选中，那么全选就设置为取消，并将文字改为全选，并 return 
-                cks.forEach(c => {
-                    if (!c.checked) {
+                // 只要点击任何一个小按钮，都需要遍历所有的小按钮
+                for (let j = 0; j < cks.length; j++) {
+                    let c = cks[j];
+                    if (!c.checked) {// 如果有按钮没有被选中，则退出循环
                         checkAll.checked = false;
                         all.innerHTML = '全选';
                         return;
                     }
-                });
+                }
+                // 循环结束后，将全选状态设置为 true
+                checkAll.checked = true;
+                all.innerHTML = '取消';
             });
-        });
+        }
 
     </script>
 
