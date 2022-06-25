@@ -55,7 +55,7 @@
             name.innerHTML = arr[random];
             // 删除数组中的元素
             arr.splice(random, 1);
-            // 如果数组里面还剩下最后一个元素，就需要禁用按钮
+            // 如果数组里面没有元素，就需要禁用按钮
             if (arr.length === 0) {
                 btn.disabled = true;
             }
