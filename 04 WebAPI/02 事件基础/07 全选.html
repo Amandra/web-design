@@ -78,19 +78,20 @@
 
     <script>
         // 获取元素
-        let all = document.querySelector('#checkAll');
+        let checkAll = document.querySelector('#checkAll');
         let cks = document.querySelectorAll('.ck');
+        let all = document.querySelector('.all')
         // 点全选按钮添加点击事件
-        all.addEventListener('click', function () {
+        checkAll.addEventListener('click', function () {
             // 将全选按钮的点击状态赋值给下面每个按钮
             cks.forEach(ck => {
                 ck.checked = this.checked;
             });
             // 如果全选按钮处于选中状态，就可以将文字改为取消
             if (this.checked) {
-                document.querySelector('.all').innerHTML = '取消';
+                all.innerHTML = '取消';
             } else {
-                document.querySelector('.all').innerHTML = '全选';
+                all.innerHTML = '全选';
             }
         });
         // 其余按钮添加点击事件，一旦有一个没有选中，全选取消
@@ -98,8 +99,7 @@
             let ck = cks[i];
             ck.addEventListener('click', function () {
                 if (!ck.checked) {
-                    console.log(11);
-                    all.checked = false;
+                    checkAll.checked = false;
                 }
             });
         }
