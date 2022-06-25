@@ -62,6 +62,12 @@
     </div>
 
     <script>
+        /* 
+          分析：
+            ① 点击开始按钮随机抽取数组中的一个数据，放到页面中。
+            ② 点击删除按钮，删除数据当前抽取的数据，并禁止定时器。
+            ③ 当抽取到最后一个数据的时候，两个按钮同时禁用。
+        */
         let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操'];
 
         function getRandom(min, max) {
@@ -75,10 +81,11 @@
         let conent = document.querySelector('.content');
         // 注册事件
         let timer = null;
+        let random = null;
         startBtn.addEventListener('click', function () {
             timer = setInterval(function () {
                 // 获取随机数
-                let random = getRandom(0, arr.length - 1);
+                random = getRandom(0, arr.length - 1);
                 // 获取随机抽取的姓名
                 let ele = arr[random];
                 // 将姓名设置到页面的内容区域
@@ -95,6 +102,9 @@
             }, 500);
         });
         endBtn.addEventListener('click', function () {
+            if (null != random) {
+                arr.splice(random, 1);
+            }
             clearInterval(timer);
         })
 
