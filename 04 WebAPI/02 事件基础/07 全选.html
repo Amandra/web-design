@@ -86,6 +86,12 @@
             cks.forEach(ck => {
                 ck.checked = this.checked;
             });
+            // 如果全选按钮处于选中状态，就可以将文字改为取消
+            if (this.checked) {
+                document.querySelector('.all').innerHTML = '取消';
+            } else {
+                document.querySelector('.all').innerHTML = '全选';
+            }
         });
         // 其余按钮添加点击事件，一旦有一个没有选中，全选取消
         for (let i = 0; i < cks.length; i++) {
