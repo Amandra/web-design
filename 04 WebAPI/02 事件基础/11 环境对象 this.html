@@ -10,12 +10,19 @@
 
 <body>
 
+    <button>点我</button>
+
     <script>
         function fn() {
             console.log(this); // Window
         }
 
         fn();
+
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            console.log(this); // button
+        })
     </script>
 
 </body>
