@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w">
+        <div class="controls">
+            <img src="images/tip.png" alt=""><br>
+            <textarea placeholder="说点什么吧..." id="area" cols="30" rows="10" maxlength="200"></textarea>
+            <div>
+                <span class="useCount">0</span>
+                <span>/</span>
+                <span>200</span>
+                <button id="send">发布</button>
+            </div>
+
+        </div>
+        <div class="contentList">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        /* 需求：用户输入文字，可以计算用户输入的字数。 */
+        /*
+            分析：
+                ① 判断用户输入事件 input 
+                ② 不断取得文本框里面的字符长度
+                ③ 将获得的数字给下面的文本框
+        */
+        let textarea = document.querySelector('textarea');
+        // 用来存储文字的数组
+        let arr = [];
+        textarea.addEventListener('input', function (e) {
+            console.log(e);
+            // 将用户输入的文字存储到数组中
+            arr.push(this.value);
+            // 回显用户输入的文字数量
+            let useCount = document.querySelector('.useCount');
+            useCount.innerHTML = arr.length;
+        })
+    </script>
+
+</body>
+
+</html>
