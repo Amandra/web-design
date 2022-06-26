@@ -93,7 +93,7 @@
             // 得到当前的时间
             let nowDate = new Date();
             // 得到指定的时间
-            let nextDate = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 24, 0, 0);
+            let nextDate = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 23, 59, 59);
             // 设置当前的时间
             let next = document.querySelector('.next');
             next.innerHTML = `今天是${nowDate.getFullYear()}年${nowDate.getMonth() + 1}月${nowDate.getDate()}日`;
