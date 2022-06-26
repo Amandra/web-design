@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        .countdown {
+            width: 240px;
+            height: 305px;
+            text-align: center;
+            line-height: 1;
+            color: #fff;
+            background-color: brown;
+            /* background-size: 240px; */
+            /* float: left; */
+            overflow: hidden;
+        }
+
+        .countdown .next {
+            font-size: 16px;
+            margin: 25px 0 14px;
+        }
+
+        .countdown .title {
+            font-size: 33px;
+        }
+
+        .countdown .tips {
+            margin-top: 80px;
+            font-size: 23px;
+        }
+
+        .countdown small {
+            font-size: 17px;
+        }
+
+        .countdown .clock {
+            width: 142px;
+            margin: 18px auto 0;
+            overflow: hidden;
+        }
+
+        .countdown .clock span,
+        .countdown .clock i {
+            display: block;
+            text-align: center;
+            line-height: 34px;
+            font-size: 23px;
+            float: left;
+        }
+
+        .countdown .clock span {
+            width: 34px;
+            height: 34px;
+            border-radius: 2px;
+            background-color: #303430;
+        }
+
+        .countdown .clock i {
+            width: 20px;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="countdown">
+        <p class="next">今天是2021年8月28日</p>
+        <p class="title">下班倒计时</p>
+        <p class="clock">
+            <span id="hour">00</span>
+            <i>:</i>
+            <span id="minutes">25</span>
+            <i>:</i>
+            <span id="second">20</span>
+        </p>
+        <p class="tips">
+            现在是18:30:00
+        </p>
+    </div>
+
+    <script>
+        /*
+            倒计时：用将来的时间减去现在的时间得到剩余的时间，然后将剩余的时间转换为天、时、分、秒。
+            d = Math.floor(总秒数 / 60 / 60 / 24); // 计算天数
+            h = Math.floor(总秒数 / 60 / 60 % 24) // 计算小时
+            m = Math.floor(总秒数 / 60 % 60); // 计算分数
+            s = Math.floor(总秒数 % 60); // 计算当前秒数
+        */
+        function fn() {
+            // 得到当前的时间
+            let nowDate = new Date();
+            // 得到指定的时间
+            let nextDate = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 23, 59, 59);
+            // 设置当前的时间
+            let next = document.querySelector('.next');
+            next.innerHTML = `今天是${nowDate.getFullYear()}年${nowDate.getMonth() + 1}月${nowDate.getDate()}日`;
+            // 设置当前的时刻
+            let tips = document.querySelector('.tips');
+            tips.innerHTML = `现在是${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getSeconds() < 10 ? '0' + nowDate.getSeconds() : nowDate.getSeconds()}`;
+            // 设置倒计时
+            let times = (nextDate.getTime() - nowDate.getTime()) / 1000;
+            let clock = document.querySelector('.clock');
+            if (times <= 0) {
+                clock.innerHTML = '已经下班啦';
+            } else {
+                let hour = Math.floor(times / 60 / 60 % 24);
+                let minutes = Math.floor(times / 60 % 60);
+                let second = Math.floor(times % 60);
+                document.querySelector('#hour').innerText = hour < 10 ? '0' + hour : hour;
+                document.querySelector('#minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.querySelector('#second').innerText = second < 10 ? '0' + second : second;
+            }
+        }
+
+        fn();
+
+        setInterval(fn, 1000);
+
+    </script>
+
+</body>
+</html>

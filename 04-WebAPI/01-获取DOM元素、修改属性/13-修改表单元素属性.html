@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <label>
+        <input placeholder="请输入密码" type="password" value="123456">
+    </label>
+
+    <button>点我</button>
+
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            let input = document.querySelector('input');
+            input.type = 'text';
+            input.placeholder = '呵呵，请输入密码';
+            input.value = '你确定是 123456 ？';
+        });
+    </script>
+</body>
+</html>

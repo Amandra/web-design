@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Bootstrap 的栅格系统</title>
+    <!-- 引入 bootstrap 相关文件 -->
+    <link href="./bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./bootstrap-3.4.1-dist/js/jquery.js"></script>
+    <script src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <style>
+        .container div {
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+<body>
+    <!-- 需求：大屏，一行排列 4 个内容；中屏，一行排列 2 个内容 -->
+    <div class="container">
+        <div class="col-lg-3 col-md-6">1</div>
+        <div class="col-lg-3 col-md-6">2</div>
+        <div class="col-lg-3 col-md-6">3</div>
+        <div class="col-lg-3 col-md-6">4</div>
+    </div>
+
+    <div class="container">
+        <div class="row">2</div>
+    </div>
+</body>
+</html>

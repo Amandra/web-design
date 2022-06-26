@@ -1,0 +1,141 @@
+/* 公共样式 */
+/* 版心 */
+.wrapper {
+  width: 1240px;
+  min-width: 1240px;
+}
+
+/* 顶部导航 */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  height: 53px;
+  background-color: #333;
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    li {
+
+      a {
+        padding: 0 16px;
+        color: #dcdcdc;
+        font-size: 14px;
+        line-height: 14px;
+        border-right: 1px solid #666;
+
+        &:hover {
+          color: #5eb69c;
+        }
+      }
+    }
+
+    li:last-child {
+      a {
+        border-right: 0;
+
+        i {
+          display: inline-block;
+          margin-right: 8px;
+          width: 11px;
+          height: 16px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+  }
+}
+
+/* 头部 */
+.header {
+  display: flex;
+  justify-content: center;
+  height: 180px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      flex: 1;
+
+      a {
+        display: block;
+        width: 143px;
+        height: 129px;
+        background-image: url(../images/logo.png);
+        background-size: contain;
+        /* 设置为 0 ，主要是为了让文字隐藏 */
+        font-size: 0;
+      }
+    }
+
+    .nav {
+      flex: 4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      color: #333333;
+      margin-right: 50px;
+
+      li {
+
+        &:first-child {
+          margin-left: 88px;
+        }
+
+        a {
+          display: inline-block;
+          padding: 0 2px;
+
+          &:hover {
+            color: #5eb69c;
+            border-bottom: 1px solid #5eb69c;
+          }
+        }
+
+      }
+    }
+
+    .search {
+      flex: 2;
+      position: relative;
+
+      .icon-search {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        font-size: 18px;
+      }
+
+      input {
+        width: 264px;
+        height: 29px;
+        padding-left: 17px;
+
+        &::placeholder {
+          font-size: 14px;
+          color: #ccc;
+        }
+      }
+
+      .icon-cart-Empty {
+        width: 22px;
+        height: 22px;
+      }
+
+    }
+
+  }
+}
+
+
+.copyright {
+
+}
+
+

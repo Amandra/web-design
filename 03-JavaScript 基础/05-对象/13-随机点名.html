@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操'];
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let random = getRandom(0, arr.length - 1);
+
+        console.log(arr[random]);
+        // 删除元素
+        arr.splice(random, 1);
+
+        console.log(arr);
+    </script>
+</body>
+</html>

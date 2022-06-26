@@ -1,0 +1,223 @@
+/* 公共样式抽取 */
+.card {
+  padding: 28px 18px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+
+    h4 {
+      font-size: 22px;
+      color: #333;
+      font-weight: normal;
+    }
+
+    a {
+      font-size: 16px;
+      color: #999;
+    }
+
+  }
+}
+
+/* 内容 */
+.body {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 85px;
+  background-color: #f6f6f6;
+
+  .wrapper {
+    display: flex;
+
+    // 侧边栏
+    .aside {
+      width: 227px;
+      min-height: 500px;
+      margin-right: 18px;
+      background-color: #fff;
+    }
+
+    // 主体内容
+    .content {
+      flex: 1;
+
+      // 用户账户概览
+      .overview {
+        display: flex;
+        padding: 20px 0;
+        margin-bottom: 10px;
+        height: 132px;
+        background-color: #fff;
+
+        div {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex: 1;
+          text-align: center;
+          font-size: 16px;
+          color: #333;
+
+          img {
+            width: 25px;
+            margin-bottom: 10px;
+          }
+
+          &:first-child {
+            border-right: 1px solid #f4f4f4;
+          }
+
+          &:last-child {
+            span {
+              font-size: 25px;
+              color: #e05e30;
+            }
+          }
+        }
+
+      }
+
+      // 订单
+      .order {
+        .card();
+
+        .card-title();
+
+        .content {
+
+          li {
+            display: flex;
+            align-items: center;
+            height: 137px;
+            border: solid 1px #f4f4f4;
+            margin-bottom: 20px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            .pic {
+              display: flex;
+              justify-content: center;
+              flex: 1;
+
+              img {
+                width: 107px;
+              }
+            }
+
+            .desc {
+              flex: 2;
+              /* 溢出的时候显示省略号 */
+              width: 0;
+
+              h4 {
+                font-weight: normal;
+                font-size: 16px;
+                color: #333;
+                /* 文字超出省略号 */
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+
+              p {
+                font-size: 14px;
+                color: #999;
+              }
+
+            }
+
+            .status {
+              flex: 1;
+              text-align: center;
+
+              p {
+                font-size: 14px;
+                color: #e05e30;
+              }
+
+              a {
+                font-size: 14px;
+                color: #999999;
+              }
+
+            }
+
+            .pay {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100%;
+              font-size: 14px;
+              color: #333333;
+              border: 1px solid #e8e8e8;
+              border-top: 0;
+              border-bottom: 0;
+
+              .price {
+                color: #9a2e1f;
+              }
+            }
+
+            .action {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              flex: 1;
+
+              a {
+                &:first-child {
+                  display: block;
+                  width: 100px;
+                  height: 30px;
+                  line-height: 30px;
+                  color: #fff;
+                  background-color: #5eb69c;
+                  border-radius: 2px;
+                  text-align: center;
+                  margin-bottom: 16px;
+
+                  &:hover {
+                    color: #fff;
+                  }
+                }
+
+                &:hover {
+                  color: #5eb69c;
+                }
+              }
+            }
+
+          }
+        }
+      }
+
+      // 商品
+      .goods {
+        .card();
+
+        .card-title();
+      }
+
+      // 足迹
+      .pug {
+        .card();
+
+        .card-title();
+      }
+    }
+
+  }
+
+}

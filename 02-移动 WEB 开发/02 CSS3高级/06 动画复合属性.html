@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+
+            /* 使用动画 */
+            /* animation: change 1s linear; */
+            /* steps 是分步动画 */
+            /* animation: change 1s steps(3) 1s; */
+            /* 无限循环 */
+            /* animation: change 1s steps(3) infinite; */
+            /* 动画方向 */
+            /* animation: change 1s steps(3) 1s infinite alternate; */
+            /* 执行完毕状态 */
+            animation: change 1s steps(3) 1s forwards;
+        }
+
+        /* 定义动画：宽度为 200 到 500*300 到 800*500 */
+        /* 百分比指的是动画总时长的占比 */
+        @keyframes change {
+            0% {
+                width: 200px;
+            }
+            50% {
+                width: 500px;
+                height: 300px;
+            }
+            100% {
+                width: 800px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
