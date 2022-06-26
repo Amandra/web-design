@@ -84,19 +84,41 @@
     <script>
         /*
             倒计时：用将来的时间减去现在的时间得到剩余的时间，然后将剩余的时间转换为天、时、分、秒。
-            d = parseInt(总秒数/ 60 / 60 / 24); // 计算天数
-            h = parseInt(总秒数/ 60 / 60 % 24) // 计算小时
-            m = parseInt(总秒数 / 60 % 60 ); // 计算分数
-            s = parseInt(总秒数 % 60); // 计算当前秒数
+            d = Math.floor(总秒数 / 60 / 60 / 24); // 计算天数
+            h = Math.floor(总秒数 / 60 / 60 % 24) // 计算小时
+            m = Math.floor(总秒数 / 60 % 60); // 计算分数
+            s = Math.floor(总秒数 % 60); // 计算当前秒数
         */
         function fn() {
             // 得到当前的时间
             let nowDate = new Date();
             // 得到指定的时间
-            let nextDate = new Date();
+            let nextDate = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 24, 0);
+            // 设置当前的时间
+            let next = document.querySelector('.next');
+            next.innerHTML = `今天是${nowDate.getFullYear()}年${nowDate.getMonth() + 1}月${nowDate.getDate()}日`;
+            // 设置当前的时刻
+            let tips = document.querySelector('.tips');
+            tips.innerHTML = `现在是${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getSeconds() < 10 ? '0' + nowDate.getSeconds() : nowDate.getSeconds()}`;
+            // 设置倒计时
+            let times = (nextDate.getTime() - nowDate.getTime()) / 1000;
+            let clock = document.querySelector('.clock');
+            if (times <= 0) {
+                clock.innerHTML = '已经下班啦';
+            } else {
+                let hour = Math.floor(times / 60 / 60 % 24);
+                let minutes = Math.floor(times / 60 % 60);
+                let second = Math.floor(times % 60);
+                document.querySelector('#hour').innerText = hour <= 0 ? '0' + hour : hour;
+                document.querySelector('#minutes').innerText = minutes <= 0 ? '0' + minutes : minutes;
+                document.querySelector('#second').innerText = second <= 0 ? '0' + second : second;
+            }
         }
 
         fn();
+
+        setInterval(fn, 1000);
+
 
     </script>
 
