@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>
+        <li>你大爷</li>
+        <li>呵呵哒</li>
+    </ul>
+
+    <script>
+        // 创建新的标签节点
+        let li = document.createElement('li');
+        li.innerHTML = '嘻嘻';
+        console.log(li);
+        // 插入元素
+        let ul = document.querySelector('ul');
+        ul.insertBefore(li, document.querySelector('li:last-child'));
+    </script>
+
+</body>
+</html>
