@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="father">
+        父亲
+        <div class="son">儿子</div>
+    </div>
+
+    <button>点我</button>
+
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            let son = document.querySelector('.son');
+            /* 查找父节点 */
+            console.log(son.parentNode);
+            son.parentNode.style.dispaly = 'none';
+        });
+    </script>
+
+</body>
+
+</html>
