@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>
+        <li>我是内容</li>
+    </ul>
+
+    <script>
+        let ul = document.querySelector('ul');
+        /*
+        * 如果为 true ，则代表克隆时会包含后代节点。
+        * 如果为 false ，则代表克隆时不包含后代节点，默认值。
+        */
+        let newUl = ul.cloneNode(true);
+        document.body.appendChild(newUl);
+    </script>
+
+</body>
+</html>
