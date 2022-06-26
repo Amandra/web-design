@@ -49,8 +49,7 @@
         let closeBtn = document.querySelector('.close_btn');
         // 注册事件
         closeBtn.addEventListener('click', function () {
-            let erweima = document.querySelector('.erweima');
-            erweima.style.display = 'none';
+            this.parentNode.style.display = 'none';
         })
     </script>
 </body>
