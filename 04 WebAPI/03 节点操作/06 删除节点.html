@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <ul>
+        <li>呵呵哒</li>
+    </ul>
+
+    <button>点我，删除li</button>
+
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            let ul = document.querySelector('ul');
+            /* 删除节点，必须父元素删除子节点。 */
+            ul.removeChild(ul.children[0]);
+        });
+    </script>
+</body>
+</html>
