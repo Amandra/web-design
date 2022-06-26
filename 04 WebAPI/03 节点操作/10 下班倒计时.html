@@ -99,7 +99,7 @@
             next.innerHTML = `今天是${nowDate.getFullYear()}年${nowDate.getMonth() + 1}月${nowDate.getDate()}日`;
             // 设置当前的时刻
             let tips = document.querySelector('.tips');
-            tips.innerHTML = `现在是${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getSeconds() <= 10 ? '0' + nowDate.getSeconds() : nowDate.getSeconds()}`;
+            tips.innerHTML = `现在是${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getSeconds() < 10 ? '0' + nowDate.getSeconds() : nowDate.getSeconds()}`;
             // 设置倒计时
             let times = (nextDate.getTime() - nowDate.getTime()) / 1000;
             let clock = document.querySelector('.clock');
@@ -109,9 +109,9 @@
                 let hour = Math.floor(times / 60 / 60 % 24);
                 let minutes = Math.floor(times / 60 % 60);
                 let second = Math.floor(times % 60);
-                document.querySelector('#hour').innerText = hour <= 0 ? '0' + hour : hour;
-                document.querySelector('#minutes').innerText = minutes <= 0 ? '0' + minutes : minutes;
-                document.querySelector('#second').innerText = second <= 0 ? '0' + second : second;
+                document.querySelector('#hour').innerText = hour < 10 ? '0' + hour : hour;
+                document.querySelector('#minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.querySelector('#second').innerText = second < 10 ? '0' + second : second;
             }
         }
 
