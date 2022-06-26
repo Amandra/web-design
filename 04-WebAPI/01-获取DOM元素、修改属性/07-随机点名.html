@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        div span {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border: 1px solid pink;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        抽中的选手是：<span></span>
+    </div>
+
+    <button>点我</button>
+
+    <script>
+        let arr = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操'];
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let btn = document.querySelector('button');
+
+        btn.addEventListener('click', function () {
+            let random = getRandom(0, arr.length - 1);
+
+            // 选中的元素
+            let checkedElement = arr[random];
+
+            let span = document.querySelector('span');
+            span.innerHTML = checkedElement;
+        });
+
+
+    </script>
+</body>
+</html>
