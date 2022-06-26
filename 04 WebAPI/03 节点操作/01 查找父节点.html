@@ -21,7 +21,7 @@
         let btn = document.querySelector('button');
         btn.addEventListener('click', function () {
             let son = document.querySelector('.son');
-            /* 查找父节点 */
+            /* 查找父节点，只能找亲爹，找不到返回 null */
             console.log(son.parentNode);
             son.parentNode.style.dispaly = 'none';
         });
