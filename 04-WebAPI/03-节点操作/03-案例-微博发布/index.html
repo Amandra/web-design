@@ -192,6 +192,21 @@
             useCount.innerText = this.value.length;
         });
 
+        /*
+            需求2：输入不能为空
+            1. 如果内容为空，则提示不能输入为空，并且直接 return 。
+            2. 防止输入无意义的空格，可以使用 trim() 去除首尾空格，并将文本域的 value 设置为空字符串，同时将红色设置为0
+        */
+        send.addEventListener('click', function () {
+            let areaValue = area.value.trim();
+            if (!areaValue) {
+                alert('输入的内容为空');
+                return;
+            }
+            area.value = '';
+            useCount.innerText = 0;
+        });
+
     </script>
 </body>
 
