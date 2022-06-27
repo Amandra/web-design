@@ -200,11 +200,12 @@
         send.addEventListener('click', function () {
             let areaValue = area.value.trim();
             if (!areaValue) {
-                alert('输入的内容为空');
-                return;
+                area.value = '';
+                useCount.innerText = 0;
+                alert('输入的内容不能为空');
+
             }
-            area.value = '';
-            useCount.innerText = 0;
+
         });
 
     </script>
