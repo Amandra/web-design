@@ -70,6 +70,9 @@
         let tbody = document.querySelector('tbody');
 
         function render() {
+            // 先删除之前的数据
+            tbody.innerHTML = '';
+            // 再渲染新的数据
             arr.forEach(a => {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
@@ -102,12 +105,8 @@
 
             console.log(arr);
 
-            // 清空数据
-            console.log(tbody.children);
-
-            // 渲染数据
+            // 重新渲染数据
             render();
-
         });
 
     </script>
