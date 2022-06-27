@@ -110,7 +110,9 @@
 
         // 删除
         tbody.addEventListener('click', function (e) {
-            this.removeChild(e.target.parentNode.parentNode);
+            if (e.target.tagName === 'A') {
+                this.removeChild(e.target.parentNode.parentNode);
+            }
         });
 
     </script>
