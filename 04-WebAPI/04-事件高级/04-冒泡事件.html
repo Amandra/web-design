@@ -32,7 +32,18 @@
         <div class="son">我是儿子</div>
     </div>
 
-    <script></script>
+    <script>
+        let son = document.querySelector('.son');
+        let father = document.querySelector('.father');
+
+        son.addEventListener('click', function () {
+            alert('儿子');
+        });
+
+        father.addEventListener('click', function () {
+            alert('父亲');
+        });
+    </script>
 
 </body>
 </html>
