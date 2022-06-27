@@ -177,7 +177,7 @@
                 <td class="price">5￥</td>
                 <td>
                     <div class="count-c clearfix">
-                        <button class="reduce" disabled>-</button>
+                        <button class="reduce">-</button>
                         <input type="text" value="1"/>
                         <button class="add">+</button>
                     </div>
@@ -198,7 +198,7 @@
                 <td class="price">10￥</td>
                 <td>
                     <div class="count-c clearfix">
-                        <button class="reduce" disabled>-</button>
+                        <button class="reduce">-</button>
                         <input type="text" value="1"/>
                         <button class="add">+</button>
                     </div>
@@ -219,7 +219,7 @@
                 <td class="price">20￥</td>
                 <td>
                     <div class="count-c clearfix">
-                        <button class="reduce" disabled>-</button>
+                        <button class="reduce">-</button>
                         <input type="text" value="1"/>
                         <button class="add">+</button>
                     </div>
@@ -240,7 +240,7 @@
                 <td class="price">35￥</td>
                 <td>
                     <div class="count-c clearfix">
-                        <button class="reduce" disabled>-</button>
+                        <button class="reduce">-</button>
                         <input type="text" value="1"/>
                         <button class="add">+</button>
                     </div>
@@ -267,11 +267,19 @@
         let reduces = document.querySelectorAll('.reduce');
         let dels = document.querySelectorAll('.del');
         adds.forEach((add, index) => {
+
             add.addEventListener('click', function () {
-                
+                let inputValue = this.previousElementSibling.value;
+                inputValue++;
+                this.previousElementSibling.value = inputValue;
             });
             reduces[index].addEventListener('click', function () {
-
+                let inputValue = this.nextElementSibling.value;
+                if (inputValue <= 0) {
+                    inputValue = 1;
+                }
+                inputValue--;
+                this.nextElementSibling.value = inputValue;
             });
             dels[index].addEventListener('click', function () {
 
