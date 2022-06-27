@@ -25,7 +25,6 @@
         <option value="广州">广州</option>
         <option value="深圳">深圳</option>
         <option value="曹县">曹县</option>
-
     </select>
         <button class="add">录入</button>
     </div>
@@ -68,8 +67,9 @@
         ];
 
         // 渲染数据
+        let tbody = document.querySelector('tbody');
+
         function render() {
-            let tbody = document.querySelector('tbody');
             arr.forEach(a => {
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
@@ -89,6 +89,26 @@
 
         render();
 
+        // 新增数据
+        let add = document.querySelector('.add');
+        add.addEventListener('click', function () {
+            arr.push({
+                stuId: (1 + arr[arr.length - 1].stuId),
+                uname: document.querySelector('.uname').value,
+                age: document.querySelector('.age').value,
+                gender: document.querySelector('.gender').value,
+                salary: document.querySelector('.salary').value,
+                city: document.querySelector('.city').value
+            });
+
+            console.log(arr);
+
+            // 清空数据
+            console.log(tbody.children);
+            // 渲染数据
+            render();
+
+        });
 
     </script>
 </body>
