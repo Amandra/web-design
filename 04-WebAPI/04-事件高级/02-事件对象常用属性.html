@@ -10,7 +10,9 @@
 
     <script>
         document.addEventListener('click', function (e) {
-            console.log(e);
+            console.log('clientX:' + e.clientX, 'clientY:' + e.clientY);
+            console.log('offsetX:' + e.offsetX, 'offsetY:' + e.offsetY);
+            console.log('pageX:' + e.pageX, 'pageY:' + e.pageY);
         });
     </script>
 
