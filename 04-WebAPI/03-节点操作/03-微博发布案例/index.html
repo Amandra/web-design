@@ -180,6 +180,7 @@
 
         let send = document.querySelector('#send');
         let area = document.querySelector('#area');
+        let useCount = document.querySelector('.useCount');
 
         /*
            需求1: 检测用户输入字数
@@ -188,7 +189,7 @@
            3. 表单的 maxlength 属性可以直接限制在 200 个数之间。
         */
         area.addEventListener('input', function () {
-            document.querySelector('.useCount').innerHTML = this.value.length;
+            useCount.innerText = this.value.length;
         });
 
     </script>
