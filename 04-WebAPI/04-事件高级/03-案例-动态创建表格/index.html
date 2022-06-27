@@ -55,7 +55,6 @@
             <!--        <a href="javascript:">删除</a>-->
             <!--    </td>-->
             <!--</tr>-->
-
         </tbody>
     </table>
     <script>
@@ -107,6 +106,11 @@
 
             // 重新渲染数据
             render();
+        });
+
+        // 删除
+        tbody.addEventListener('click', function (e) {
+            this.removeChild(e.target.parentNode.parentNode);
         });
 
     </script>
