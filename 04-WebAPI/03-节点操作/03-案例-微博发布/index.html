@@ -185,7 +185,7 @@
         let send = document.querySelector('#send');
         let area = document.querySelector('#area');
         let useCount = document.querySelector('.useCount');
-        let dels = document.querySelectorAll('.the_del');
+
 
         /*
            需求1: 检测用户输入字数
@@ -228,17 +228,18 @@
                     <div class="content">死数据:${areaValue}</div>
                     <span class="the_del">X</span>
             `;
+            /*
+                需求4：删除留言
+            */
+            let del = li.querySelector('.the_del');
+            del.addEventListener('click', function () {
+                this.parentNode.parentNode.removeChild(this.parentNode);
+            });
+
             let ul = document.querySelector('#list');
             ul.insertBefore(li, ul.children[0]);
         });
-
-        dels.forEach(del => {
-            del.addEventListener('click', function () {
-                console.log(111);
-                ul.removeChild(this);
-            });
-        });
-
+        
     </script>
 </body>
 
