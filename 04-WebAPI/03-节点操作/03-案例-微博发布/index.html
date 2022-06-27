@@ -185,7 +185,7 @@
         let send = document.querySelector('#send');
         let area = document.querySelector('#area');
         let useCount = document.querySelector('.useCount');
-
+        
         /*
            需求1: 检测用户输入字数
            1. 注册 input 输入事件。
@@ -207,8 +207,8 @@
                 area.value = '';
                 useCount.innerText = 0;
                 alert('输入的内容不能为空');
+                return;
             }
-
             /*
                 需求3：新增留言
                 1. 创建一个小的 li ，然后通过 innerHTML 追加数据。
