@@ -185,7 +185,8 @@
         let send = document.querySelector('#send');
         let area = document.querySelector('#area');
         let useCount = document.querySelector('.useCount');
-        
+        let dels = document.querySelectorAll('.the_del');
+
         /*
            需求1: 检测用户输入字数
            1. 注册 input 输入事件。
@@ -218,7 +219,6 @@
             let li = document.createElement('li');
             // 获取数据数组的随机索引
             let random = getRandom(0, dataArr.length - 1);
-
             li.innerHTML = `
                     <div class="info">
                         <img class="userpic" src="${dataArr[random].imgSrc}"/>
@@ -229,9 +229,15 @@
                     <span class="the_del">X</span>
             `;
             let ul = document.querySelector('#list');
-            ul.appendChild(li);
+            ul.insertBefore(li, ul.children[0]);
         });
 
+        dels.forEach(del => {
+            del.addEventListener('click', function () {
+                console.log(111);
+                ul.removeChild(this);
+            });
+        });
 
     </script>
 </body>
