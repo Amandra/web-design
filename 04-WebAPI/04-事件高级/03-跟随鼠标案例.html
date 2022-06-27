@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <img alt="" src="./images/tianshi.gif">
+
+    <script>
+        document.addEventListener('mousemove', function (e) {
+            let img = document.querySelector('img');
+            img.style.left = e.pageX + 'px';
+            img.style.top = e.pageY + 'px';
+        });
+    </script>
+
+</body>
+</html>
