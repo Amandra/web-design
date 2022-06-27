@@ -203,6 +203,11 @@
             2. 防止输入无意义的空格，可以使用 trim() 去除首尾空格，并将文本域的 value 设置为空字符串，同时将红色设置为0
         */
         send.addEventListener('click', function () {
+            sendMsg();
+        });
+
+
+        function sendMsg() {
             let areaValue = area.value.trim();
             if (!areaValue) {
                 area.value = '';
@@ -228,6 +233,9 @@
                     <div class="content">死数据:${areaValue}</div>
                     <span class="the_del">X</span>
             `;
+            // 清空数据
+            area.value = '';
+            useCount.innerText = 0;
             /*
                 需求4：删除留言
             */
@@ -238,6 +246,13 @@
 
             let ul = document.querySelector('#list');
             ul.insertBefore(li, ul.children[0]);
+        }
+
+        // 按下回车可以生成留言信息
+        area.addEventListener('keyup', function (e) {
+            if ('Enter' === e.key) {
+                sendMsg();
+            }
         });
 
     </script>
