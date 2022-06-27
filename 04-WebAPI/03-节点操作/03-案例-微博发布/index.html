@@ -178,6 +178,10 @@
             {uname: '百里玄策', imgSrc: './images/9.5/22.jpg'},
         ];
 
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
         let send = document.querySelector('#send');
         let area = document.querySelector('#area');
         let useCount = document.querySelector('.useCount');
@@ -203,9 +207,31 @@
                 area.value = '';
                 useCount.innerText = 0;
                 alert('输入的内容不能为空');
-
             }
+
+            /*
+                需求3：新增留言
+                1. 创建一个小的 li ，然后通过 innerHTML 追加数据。
+                2. 随机获取数据数组中的内容，替换 newNode 中的图片和名字以及留言内容。
+                3. 追加给 ul 。
+            */
+            let li = document.createElement('li');
+            // 获取数据数组的随机索引
+            let random = getRandom(0, dataArr.length - 1);
+
+            li.innerHTML = `
+                    <div class="info">
+                        <img class="userpic" src="${dataArr[random].imgSrc}"/>
+                        <span class="username">死数据:${dataArr[random].uname}</span>
+                        <p class="send-time">死数据:发布于 ${new Date().toLocaleString()}</p>
+                    </div>
+                    <div class="content">死数据:${areaValue}</div>
+                    <span class="the_del">X</span>
+            `;
+            let ul = document.querySelector('#list');
+            ul.appendChild(li);
         });
+
 
     </script>
 </body>
