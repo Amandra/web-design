@@ -7,7 +7,6 @@
     <title>Title</title>
     <style>
         div {
-            overflow: auto;
             width: 150px;
             height: 150px;
             background-color: pink;
@@ -35,10 +34,8 @@
 
     <script>
         let div = document.querySelector('div');
-        div.addEventListener('scroll', function () {
-            console.log(`scrollWidth: ${this.scrollWidth}`);
-            console.log(`scrollHeight ${this.scrollHeight}`);
-        });
+        console.log(`scrollWidth: ${div.scrollWidth}`); // scrollWidth: 150
+        console.log(`scrollHeight ${div.scrollHeight}`); // scrollHeight 210
     </script>
 
 </body>
