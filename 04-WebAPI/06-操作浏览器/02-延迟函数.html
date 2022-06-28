@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <button>点我解除定时器</button>
+
+    <script>
+        // 仅仅执行一次
+        let timer = setTimeout(function () {
+            console.log(111);
+        }, 3000);
+
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            clearTimeout(timer);
+        });
+    </script>
+
+</body>
+</html>
