@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
-
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>手风琴</title>
     <style>
         ul {
@@ -34,7 +35,6 @@
         }
     </style>
 </head>
-
 <body>
 
     <div id="box">
@@ -78,7 +78,7 @@
         // 遍历 lis
         lis.forEach(li => {
 
-            li.addEventListener('mouseenter', function (e) {
+            li.addEventListener('mouseenter', function () {
                 // 所有的 li 变为 100 px
                 lis.forEach(lii => {
                     lii.style.width = '100px';
@@ -88,7 +88,7 @@
                 this.style.width = '800px';
             });
 
-            li.addEventListener('mouseleave', function (e) {
+            li.addEventListener('mouseleave', function () {
                 // 所有的 li 变为 240px
                 lis.forEach(lii => {
                     lii.style.width = '240px';
