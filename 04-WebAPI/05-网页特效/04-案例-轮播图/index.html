@@ -252,7 +252,7 @@
 
         // 右侧按钮的点击事件
         let index = 0;
-        next.addEventListener('click', function (e) {
+        next.addEventListener('click', function () {
             index++;
             index = index % indicators.length;
             document.querySelector('.indicator .active').classList.remove('active');
@@ -262,7 +262,7 @@
             extraH3.innerHTML = `第${index + 1}张图的描述信息`;
         });
 
-        prev.addEventListener('click', function (e) {
+        prev.addEventListener('click', function () {
             index--;
             if (index < 0) {
                 index = indicators.length - 1;
