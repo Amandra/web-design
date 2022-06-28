@@ -11,6 +11,7 @@
             height: 150px;
             background-color: pink;
             overflow: auto;
+            margin: 100px auto;
         }
     </style>
 </head>
@@ -35,9 +36,8 @@
 
     <script>
         let div = document.querySelector('div');
-        /* 盒子元素的大小 = 盒子本身的宽度和高度 + padding + border */
-        console.log(`offsetWidth: ${div.offsetWidth}`); // offsetWidth: 150
-        console.log(`offsetHeight ${div.offsetHeight}`); // offsetHeight 150
+        console.log(`offsetLeft: ${div.offsetLeft}`); // offsetWidth: 100
+        console.log(`offsetTop ${div.offsetTop}`); // offsetHeight 885
     </script>
 
 </body>
