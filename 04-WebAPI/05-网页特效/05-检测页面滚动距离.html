@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // 页面滚动事件
+        window.addEventListener('scroll', function () {
+            // document.documentElement.scrollTop 获取当前页面被卷去的头部
+            let num = document.documentElement.scrollTop;
+            console.log(num);
+        });
+    </script>
+
+</body>
+</html>
