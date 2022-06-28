@@ -89,9 +89,9 @@
             // 添加点击事件
             item.addEventListener('click', function () {
                 /* 点击当前小导航，当前添加 active ，其余移除 active  */
-                items.forEach(i => {
-                    i.classList.remove('active');
-                });
+                let active = document.querySelector('.aside .active');
+                active.classList.remove('active');
+
                 this.classList.add('active');
 
                 document.documentElement.scrollTop = neirong[index].offsetTop;
