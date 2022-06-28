@@ -60,9 +60,16 @@
         * ② 检测页面滚动 >= 500px ，则显示按钮。
         * ③ 点击按钮，让页面的 scrollTop = 0 。
         */
-        
+        let backtop = document.querySelector('.backtop');
         document.addEventListener('scroll', function () {
+            let scrollTop = document.documentElement.scrollTop;
+            if (scrollTop >= 500) {
+                backtop.style.display = 'block';
+            }
+        });
 
+        backtop.addEventListener('click', function () {
+            document.documentElement.scrollTop = 0;
         });
 
     </script>
