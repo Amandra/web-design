@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            width: 1000px;
+            height: 3000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .backtop {
+            display: none;
+            width: 50px;
+            left: 50%;
+            margin: 0 0 0 505px;
+            position: fixed;
+            bottom: 60px;
+            z-index: 100;
+        }
+
+        .backtop a {
+            height: 50px;
+            width: 50px;
+            background: url(./images/bg2.png) 0 -600px no-repeat;
+            opacity: 0.35;
+            overflow: hidden;
+            display: block;
+            text-indent: -999em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content"></div>
+    <div class="backtop">
+        <img alt="" src="./images/close2.png">
+        <a href="javascript:"></a>
+    </div>
+
+    <script>
+        /* 页面滚动 500px ，就显示返回顶部按钮，否则隐藏，同时点击按钮，返回顶部 */
+
+        /*
+        * 分析：
+        * ① 用到页面滚动事件。
+        * ② 检测页面滚动 >= 500px ，则显示按钮。
+        * ③ 点击按钮，让页面的 scrollTop = 0 。
+        */
+        
+        document.addEventListener('scroll', function () {
+
+        });
+
+    </script>
+</body>
+
+</html>
