@@ -229,13 +229,18 @@
     <script>
         /* 小图标鼠标经过 */
         let indicators = document.querySelectorAll('.indicator li');
+        let slides = document.querySelectorAll('.slides li');
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('mouseenter', function () {
-                /* 选出唯一的 active 类，并移除它 */
-                let active = document.querySelector('.indicator .active');
-                active.classList.remove('active');
+                /* 选出唯一的 indicator 的 active 类，并移除它 */
+                document.querySelector('.indicator .active').classList.remove('active');
                 /* 添加 active 类 */
                 this.classList.add('active');
+
+                /* 选出唯一的 slides 的 active 类，并移除它 */
+                document.querySelector('.slides .active').classList.remove('active');
+                /* 添加 active 类 */
+                slides[index].classList.add('active');
             });
         });
 
