@@ -284,6 +284,12 @@
             clearInterval(timer);
         });
 
+        main.addEventListener('mouseleave', function () {
+            timer = setInterval(function () {
+                next.click();
+            }, 1000);
+        });
+
     </script>
 </body>
 
