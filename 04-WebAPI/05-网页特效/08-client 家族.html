@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            overflow: auto;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+        我有很多内容
+    </div>
+
+    <script>
+        let div = document.querySelector('div');
+        console.log(`clientWidth: ${div.clientWidth}`); // clientWidth: 100
+        console.log(`clientHeight ${div.clientHeight}`); // clientHeight 885
+    </script>
+
+</body>
+</html>
