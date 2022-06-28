@@ -254,6 +254,7 @@
         let index = 0;
         next.addEventListener('click', function (e) {
             index++;
+            index = index % indicators.length;
             document.querySelector('.indicator .active').classList.remove('active');
             indicators[index].classList.add('active');
             document.querySelector('.slides .active').classList.remove('active');
