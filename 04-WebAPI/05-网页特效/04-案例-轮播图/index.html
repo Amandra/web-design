@@ -231,6 +231,8 @@
         let indicators = document.querySelectorAll('.indicator li');
         let slides = document.querySelectorAll('.slides li');
         let extraH3 = document.querySelector('.slides .extra h3');
+        let next = document.querySelector('.slides .extra .next');
+        let prev = document.querySelector('.slides .extra .prev');
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('mouseenter', function () {
                 /* 选出唯一的 indicator 的 active 类，并移除它 */
@@ -246,6 +248,16 @@
                 // 修改文字
                 extraH3.innerHTML = `第${index + 1}张图的描述信息`;
             });
+        });
+
+        // 右侧按钮的点击事件
+        let index = 0;
+        next.addEventListener('click', function (e) {
+            index++;
+            document.querySelector('.indicator .active').classList.remove('active');
+            indicators[index].classList.add('active');
+            document.querySelector('.slides .active').classList.remove('active');
+            slides[index].classList.add('active');
         });
 
     </script>
