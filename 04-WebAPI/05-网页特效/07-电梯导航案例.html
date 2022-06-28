@@ -88,12 +88,12 @@
         items.forEach((item, index) => {
             // 添加点击事件
             item.addEventListener('click', function () {
-                /* 点击当前小导航，当前添加 active ，其余移除 active  */
+                /* 移除 active */
                 let active = document.querySelector('.aside .active');
                 active.classList.remove('active');
-
+                /* 增加 active */
                 this.classList.add('active');
-
+                /* 将对应内容的 offsetTop 值赋值给页面的 scrollTop */
                 document.documentElement.scrollTop = neirong[index].offsetTop;
             });
         });
