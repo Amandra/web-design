@@ -72,9 +72,11 @@
             }
         });
 
-        backtop.addEventListener('click', function () {
-            backtop.style.display = 'none';
-            document.documentElement.scrollTop = 0;
+        backtop.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+                backtop.style.display = 'none';
+                document.documentElement.scrollTop = 0;
+            }
         });
 
     </script>
