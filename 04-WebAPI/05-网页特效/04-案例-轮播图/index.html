@@ -233,6 +233,7 @@
         let extraH3 = document.querySelector('.slides .extra h3');
         let next = document.querySelector('.slides .extra .next');
         let prev = document.querySelector('.slides .extra .prev');
+        let main = document.querySelector('.main');
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('mouseenter', function () {
                 document.querySelector('.indicator .active').classList.remove('active');
@@ -274,6 +275,14 @@
             extraH3.innerHTML = `第${index + 1}张图的描述信息`;
         }
 
+        // 开启定时器
+        let timer = setInterval(function () {
+            next.click();
+        }, 1000);
+
+        main.addEventListener('mouseenter', function () {
+            clearInterval(timer);
+        });
 
     </script>
 </body>
