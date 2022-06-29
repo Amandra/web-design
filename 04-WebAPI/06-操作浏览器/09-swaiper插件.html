@@ -6,15 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Title</title>
     <link href="./swiper/swiper-bundle.css" rel="stylesheet">
-    <!-- Demo styles -->
     <style>
-        .box {
-            width: 600px;
-            height: 350px;
-            background-color: pink;
-            margin: 100px auto;
-        }
-
         html,
         body {
             position: relative;
@@ -30,6 +22,12 @@
             padding: 0;
         }
 
+        .box {
+            width: 600px;
+            height: 350px;
+            background-color: pink;
+            margin: 100px auto;
+        }
 
         .swiper-container {
             width: 100%;
@@ -89,7 +87,7 @@
 
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        const swiper = new Swiper('.swiper-container', {
             slidesPerView: 1,
             spaceBetween: 30,
             loop: true,
