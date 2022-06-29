@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <button class="back">后退</button>
+    <button class="forward">前进</button>
+
+    <script>
+        let backBtn = document.querySelector('.back');
+        let forwardBtn = document.querySelector('.forward');
+        backBtn.addEventListener('click', function () {
+            history.back();
+        });
+        forwardBtn.addEventListener('click', function () {
+            history.forward();
+        });
+    </script>
+
+</body>
+</html>
