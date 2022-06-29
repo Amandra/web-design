@@ -9,7 +9,17 @@
 <body>
 
     <script>
-        
+        let person = {
+            name: '许大仙',
+            age: 18
+        };
+
+        localStorage.setItem('person', JSON.stringify(person));
+
+        let item = localStorage.getItem('person');
+        console.log(item)
+        console.log(JSON.parse(item))
+
     </script>
 
 </body>
