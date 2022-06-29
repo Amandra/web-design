@@ -12,6 +12,9 @@
         console.log(/哈/.test('二哈')); // true
         console.log(/^哈/.test('哈哈')); // true
         console.log(/^哈/.test('二哈')); // false
+        console.log(/^哈$/.test('二哈')); // false
+        console.log(/^哈$/.test('哈哈')); // false
+        console.log(/^哈$/.test('哈')); // true
     </script>
 </body>
 </html>
