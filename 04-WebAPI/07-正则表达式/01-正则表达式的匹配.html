@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        /* 定义正则表达式，reg 里面存放的是正则表达式的对象。 */
+        let reg = /许大仙/;
+        let str = '许1大2仙3';
+        let str2 = '许1大2仙3许大仙';
+        /* 判断是否有符合规则的字符串。 */
+        let res = reg.test(str);
+        let res2 = reg.test(str2);
+        console.log(res); // false
+        console.log(res2); // true
+    </script>
+
+</body>
+</html>
