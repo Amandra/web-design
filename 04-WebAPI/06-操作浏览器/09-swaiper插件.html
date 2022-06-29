@@ -33,6 +33,8 @@
             height: 100%;
             margin-left: auto;
             margin-right: auto;
+            --swiper-theme-color: #ff6600;
+            --swiper-pagination-color: #fff;
         }
 
         .swiper-slide {
@@ -54,6 +56,7 @@
             -webkit-align-items: center;
             align-items: center;
         }
+
     </style>
 </head>
 <body>
@@ -107,6 +110,7 @@
     <!-- Initialize Swiper -->
     <script>
         const swiper = new Swiper('.swiper-container', {
+            autoplay: true, // 自动播放
             slidesPerView: 1,
             spaceBetween: 30,
             loop: true,
