@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let reg = /许大仙/;
+        
+        let str = '许1大2仙3';
+        let str2 = '许1大2仙3许大仙';
+
+        let res = reg.exec(str);
+        let res2 = reg.exec(str2);
+
+        console.log(res); // null
+        console.log(res2); // ['许大仙', index: 6, input: '许1大2仙3许大仙', groups: undefined]
+    </script>
+
+</body>
+</html>
