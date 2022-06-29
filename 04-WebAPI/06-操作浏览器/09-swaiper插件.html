@@ -110,7 +110,11 @@
     <!-- Initialize Swiper -->
     <script>
         const swiper = new Swiper('.swiper-container', {
-            autoplay: true, // 自动播放
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            }, // 自动播放
             slidesPerView: 1,
             spaceBetween: 30,
             loop: true,
