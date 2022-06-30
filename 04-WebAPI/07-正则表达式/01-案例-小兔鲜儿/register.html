@@ -289,8 +289,8 @@
 
             function verifyConfirm() {
                 let span = confirm.nextElementSibling;
-                if (!/^[a-zA-Z\d-_]{6,20}$/.test(confirm.value) || password.value !== confirm.value) {
-                    span.innerHTML = '确认密码不合法';
+                if (password.value !== confirm.value) {
+                    span.innerHTML = '两次密码不一致';
                     return false;
                 }
                 span.innerHTML = '';
