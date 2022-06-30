@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        /* 过滤敏感词 */
+        let str = '美国人民活在水深火热之中';
+
+        str = str.replace(/美国/g, '漂亮国');
+
+        console.log(str); // 漂亮国人民活在水深火热之中
+    </script>
+
+</body>
+</html>
