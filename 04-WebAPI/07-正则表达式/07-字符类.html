@@ -11,6 +11,8 @@
     <script>
         /* [^] 中 ^ 表示取反 */
         console.log(/[^a-z]/.test('999')); // true
+        console.log(/^[^a-z]$/.test('9')); // true
+        console.log(/^[^a-z]$/.test('999')); // false
     </script>
 
 </body>
