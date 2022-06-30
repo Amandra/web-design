@@ -9,7 +9,19 @@
 <body>
 
     <script>
-        
+        let num = 1;
+
+        function fn() {
+            let num = 2;
+
+            function fn2() {
+                console.log(num); // 2
+            }
+
+            fn2();
+        }
+
+        fn();
     </script>
 
 </body>
