@@ -306,10 +306,16 @@
                 if (!result) {
                     e.preventDefault();
                 }
+
+                if (!confirm.classList.contains('icon-queren2')) {
+                    alert('请先勾选同意协议');
+                }
+
             });
 
             // 确认协议
             let confirm = document.querySelector('.icon-queren');
+
             confirm.addEventListener('click', function () {
                 this.classList.toggle('icon-queren2');
             });
