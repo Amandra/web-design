@@ -206,11 +206,12 @@
             this.nextElementSibling.classList.remove('right');
             this.nextElementSibling.classList.remove('wrong');
             if (!/^[a-zA-Z][a-zA-Z0-9-]{5,15}$/.test(this.value)) {
-                this.nextElementSibling.innerHTML = '用户名不合法';
                 this.nextElementSibling.classList.add('wrong');
+                this.nextElementSibling.innerHTML = '用户名不合法';
+
             } else {
-                this.nextElementSibling.innerHTML = '';
                 this.nextElementSibling.classList.add('right');
+                this.nextElementSibling.innerHTML = '';
             }
         });
 
