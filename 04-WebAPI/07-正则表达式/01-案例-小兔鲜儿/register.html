@@ -9,7 +9,7 @@
     <link href="./favicon.ico" rel="shortcut icon">
     <link href="./css/common.css" rel="stylesheet">
     <link href="./css/register.css" rel="stylesheet">
-    <link href="https://at.alicdn.com/t/font_2143783_iq6z4ey5vu.css" rel="stylesheet">
+    <!--<link href="https://at.alicdn.com/t/font_2143783_iq6z4ey5vu.css" rel="stylesheet">-->
 </head>
 
 <body>
@@ -200,30 +200,34 @@
         </div>
     </div>
     <script>
-        // 需求：发送验证码
-        let codeBtn = document.querySelector('.code');
-        codeBtn.addEventListener('click', function () {
-            let count = 5;
-            this.innerHTML = `${count}秒后重新获取`;
-            let timer = setInterval(function () {
-                if (count <= 0) {
-                    codeBtn.innerHTML = '发送验证码';
-                    clearInterval(timer);
-                } else {
-                    codeBtn.innerHTML = `${--count}秒后重新获取`;
-                }
-            }, 1000);
-        });
+        ;(function () {
+            // 需求：发送验证码
+            let codeBtn = document.querySelector('.code');
+            codeBtn.addEventListener('click', function () {
+                let count = 5;
+                this.innerHTML = `${count}秒后重新获取`;
+                let timer = setInterval(function () {
+                    if (count <= 0) {
+                        codeBtn.innerHTML = '发送验证码';
+                        clearInterval(timer);
+                    } else {
+                        codeBtn.innerHTML = `${--count}秒后重新获取`;
+                    }
+                }, 1000);
+            });
 
-        // 用户名验证：要求用户名必须是英文字母、数字、下划线组成，并且长度是 6 ~ 16 位，并且首字母不能是数字或下划线
-        let username = document.querySelector('#username');
-        username.addEventListener('blur', function () {
-            if (!/^[a-zA-Z]\w{5,15}$/.test(this.value)) {
-                this.nextElementSibling.innerHTML = '用户名不合法';
-            } else {
-                this.nextElementSibling.innerHTML = '';
-            }
-        });
+            // 需求：用户名验证
+            // 要求用户名必须是英文字母、数字、下划线组成，并且长度是 6 ~ 10 位，并且首字母不能是数字或下划线
+            let username = document.querySelector('#username');
+            username.addEventListener('change', function () {
+                if (!/^[a-zA-Z]\w{5,9}$/.test(this.value)) {
+                    this.nextElementSibling.innerHTML = '用户名不合法';
+                } else {
+                    this.nextElementSibling.innerHTML = '';
+                }
+            });
+        }());
+
 
     </script>
 </body>
