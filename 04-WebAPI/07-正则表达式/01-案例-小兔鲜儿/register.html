@@ -113,7 +113,7 @@
                     </div>
                     <div class="xtx-form-item" data-prop="code">
                         <span class="iconfont icon-zhibiaozhushibiaozhu"></span>
-                        <input name="code" placeholder="短信验证码" type="text">
+                        <input id="code" name="code" placeholder="短信验证码" type="text">
                         <span class="msg"></span>
                         <a class="code" href="javascript:">发送验证码</a>
                     </div>
@@ -200,6 +200,22 @@
         </div>
     </div>
     <script>
+        // 需求：发送验证码
+        let codeBtn = document.querySelector('.code');
+        codeBtn.addEventListener('click', function () {
+            let count = 5;
+            let timer = setInterval(function () {
+                if (count <= 0) {
+                    codeBtn.innerHTML = '发送验证码';
+                    clearInterval(timer);
+                } else {
+                    codeBtn.innerHTML = `${count--}秒后重新获取`;
+                }
+
+            }, 1000);
+        });
+
+
         // 用户名验证：要求用户名必须是英文字母、数字、下划线组成，并且长度是 6 ~ 16 位，并且首字母不能是数字或下划线
         let username = document.querySelector('#username');
         username.addEventListener('blur', function () {
