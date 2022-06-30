@@ -100,7 +100,7 @@
             <!-- 卡片 -->
             <div class="xtx-card">
                 <h3>新用户注册</h3>
-                <form class="xtx-form">
+                <form action="https://www.baidu.com" class="xtx-form" method="post">
                     <div class="xtx-form-item" data-prop="username">
                         <span class="iconfont icon-zhanghao"></span>
                         <input name="username" placeholder="设置用户名称" type="text">
@@ -299,9 +299,9 @@
 
             confirmPassword.addEventListener('change', verifyConfirmPassword);
 
-            let submit = document.querySelector('.submit');
+            let form = document.querySelector('form');
 
-            submit.addEventListener('click', function (e) {
+            form.addEventListener('submit', function (e) {
                 let result = verifyUsername() && verifyPhone() && verifyCode() && verifyPassword() && verifyConfirmPassword();
                 if (!result) {
                     e.preventDefault();
