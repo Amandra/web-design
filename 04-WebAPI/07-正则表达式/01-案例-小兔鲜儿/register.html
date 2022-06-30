@@ -219,6 +219,7 @@
             // 需求：用户名验证
             // 要求用户名必须是英文字母、数字、下划线组成，并且长度是 6 ~ 10 位，并且首字母不能是数字或下划线
             let username = document.querySelector('#username');
+            // change 是当表单中的值发生变化的时候，才触发。和 blur 不一样，blur 一离开就触发。
             username.addEventListener('change', function () {
                 if (!/^[a-zA-Z]\w{5,9}$/.test(this.value)) {
                     this.nextElementSibling.innerHTML = '用户名不合法';
