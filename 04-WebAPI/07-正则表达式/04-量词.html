@@ -47,7 +47,9 @@
         console.log(/^a{3,}$/.test('aa')); // false
         console.log(/^a{3,}$/.test('aaa')); // true
         console.log(/^a{3,}$/.test('aaaa')); // true
+
         console.log('--------------------------');
+        
         // {n,m}   >= n  <= m
         console.log(/^a{3,6}$/.test('aa')); // false
         console.log(/^a{3,6}$/.test('aaa')); // true
