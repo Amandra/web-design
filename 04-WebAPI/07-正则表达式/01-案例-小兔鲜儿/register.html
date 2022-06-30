@@ -285,11 +285,11 @@
 
 
             // 需求：验证确认密码
-            let confirm = document.querySelector('[name=confirm]');
+            let confirmPassword = document.querySelector('[name=confirm]');
 
-            function verifyConfirm() {
-                let span = confirm.nextElementSibling;
-                if (password.value !== confirm.value) {
+            function verifyConfirmPassword() {
+                let span = confirmPassword.nextElementSibling;
+                if (password.value !== confirmPassword.value) {
                     span.innerHTML = '两次密码不一致';
                     return false;
                 }
@@ -297,15 +297,21 @@
                 return true;
             }
 
-            confirm.addEventListener('change', verifyConfirm);
+            confirmPassword.addEventListener('change', verifyConfirmPassword);
 
             let submit = document.querySelector('.submit');
 
             submit.addEventListener('click', function (e) {
-                let result = verifyUsername() && verifyPhone() && verifyCode() && verifyPassword() && verifyConfirm();
+                let result = verifyUsername() && verifyPhone() && verifyCode() && verifyPassword() && verifyConfirmPassword();
                 if (!result) {
                     e.preventDefault();
                 }
+            });
+
+            // 确认协议
+            let confirm = document.querySelector('.icon-queren');
+            confirm.addEventListener('click', function () {
+                this.classList.toggle('icon-queren2');
             });
 
         }());
