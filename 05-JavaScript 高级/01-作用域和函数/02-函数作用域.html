@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 声明 count 函数
+        function count(x = 0, y = 0) {
+            // 函数内部声明的变量
+            let s = x + y;
+            console.log(s); // 18
+        }
+
+        // 调用 count 函数
+        count(10, 8);
+
+        // 访问变量 s
+        console.log(s); // 报错 Uncaught ReferenceError: s is not defined
+    </script>
+</body>
+</html>
