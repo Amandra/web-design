@@ -10,6 +10,14 @@
 
     <script>
         /* [-] 中 - 表示范围 */
+        console.log(/^[abc]$/.test('abc')); // false
+        console.log(/^[abc]$/.test('a')); // true
+        console.log(/^[abc]$/.test('b')); // true
+        console.log(/^[abc]$/.test('c')); // true
+        console.log(/^[abc]$/.test('cc')); // false
+
+        console.log('-------------------------');
+
         console.log(/[a-zA-Z]/.test('andy')); // true
         console.log(/[0-9]/.test('2')); // true
         console.log(/[0-9]/.test('200')); // true
