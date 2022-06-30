@@ -204,12 +204,13 @@
         let codeBtn = document.querySelector('.code');
         codeBtn.addEventListener('click', function () {
             let count = 5;
+            this.innerHTML = `${count}秒后重新获取`;
             let timer = setInterval(function () {
                 if (count <= 0) {
                     codeBtn.innerHTML = '发送验证码';
                     clearInterval(timer);
                 } else {
-                    codeBtn.innerHTML = `${count--}秒后重新获取`;
+                    codeBtn.innerHTML = `${--count}秒后重新获取`;
                 }
 
             }, 1000);
