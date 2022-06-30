@@ -19,6 +19,8 @@
         console.log('-------------------------');
 
         console.log(/[a-zA-Z]/.test('andy')); // true
+        console.log(/^[a-zA-Z]$/.test('andy')); // false
+        console.log(/^[a-zA-Z]$/.test('a')); // true
         console.log(/[0-9]/.test('2')); // true
         console.log(/[0-9]/.test('200')); // true
         console.log(/^[1-9][0-9]{4,}$/.test('123456')); // true
