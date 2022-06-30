@@ -225,10 +225,11 @@
 
             // 验证用户名
             function verifyUsername() {
+                let span = username.nextElementSibling;
                 if (!/^[a-zA-Z]\w{5,9}$/.test(username.value)) {
-                    username.nextElementSibling.innerHTML = '用户名不合法';
+                    span.innerHTML = '用户名不合法';
                 } else {
-                    username.nextElementSibling.innerHTML = '';
+                    span.innerHTML = '';
                 }
             }
 
@@ -238,10 +239,11 @@
 
             // 验证手机号码
             function verifyPhone() {
+                let span = phone.nextElementSibling;
                 if (!/^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/.test(phone.value)) {
-                    phone.nextElementSibling.innerHTML = '手机号码不合法';
+                    span.innerHTML = '手机号码不合法';
                 } else {
-                    phone.nextElementSibling.innerHTML = '';
+                    span.innerHTML = '';
                 }
             }
 
