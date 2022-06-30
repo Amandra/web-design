@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        /* [-] 中 - 表示范围 */
+        console.log(/[a-zA-Z]/.test('andy')); // true
+        console.log(/[0-9]/.test('2')); // true
+        console.log(/[0-9]/.test('200')); // true
+        console.log(/^[1-9][0-9]{4,}$/.test('123456')); // true
+        console.log(/^[1-9][0-9]{4,}$/.test('1234')); // false
+    </script>
+
+</body>
+</html>
