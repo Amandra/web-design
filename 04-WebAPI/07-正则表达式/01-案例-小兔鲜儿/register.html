@@ -200,10 +200,10 @@
         </div>
     </div>
     <script>
-        // 用户名验证：要求用户名必须是英文字母、数字、下划线或者短横线组成，并且长度是 6 ~ 16 位，并且首字母不能是数字或下划线
+        // 用户名验证：要求用户名必须是英文字母、数字、下划线组成，并且长度是 6 ~ 16 位，并且首字母不能是数字或下划线
         let username = document.querySelector('#username');
         username.addEventListener('blur', function () {
-            if (!/^[a-zA-Z][a-zA-Z0-9-_]{5,15}$/.test(this.value)) {
+            if (!/^[a-zA-Z]\w{5,15}$/.test(this.value)) {
                 this.nextElementSibling.innerHTML = '用户名不合法';
             } else {
                 this.nextElementSibling.className = 'right';
