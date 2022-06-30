@@ -206,7 +206,7 @@
             if (!/^[a-zA-Z][a-zA-Z0-9-_]{5,15}$/.test(this.value)) {
                 this.nextElementSibling.innerHTML = '用户名不合法';
             } else {
-                this.nextElementSibling.classList.add('right');
+                this.nextElementSibling.className = 'right';
                 this.nextElementSibling.innerHTML = '';
             }
         });
