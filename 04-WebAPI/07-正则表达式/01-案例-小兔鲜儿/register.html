@@ -291,7 +291,7 @@
             function verifyConfirm() {
                 let span = confirm.nextElementSibling;
                 if (!/^[a-zA-Z\d-_]{6,20}$/.test(confirm.value) || password.value !== confirm.value) {
-                    span.innerHTML = '验证码不合法';
+                    span.innerHTML = '确认密码不合法';
                     return false;
                 }
                 span.innerHTML = '';
@@ -300,8 +300,16 @@
 
             confirm.addEventListener('change', verifyConfirm);
 
-        }());
+            let submit = document.querySelector('.submit');
 
+            submit.addEventListener('click', function (e) {
+                let result = verifyUsername() && verifyPhone() && verifyCode() && verifyPassword() && verifyConfirm();
+                if (!result) {
+                    e.preventDefault();
+                }
+            });
+
+        }());
 
     </script>
 </body>
