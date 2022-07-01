@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        /* 对象解构：将属性名当做变量名即可。 */
+        let obj = {
+            name: '许大仙',
+            age: 18,
+            dog: {
+                uname: '二狗子'
+            },
+            sex: '男',
+            score: 50,
+            grade: '小学'
+        };
+        let {dog: {uname}} = obj;
+        console.log(uname); // 二狗子
+    </script>
+
+</body>
+</html>
