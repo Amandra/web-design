@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        /* 闭包是一种特殊的函数，使用闭包能够访问函数作用域中的变量。从代码形式上看闭包就是一个有返回值的函数。 */
+        /* 闭包的作用：闭包能够创建外部可访问的隔离作用域，避免全局变量污染，能够将变量的作用范围延伸。 */
+        /* 闭包的弊端：过度使用闭包可能会造成内存泄露。 */
+
+        function fn() {
+            let num = 123;
+
+            return function () {
+                return num;
+            };
+        }
+
+        let res = fn();
+
+        console.log(res());
+
+        console.log(res());
+
+        console.log(res());
+
+
+    </script>
+
+</body>
+</html>
