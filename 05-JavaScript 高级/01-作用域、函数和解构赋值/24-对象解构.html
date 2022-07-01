@@ -10,6 +10,7 @@
 
     <script>
         /* 对象解构：将属性名当做变量名即可。 */
+        let name = '呵呵哒';
         let obj = {
             name: '许大仙',
             age: 18,
@@ -17,9 +18,10 @@
             score: 50,
             grade: '小学'
         };
-
-        let {name, age, sex, score, grade} = obj;
-        console.log(name); // 许大仙
+        /* let 关键字具有作用域的特点，而上面已经定义了 name ，所以可以使用 `:` 号修改名字。 */
+        let {name: uname, age, sex, score, grade} = obj;
+        console.log(name); // 呵呵哒
+        console.log(uname); // 许大仙
         console.log(age); // 18
         console.log(sex); // 男
         console.log(score); // 50
