@@ -9,16 +9,20 @@
 <body>
 
     <script>
-        /* 剩余函数 */
-        function fn(...num) {
+        /*
+           剩余参数：声明在函数的形参列表中的最后位置，表示多个参数。
+           剩余参数在 Java 中被称为可变参数。
+           剩余参数本质上就是数组。
+        */
+        function fn(...arr) {
             // [1, 2]
-            console.log(num);
-            num.forEach(n => {
+            console.log(arr);
+            arr.forEach(n => {
                 console.log(n);
             });
         }
 
-        fn(1, 2);
+        fn(1, 2, 3);
     </script>
 
 </body>
