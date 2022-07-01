@@ -9,7 +9,13 @@
 <body>
 
     <script>
-        
+        /* 动态参数：`arguments` 是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参。 */
+
+        function fn() {
+            console.log(arguments);
+        }
+
+        fn(1, 2, 3);
     </script>
 
 </body>
