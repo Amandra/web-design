@@ -30,6 +30,17 @@
         let [g, ...h] = [1, 2, 3, 4, 5];
         console.log(g); // 1
         console.log(h); // [2, 3, 4, 5]
+
+        console.log('-----------------');
+
+        /* 复杂情况 */
+        let [, i, j, , [k, , l, m]] = [1, 2, 3, 4, [5, 6, 7, 8]];
+        console.log(i); // 2
+        console.log(j); // 3
+        console.log(k); // 5
+        console.log(l); // 7
+        console.log(m); // 8
+
     </script>
 
 </body>
