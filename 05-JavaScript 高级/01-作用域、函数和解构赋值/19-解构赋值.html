@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        /* 解构赋值是一种快速为变量赋值的简洁语法，本质上仍然是为变量赋值，分为数组解构、对象解构两大类型。 */
+        let arr = ['张飞', '刘备', '孙权', '关羽'];
+        let uname1 = arr[0];
+        let uname2 = arr[1];
+        let uname3 = arr[2];
+        let uname4 = arr[3];
+        console.log(uname1, uname2, uname3, uname4);
+
+        /* 解构赋值：解开数据解构赋值给变量。 */
+        let [u1, u2, u3, u4] = arr;
+        console.log(u1, u2, u3, u4);
+
+    </script>
+
+</body>
+</html>
