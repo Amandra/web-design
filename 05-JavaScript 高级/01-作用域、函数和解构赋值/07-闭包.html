@@ -9,7 +9,17 @@
 <body>
 
     <script>
-        
+        /* 闭包是一种特殊的函数，使用闭包能够访问函数作用域中的变量。从代码形式上看闭包就是一个有返回值的函数。 */
+        function fn() {
+            let num = 123;
+
+            return function () {
+                console.log(num);
+            };
+        }
+
+        let res = fn();
+        res();
 
     </script>
 
