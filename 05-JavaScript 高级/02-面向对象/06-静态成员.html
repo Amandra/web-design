@@ -13,7 +13,14 @@
         function Star(name, age) {
             this.name = name;
             this.age = age;
+            this.sing = function () {
+                console.log('唱歌');
+            };
         }
+
+        const ldh = new Star('刘德华', 18);
+        console.log(ldh);
+        console.log(Star);
 
     </script>
 
