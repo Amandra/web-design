@@ -12,9 +12,10 @@
 
         let arr = [3, 1, 2, -1, 1];
 
-        arr.map((value, index, array) => {
-            
-        });
+        // find 用于查找首次出现满足条件的值并返回。
+        let res = arr.find((value, index, array) => value >= 3);
+
+        console.log(res); // 3
 
     </script>
 </body>
