@@ -15,8 +15,13 @@
 
         // 内置构造函数：Object()，用于创建对象。
 
-        let obj = new Object();
+        let obj = {};
+        // 添加属性和方法
         obj.name = '许大仙';
+        obj.age = 18;
+        obj.run = function () {
+            console.log('跑');
+        };
         console.log(obj);
     </script>
 
