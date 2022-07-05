@@ -15,8 +15,8 @@
         let obj = {
             name: '张三疯',
             age: 18,
-            activity: function () {
-                console.log('打太极');
+            run: function () {
+                console.log('跑。。。');
             }
         };
 
@@ -24,7 +24,7 @@
         console.log(obj.name); // 用于固定属性写法
         console.log(obj['name']); // 用于动态属性写法
         // 方法
-        obj.activity();
+        obj.run();
 
         // 遍历对象
         for (let key in obj) {
