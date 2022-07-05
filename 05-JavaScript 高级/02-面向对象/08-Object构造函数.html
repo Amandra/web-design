@@ -9,13 +9,13 @@
 <body>
 
     <script>
-        // 通过构造函数创建普通对象
-        const obj = new Object({name: '许大仙', age: 18});
-        console.log(obj);
+        const obj = {name: '许大仙', age: 18};
 
-        // 通过字面量的方式创建对象
-        const obj1 = {name: '许大仙', age: 18};
-        console.log(obj1);
+        let keysArr = Object.keys(obj);
+        console.log(keysArr); // ['name', 'age']
+
+        let valuesArr = Object.values(obj);
+        console.log(valuesArr); // ['许大仙', 18]
     </script>
 
 </body>
