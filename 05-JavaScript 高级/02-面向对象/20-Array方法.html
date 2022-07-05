@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        let arr = [3, 1, 2, -1, 1];
+
+        // filter 筛选数组中满足条件的元素，并将这些元素放到新数组返回
+        let res = arr.filter((value, index, array) => value >= 1);
+
+        console.log(res); // [3, 1, 2, 1]
+
+    </script>
+</body>
+</html>
