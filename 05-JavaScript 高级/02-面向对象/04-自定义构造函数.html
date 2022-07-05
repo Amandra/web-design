@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 自定义构造函数
+        // 建议：所有构造函数的首字母大写
+        function Person(name, age) {
+
+            // 设置属性，this 指向实例对象
+            this.name = name;
+            this.age = age;
+
+            // 设置方法
+            this.sayHi = function () {
+                console.log('大家好');
+            };
+        }
+
+        // 实例化对象
+        const p = new Person('许大仙', 18);
+        console.log(p.name);
+        console.log(p.age);
+        p.sayHi();
+        
+    </script>
+</body>
+
+</html>
