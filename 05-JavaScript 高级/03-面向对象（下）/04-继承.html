@@ -8,8 +8,24 @@
 </head>
 <body>
 
+    <button>按钮</button>
+
     <script>
-        
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            this.disabled = true;
+            let count = 3;
+            let timer = setInterval(function () {
+                if (count === 0) {
+                    clearInterval(timer);
+                    this.innerText = '按钮';
+                    this.disabled = false;
+                } else {
+                    count--;
+                    this.innerHTML = `还剩 ${count} 秒`;
+                }
+            }.bind(this), 1000);
+        });
     </script>
 
 </body>
