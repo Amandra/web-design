@@ -4,6 +4,7 @@ module.exports.sayHi = function () {
     console.log('大家好');
 };
 
+// 让 module.exports 指向一个全息的对象
 module.exports = {
     nickname: '你大爷',
     sayHello: function () {
