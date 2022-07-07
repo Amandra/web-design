@@ -6,5 +6,6 @@ const fs = require('fs');
 // 参数3：回调函数
 fs.writeFile('./test.txt', 'Node.js 你好', function (err) {
     // 如果文件写入成功，则 err = null
+    // 如果文件写入失败，则 err 的值等于一个错误对象
     console.log(err);
 });
