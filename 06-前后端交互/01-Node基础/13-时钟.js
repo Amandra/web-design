@@ -10,7 +10,7 @@ server.on('request', (req, res) => {
     if (url === '/clock/index.html' || url === '/clock/index.css' || url === '/clock/index.js') {
         fs.readFile(path.join(__dirname, url), 'utf-8', (err, data) => {
             if (err) {
-                return console.log('文件读取失败');
+                return res.end('404 Not Found');
             }
             res.end(data);
         });
