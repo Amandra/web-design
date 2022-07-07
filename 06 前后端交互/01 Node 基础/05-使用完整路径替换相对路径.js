@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 // 使用完整路径来防止路径动态拼接的问题
+// __dirname 表示当前文件所处的目录
 
 fs.readFile(__dirname + '/demo.txt', 'utf-8', (err, data) => {
     if (err) {
