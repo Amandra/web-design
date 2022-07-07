@@ -1,0 +1,13 @@
+const fs = require('fs');
+const path = require('path');
+
+// 使用完整路径来防止路径动态拼接的问题
+// __dirname 表示当前文件所处的目录
+
+fs.readFile(path.join(__dirname, '/demo.txt'), 'utf-8', (err, data) => {
+    if (err) {
+        return console.log('读取文件失败：' + err.message);
+    }
+
+    console.log('读取文件成功');
+});
