@@ -27,7 +27,17 @@ function resolveCSS(data) {
 }
 
 function resolveJS(data) {
-
+    // 使用正则表达式提取页面中的 <script></script> 标签
+    const content = scriptReg.exec(data);
+    // 去掉<script> 和 </script>
+    const newJS = content[0].replace('<script>', '').replace('</script>', '');
+    // 将提取的 css 样式，写入到 index.css 文件中
+    fs.writeFile(path.join(__dirname, './clock/index.js'), newJS, err => {
+        if (err) {
+            return console.log('文件写入失败' + err.message);
+        }
+        console.log('文件写入成功');
+    });
 }
 
 function resolveHTML(data) {
