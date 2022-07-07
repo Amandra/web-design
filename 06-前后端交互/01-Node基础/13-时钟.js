@@ -6,7 +6,13 @@ const server = http.createServer();
 
 server.on('request', (req, res) => {
     let url = req.url;
-    fs.readFile(path.join(__dirname, url), 'utf-8', (err, data) => {
+    let filePath;
+    if (url === '/') {
+        filePath = path.join(__dirname, './clock/index.html');
+    } else {
+        filePath = path.join(__dirname, './clock', url);
+    }
+    fs.readFile(filePath, 'utf-8', (err, data) => {
         if (err) {
             return res.end('404 Not Found');
         }
