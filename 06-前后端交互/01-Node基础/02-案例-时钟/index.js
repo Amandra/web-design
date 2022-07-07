@@ -41,7 +41,18 @@ function resolveJS(data) {
 }
 
 function resolveHTML(data) {
-    
+    // 使用字符串的 replace 方法，将内嵌的 <style> 和 <script> 标签，替换为外联的 <link> 和 <script> 标签
+    const newHTML = data
+        .replace(styleReg, '<link rel="stylesheet" href="./index.css">')
+        .replace(scriptReg, '<script src="./index.js"></script>');
+
+    fs.writeFile(path.join(__dirname, './clock/index.html'), newHTML, err => {
+        if (err) {
+            return console.log('文件写入失败' + err.message);
+        }
+        console.log('文件写入成功');
+    });
+
 }
 
 // 使用 fs 模块读取文件
