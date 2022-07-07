@@ -41,7 +41,7 @@ function resolveJS(data) {
 }
 
 function resolveHTML(data) {
-
+    
 }
 
 // 使用 fs 模块读取文件
