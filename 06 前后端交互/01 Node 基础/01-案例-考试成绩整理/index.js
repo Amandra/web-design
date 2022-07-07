@@ -16,9 +16,9 @@ fs.readFile('./成绩.txt', 'utf-8', (err, data) => {
     // 将新数组中的每一个元素进行合并，得到一个新的字符串
     let newStr = dataNewArr.join('\r\n');
 
-    fs.writeFile('./成绩-ok.txt', newStr, (err) => {
-        if (err) {
-            return console.log('文件写入失败：' + err.message);
+    fs.writeFile('./成绩-ok.txt', newStr, (wErr) => {
+        if (wErr) {
+            return console.log('文件写入失败：' + wErr.message);
         }
 
         console.log('文件写入成功');
