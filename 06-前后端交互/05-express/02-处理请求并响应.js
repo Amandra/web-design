@@ -4,6 +4,13 @@ const express = require('express');
 const app = express();
 // 监听 GET 请求
 app.get('/user', (req, res) => {
+    // req.query 默认是一个空对象
+    // 客户端使用 ?name=zs&age=18 这种查询字符串的形式，发送到服务器的参数
+    // 可以通过 req.query 对象访问到
+    console.log(req.query);
+    const {name, age} = req.query;
+    console.log(name); // zs
+    console.log(age); // 18
     // 向客户端发送 JSON 对象
     res.send({name: '张三', age: 18});
 });
