@@ -14,6 +14,16 @@ app.get('/user', (req, res) => {
     // 向客户端发送 JSON 对象
     res.send({name: '张三', age: 18});
 });
+// 获取动态参数
+app.get('/user/delete/:id', (req, res) => {
+    // req.params 默认是一个空对象
+    // 里面存放着通过 : 动态匹配的参数值
+    console.log(req.params); // {id: "1"}
+    let {id} = req.params;
+    console.log(id); // 1
+
+    res.send('删除成功');
+});
 // 监听 POST 请求
 app.post('/user', (req, res) => {
     // 向客户端发送文本内容
