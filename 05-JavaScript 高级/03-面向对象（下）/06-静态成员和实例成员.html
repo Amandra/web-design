@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实例成员就是构造函数内部通过 this 添加的成员，实例成员只能通过实例化的对象来访问。
+        function Person(name, age) {
+            // name 和 age 就是实例成员
+            this.name = name;
+            this.age = age;
+        }
+
+        let p = new Person('许大仙', 18);
+        console.log(p);
+
+        // 静态成员：在构造函数本身添加的成员，静态成员只能通过构造函数来访问。
+        Person.sex = '男';
+        console.log(Person.sex);
+    </script>
+</body>
+
+</html>
