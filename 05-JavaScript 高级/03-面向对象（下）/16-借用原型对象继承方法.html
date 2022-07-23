@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>借用原型对象继承方法</title>
+</head>
+<body>
+    <script>
+        // 父构造函数
+        function Father(name, age) {
+            // this 指向父构造函数的对象实例
+            this.name = name;
+            this.age = age;
+        }
+
+        Father.prototype.eat = function () {
+            console.log('吃饭');
+        };
+
+        // 子构造函数
+        function Son(name, age) {
+            // this 指向子构造函数的对象实例
+            Father.call(this, name, age);
+        }
+
+        // 让子构造函数的原型对象指向父构造函数的实例对象
+        Son.prototype = new Father();
+        Son.prototype.constructor = Son;
+
+        // 这是子构造函数专门的方法
+        Son.prototype.study = function () {
+            console.log('孩子要学习');
+        };
+
+        let son = new Son('许大仙', 18);
+        console.log(son); // Son {name: '许大仙', age: 18}
+        son.study();
+    </script>
+</body>
+</html>
