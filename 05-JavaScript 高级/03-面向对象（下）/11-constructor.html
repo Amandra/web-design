@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        /*  Person.prototype.eat = function () {
+             console.log('吃饭');
+         };
+ 
+         Person.prototype.sleep = function () {
+             console.log('睡觉');
+         }; */
+
+        // 很多情况下，我们需要手动利用 constructor 这个属性指回原来的构造函数
+        Person.prototype = {
+            eat: function () {
+                console.log('吃饭');
+            },
+            sleep: function () {
+                console.log('睡觉');
+            }
+        };
+
+        Person.prototype.constructor = Person;
+
+        let ldh = new Person('刘德华', 20);
+        ldh.eat();
+        console.log(Person.prototype.constructor);
+
+    </script>
+</body>
+
+</html>
