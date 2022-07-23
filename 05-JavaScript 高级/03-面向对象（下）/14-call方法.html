@@ -10,7 +10,23 @@
 
 <body>
 
+    <script>
+        function fn() {
+            console.log(this);
+            console.log("许大仙");
+        }
 
+        // fn();
+        // call 调用函数
+        fn.call();
+
+        let obj = {
+            name: '呵呵哒'
+        };
+        // call 改变函数中this的指向
+        fn.call(obj);
+
+    </script>
 
 </body>
 
