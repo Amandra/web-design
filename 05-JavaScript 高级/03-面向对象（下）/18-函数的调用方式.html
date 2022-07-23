@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>函数的调用方式</title>
+</head>
+<body>
+
+    <button>点我</button>
+
+    <script>
+
+        // 普通函数
+        function fn() {
+            console.log('普通函数');
+        }
+
+        fn();
+        window.fn();
+        fn.call();
+        fn.call(window);
+        // 对象的方法
+        let obj = {
+            name: '许大仙',
+            eat: function () {
+                console.log('吃饭');
+            }
+        };
+        obj.eat();
+
+        // 构造函数
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        let p = new Person('许大仙', 18);
+        console.log(p);
+
+        // 绑定事件函数
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            console.log('OK');
+        });
+
+        // 定时器函数
+
+        window.setTimeout(function () {
+            console.log('定时器函数');
+        }, 1000);
+
+        // 立即执行函数
+        (function (a, b) {
+            console.log(a + b);
+        })(1, 2);
+    </script>
+
+</body>
+</html>
