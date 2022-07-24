@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // const 声明的常量是数组或对象的元素修改，不会影响错误
+        const ARR = [1, 2, 3];
+        ARR.push(4);
+        // [1, 2, 3, 4]
+        console.log(ARR);
+
+        const OBJ = {
+            name: '许大仙'
+        };
+        OBJ.age = 18;
+        // {name: '许大仙', age: 18}
+        console.log(OBJ);
+    </script>
+</body>
+</html>

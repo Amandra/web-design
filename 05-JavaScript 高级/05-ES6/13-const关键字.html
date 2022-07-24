@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // const 声明的常量具有块级作用域
+        {
+            const A = 100;
+        }
+        // Uncaught ReferenceError: A is not defined
+        console.log(A);
+    </script>
+</body>
+</html>
