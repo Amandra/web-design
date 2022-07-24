@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // const 声明的常量不能被修改，都是常量（不能改变的量叫常量）了，修改了还叫常量吗？
+        const A = 100;
+        A = 200;
+        // Uncaught TypeError: Assignment to constant variable.
+        console.log(A);
+    </script>
+</body>
+</html>
