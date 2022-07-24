@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function fn(a, b) {
+            // {name: '许大仙', age: 18}
+            console.log(this);
+            // 3
+            console.log(a + b);
+        }
+
+        let obj = {
+            name: '许大仙',
+            age: 18
+        };
+        // apply 方法可以调用函数，还可以改变函数内部的 this 指向，但是参数必须是数组
+        fn.apply(obj, [1, 2]);
+    </script>
+</body>
+</html>
