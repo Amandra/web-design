@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        // 数组的解构赋值
+        let arr = ['张三', '李四', '王五', '赵六'];
+        let [zhang, li, wang, zhao] = arr;
+        console.log(zhang); // 张三
+        console.log(li); // 李四
+        console.log(wang); // 王五
+        console.log(zhao); // 赵六
+        // 对象的解构赋值
+        let obj = {
+            name: '许大仙',
+            age: 18,
+            tags: ['吃饭', '睡觉', '玩游戏']
+        };
+
+        let {name, age, tags} = obj;
+        console.log(name); // 许大仙
+        console.log(age); // 18
+        console.log(tags); // ['吃饭', '睡觉', '玩游戏']
+    </script>
+
+</body>
+</html>
