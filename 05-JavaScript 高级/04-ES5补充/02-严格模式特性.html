@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 开启严格模式
+        'use strict';
+
+        // 严格模式的特性
+        // ① 不允许使用没有声明的变量。
+        /*
+            age = 18;
+            console.log(age); // Uncaught ReferenceError: age is not defined
+        */
+        // ② 函数内部的 this 不指向 window 。
+        /*
+            function fn() {
+                // undefined
+                console.log(this);
+            }
+
+            fn();
+        */
+        // ③ eval 作用域。eval 是一个函数，接收字符串参数，会对字符串进行 JS 语法解析并运行
+        /*
+            eval('alert(123)');
+            eval('var a = 10;var b = 20;');
+            // Uncaught ReferenceError: a is not defined
+            console.log(a, b);
+        */
+        // ④ 对象不能有重复的属性。
+        /*
+           let obj = {
+              a: 100,
+              a: 100
+           };
+           // {a: 100}
+           console.log(obj);
+          */
+        // ⑤ 严格模式下，函数不允许有同名的形参。
+        /*
+             function fn(a, a) {
+
+             }
+             fn(1,1)
+        */
+        // ⑥ 新增了一些保留字：private、protected、implements 。
+    </script>
+</body>
+</html>
