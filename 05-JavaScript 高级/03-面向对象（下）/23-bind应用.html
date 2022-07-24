@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <button>按钮</button>
+
+    <script>
+        /* 当点击了按钮之后，就禁用这个按钮，3秒后开启这个按钮 */
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            this.disabled = true;
+            let count = 3;
+            setInterval(function () {
+                if (count === 0) {
+                    btn.innerHTML = `按钮`;
+                    this.disabled = false;
+                    return;
+                }
+                btn.innerHTML = `还剩${count--}秒`;
+            }.bind(this), 1000);
+        });
+    </script>
+</body>
+</html>
