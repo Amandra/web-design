@@ -9,7 +9,37 @@
 <body>
 
     <script>
-        
+        let car = {
+            name: '汽车',
+            run: function () {
+                console.log('行驶');
+            }
+        };
+
+        // 以指定对象为原型创建新的对象
+        let tesla = Object.create(car, {
+            brand: {
+                // 设置的是属性的值
+                value: '特斯拉',
+                // 标识当前属性是否可以被修改，默认为 false
+                writable: true,
+                // 标识当前属性是否可以被删除，默认为 false
+                configurable: false,
+                // 标识属性是可以枚举（遍历），默认为 false
+                enumerable: true
+            }
+        });
+
+        tesla.brand = '特斯拉吗';
+        console.log(tesla);
+
+        for (let key in tesla) {
+            console.log(key);
+            console.log(tesla[key]);
+        }
+
+        tesla.run();
+
     </script>
 
 </body>
