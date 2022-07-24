@@ -18,7 +18,10 @@
         let obj = {
             name,
             age,
-            run
+            run,
+            import() {
+                console.log('提升');
+            }
         };
         console.log(obj);
     </script>
