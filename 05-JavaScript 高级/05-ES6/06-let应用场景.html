@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        .container {
+            margin: 20px auto;
+        }
+
+        .item {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        let items = document.querySelectorAll('.item');
+        for (let i = 0; i < items.length; i++) {
+            items[i].addEventListener('click', function () {
+                this.style.backgroundColor = 'pink';
+            });
+        }
+
+        /* 相当于下面的代码 */
+        /*
+        {
+
+             item[0].addEventListener('click', function () {
+                 this.style.backgroundColor = 'pink';
+             });
+         }
+
+         {
+
+             item[1].addEventListener('click', function () {
+                 this.style.backgroundColor = 'pink';
+             });
+         }
+
+         {
+
+             item[2].addEventListener('click', function () {
+                 this.style.backgroundColor = 'pink';
+             });
+         }
+         */
+    </script>
+
+</body>
+</html>
