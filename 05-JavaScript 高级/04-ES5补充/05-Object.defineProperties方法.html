@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 定义对象
+        let star = {
+            firstName: '刘',
+            lastName: '德华'
+        };
+        Object.defineProperties(star, {
+            fullName: {
+                get: function () {
+                    return this.firstName + this.lastName;
+                },
+                set: function (name) {
+                    let nameArr = name.split('-');
+                    this.firstName = nameArr[0];
+                    this.lastName = nameArr[1];
+                }
+            }
+        });
+
+        console.log(star.fullName);
+        star.fullName = '张-学友';
+        console.log(star.fullName);
+
+    </script>
+</body>
+</html>
