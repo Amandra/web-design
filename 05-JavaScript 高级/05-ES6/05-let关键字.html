@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // let 声明特点：不影响作用域链
+        function fn1() {
+            let name = 10;
+
+            function fn2() {
+                let name = 20;
+                // 20
+                console.log(name);
+            }
+
+            // 10
+            console.log(name);
+
+            fn2();
+        }
+
+        fn1();
+    </script>
+</body>
+</html>
