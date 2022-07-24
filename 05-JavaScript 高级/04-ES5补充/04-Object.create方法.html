@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let car = {
+            name: '汽车',
+            run: function () {
+                console.log('行驶');
+            }
+        };
+
+        // 以指定对象为原型创建新的对象
+        let tesla = Object.create(car, {
+            brand: {
+                // 设置的是属性的值
+                value: '特斯拉',
+                // 标识当前属性是否可以被修改，默认为 false
+                writable: true,
+                // 标识当前属性是否可以被删除，默认为 false
+                configurable: false,
+                // 标识属性是可以枚举（遍历），默认为 false
+                enumerable: true
+            },
+            price: {
+                // get 对应的方法是一个回调函数，函数的执行结果将作为属性的值
+                get: function () {
+                    console.log('被获取了');
+                    return 2;
+                },
+                // set 对应的方法是一个回调函数，当对 price 属性设置的时候执行
+                set: function (value) {
+                    // this 指定的是新创建的对象
+                    this.jiage = value;
+                    console.log(this.jiage);
+                    console.log('值被修改了' + value);
+                }
+            }
+        });
+
+        tesla.price = 500;
+        console.log(tesla.price);
+
+        console.log(tesla);
+
+    </script>
+
+</body>
+</html>
