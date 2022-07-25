@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 声明一个 set 集合对象
+        let set = new Set();
+        console.log(set); // Set(0){size: 0}
+
+        // 声明一个 Set 集合对象，并传入一个数组作为初始化数据
+        let set2 = new Set([1, 2, 3, 2, 3]);
+        console.log(set2); // Set(3){1, 2, 3}
+
+        // 集合中元素的个数
+        console.log(set2.size); // 3
+
+        // 增加一个新的元素
+        set2.add(4);
+        console.log(set2); // Set(4){1, 2, 3, 4}
+
+        // 删除元素
+        set2.delete(1);
+        console.log(set2); // Set(3){2, 3, 4}
+
+        // 判断集合中是否包含某个元素
+        console.log(set2.has(2)); // true
+
+        // 清空集合
+        set2.clear();
+        console.log(set2); // Set(0) {size: 0}
+
+    </script>
+</body>
+</html>
