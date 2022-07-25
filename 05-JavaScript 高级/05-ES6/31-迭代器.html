@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Title</title>
+    <title>迭代器</title>
 </head>
 <body>
     <script>
-        
+        const arr = ['刘德华', '郭富城', '张学友', '黎明'];
+
+        for (let exp of arr) {
+            console.log(exp);
+        }
+        // 获取 iterator
+        const iterator = arr[Symbol.iterator]();
+        console.log(iterator.next()); // {value: '刘德华', done: false}
+        console.log(iterator.next()); // {value: '郭富城', done: false}
+        console.log(iterator.next()); // {value: '张学友', done: false}
+        console.log(iterator.next()); // {value: '黎明', done: false}
+        console.log(iterator.next()); // {value: undefined, done: true}
+
     </script>
 </body>
 </html>
