@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let obj = {
+            [Symbol.replace]: function () {
+                console.log('我被调用了');
+            }
+        };
+
+        let str = 'i love you';
+        let result = str.replace(obj, 'hate');
+    </script>
+
+</body>
+</html>
