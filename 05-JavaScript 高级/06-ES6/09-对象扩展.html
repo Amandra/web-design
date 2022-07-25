@@ -14,7 +14,14 @@
         // Object.assign 对象的合并
         console.log(Object.assign({a: 1, b: 2}, {c: 3})); // {a: 1, b: 2, c: 3}
         // 直接修改 __proto__ 的值
-        
+        const A = {
+            name: '父级'
+        };
+        const B = {
+            test: '测试'
+        };
+        B.__proto__ = A;
+        console.log(B);
     </script>
 </body>
 </html>
