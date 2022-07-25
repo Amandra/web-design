@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        // 创建 Symbol
+        let s1 = Symbol();
+        console.log(s1, typeof s1); // Symbol() 'symbol'
+        // 创建 Symbol
+        let s2 = Symbol('呵呵哒');
+        let s3 = Symbol('呵呵哒');
+        console.log(s2 === s3); // false
+        // 创建 Symbol
+        let s4 = Symbol.for('许大仙');
+        let s5 = Symbol.for('许大仙');
+        console.log(s4 === s5); // true
+
+        // symbol 不能和其他类型的数据进行运算
+        const result = s1 + 123;
+        console.log(result); // Uncaught TypeError: Cannot convert a Symbol value to a number
+    </script>
+
+</body>
+</html>
