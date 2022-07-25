@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Phone {
+            // 静态属性
+            static name = '手机';
+
+            // 通过构造方法进行实例化
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+            }
+
+            // 静态方法
+            static change() {
+                console.log('改变世界');
+            }
+
+            // 方法
+            call(someone) {
+                console.log(`给${someone}打电话`);
+            }
+
+            sendMessage(someone) {
+                console.log(`给${someone}发短信`);
+            }
+        }
+
+        /*
+        * 学习 Java 的人注意：在 Java 中，静态属性或方法可以通过类名或对象调用。
+        * 但是，在 JavaScript 中，静态属性或方法只能通过类名调用。
+        */
+        console.log(Phone.name);
+        Phone.change();
+
+    </script>
+</body>
+</html>
