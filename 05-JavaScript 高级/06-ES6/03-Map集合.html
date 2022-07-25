@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 声明一个 Map 集合
+        const m = new Map();
+        console.log(m); // Map(0) {size: 0}
+
+        // 声明一个 Map 集合
+        const m2 = new Map([
+            ['name', '许大仙'],
+            ['age', 18]
+        ]);
+
+        console.log(m2); // Map(2) {'name' => '许大仙', 'age' => 18}
+
+        // 判断集合中元素的个数
+        console.log(m2.size); // 2
+
+        // 增加元素
+        m2.set('school', '地球大学');
+        console.log(m2); // Map(3) {'name' => '许大仙', 'age' => 18, 'school' => '地球大学'}
+
+        // 根据键获取值
+        console.log(m2.get('name')); // 许大仙
+
+        // 清空集合
+        m2.clear();
+        console.log(m2); // Map(0) {size: 0}
+
+    </script>
+</body>
+</html>
