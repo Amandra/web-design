@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // ES6 提供 rest 参数来代替 arguments ，rest 参数也有人称为可变参数、剩余参数。
+        // 注意，rest 参数必须是形参的最后一个参数。
+        function fn() {
+            console.log(arguments);
+        }
+
+        fn(1, 2, 3);
+
+        // rest 参数
+        function fn2(a, ...nums) {
+            // 1
+            console.log(a);
+            // [1, 2, 3]
+            console.log(nums);
+        }
+
+        fn2(1, 1, 2, 3);
+    </script>
+</body>
+</html>
