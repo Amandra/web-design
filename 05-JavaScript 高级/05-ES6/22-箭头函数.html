@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        * 箭头函数简写：
+        * ① 箭头函数中当形参有且只有一个的时候，小括号可以不写。
+        * ② 当代码体只有一条语句的时候，并且语句的执行结果为函数返回值的，可以不写花括号（如果不写花括号，return 也不能写）。
+        */
+        // ① 箭头函数中当形参有且只有一个的时候，小括号可以不写。
+        let pow = (num) => {
+            return num * num;
+        };
+
+        // 4
+        console.log(pow(2));
+
+        let pow2 = num => {
+            return num * num;
+        };
+        // 4
+        console.log(pow2(2));
+
+        // ② 当代码体只有一条语句的时候，并且语句的执行结果为函数返回值的，可以不写花括号（如果不写花括号，return 也不能写）。
+        let pow3 = num => num * num;
+        // 4
+        console.log(pow3(2));
+
+    </script>
+</body>
+</html>
