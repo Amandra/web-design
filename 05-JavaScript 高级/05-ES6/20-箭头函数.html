@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 传统的函数可以作为构造函数使用
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        let p = new Person('许大仙', 18);
+        console.log(p);
+
+        // 箭头函数的特点：不能作为构造函数。
+        let Man = (name, age) => {
+            this.name = name;
+            this.age = age;
+        };
+        
+        let man = new Man('许仙', 20);
+        // Uncaught TypeError: Man is not a constructor
+        console.log(man);
+    </script>
+</body>
+</html>
