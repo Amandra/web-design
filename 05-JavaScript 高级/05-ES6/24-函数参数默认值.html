@@ -19,7 +19,21 @@
         console.log(add(1, 2, 3)); // 6
         console.log(add(2, 3)); // 5
 
+
         // ② 和解构赋值结合使用；解构赋值的形式先后顺序无所谓。
+        function connect({host = '127.0.0.1', port, username, password}) {
+            console.log(host); // 127.0.0.1
+            console.log(port); // 3306
+            console.log(username); // root
+            console.log(password); // 123456
+        }
+
+        connect({
+            port: 3306,
+            username: 'root',
+            password: '123456'
+        });
+
     </script>
 </body>
 </html>
