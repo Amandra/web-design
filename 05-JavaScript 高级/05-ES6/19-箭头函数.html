@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 函数表达式的特点：箭头函数没有 this 指向（有争议，也有人认为箭头函数的 this 指向声明时所在作用域的值）
+
+        // 传统的函数，可以通过 call 来改变函数内部的 this 指向
+        function fn() {
+            // {name: '许大仙', age: 18}
+            console.log(this);
+        }
+
+        let obj = {
+            name: '许大仙',
+            age: 18
+        };
+
+        fn.call(obj);
+
+        /**
+         * 箭头函数中的 this 指向有两种观点：
+         * 第一种认为：箭头函数中 this 没有指向，那么就会跨过箭头函数寻找 this ，如下面的代码所示，this 就是 window
+         * 第二种认为：箭头函数中的 this 指向声明时所在作用域的值，如下面的代码所示：this 是 fn1 声明的，而 fn1 的作用域是 window，所以 this 也是 window
+         */
+        let fn1 = () => {
+            // window
+            console.log(this);
+        };
+
+        fn1.call(obj);
+
+    </script>
+</body>
+</html>
