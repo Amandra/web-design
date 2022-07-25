@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>生成器函数参数</title>
+</head>
+<body>
+    <script>
+        // 生成器其实就是一个特殊的函数，用于异步编程。
+        function* gen(arg) {
+            console.log(arg);
+            console.log(yield 111); //bbb yield 相当于函数代码的分隔符
+            yield 222; // yield 相当于函数代码的分隔符
+            yield 333; // yield 相当于函数代码的分隔符
+        }
+
+        let iterator = gen('AAA');
+        console.log(iterator.next()); // {value: 111, done: false}
+        // next 方法可以传入实参，将作为 yield 语句的返回结果
+        console.log(iterator.next('bbb')); // {value: 222, done: false}
+        console.log(iterator.next()); // {value: 333, done: false}
+        console.log(iterator.next()); // {value: undefined, done: true}
+    </script>
+</body>
+</html>
