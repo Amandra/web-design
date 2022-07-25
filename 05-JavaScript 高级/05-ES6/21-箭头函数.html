@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 箭头函数不能使用 arguments
+        function fn() {
+            // 伪数组
+            console.log(arguments);
+        }
+
+        fn(1, 2, 3);
+
+        let fn1 = () => {
+            // Uncaught ReferenceError: arguments is not defined
+            console.log(arguments);
+        };
+        fn1(1, 2, 3);
+
+        // arguments 实际开发中不怎么会使用，而是使用 rest 参数，也有人称为剩余参数，可变参数
+    </script>
+</body>
+</html>
