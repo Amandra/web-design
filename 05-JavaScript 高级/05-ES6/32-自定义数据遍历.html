@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const team = {
+            name: '前端开发团队',
+            members: [
+                '小明',
+                '二狗子',
+                '王二麻子'
+            ],
+            // 添加 Symbol.iterator
+            [Symbol.iterator]: function () {
+                let index = 0;
+                return {
+                    next: () => {
+                        // 声明对象
+                        const result = {value: this.members[index], done: false};
+                        // 防止数组越界
+                        if (index >= this.members.length) {
+                            result.done = true;
+                        }
+                        // index 自增
+                        index++;
+                        // 返回结果
+                        return result;
+                    }
+                };
+            }
+        };
+
+        for (let member of team) {
+            console.log(member);
+        }
+    </script>
+</body>
+</html>
