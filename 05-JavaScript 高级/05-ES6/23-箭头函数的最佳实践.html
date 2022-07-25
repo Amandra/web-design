@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #58a;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ad"></div>
+
+    <script>
+        /*
+        * 箭头函数的最佳实践：与 this 无关的回调，如：定时器和数组。
+        */
+
+        // 需求：点击 div 2秒后颜色变为粉色
+        let div = document.querySelector('#ad');
+        div.addEventListener('click', function () {
+            setTimeout(() => {
+                this.style.backgroundColor = 'pink';
+            }, 2000);
+        });
+
+        // 需求：从数组中获取偶数
+        let arr = [1, 2, 3, 4, 5, 6];
+        let newArr = arr.filter(x => x % 2 === 0);
+        // [2, 4, 6]
+        console.log(newArr);
+
+        // 如果回调和 this 的值有关，则不能使用回调函数
+        // ① 事件的回调
+        div.addEventListener('click', () => {
+            // window 不是 div
+            console.log(this);
+        });
+        // ② 对象的方法
+        let obj = {
+            run: () => {
+                // window 不是 obj
+                console.log(this);
+            }
+        };
+        obj.run();
+    </script>
+</body>
+</html>

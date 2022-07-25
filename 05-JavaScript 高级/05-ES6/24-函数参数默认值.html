@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        * ES6 允许给函数参数赋初始值
+        */
+        // ① 参数直接设置默认值；具有默认值的参数，位置一般靠后（行业规范）。
+        function add(a, b, c = 0) {
+            return a + b + c;
+        }
+
+        console.log(add(1, 2, 3)); // 6
+        console.log(add(2, 3)); // 5
+
+        // ② 和解构赋值结合使用；解构赋值的形式先后顺序无所谓。
+    </script>
+</body>
+</html>
