@@ -9,17 +9,22 @@
 <body>
     <script>
         // 向对象中添加方法 up 和 down
-        let game = {
-            name: '俄罗斯方块',
-            up: function () {
-                console.log('game 内部的 up 方法');
-            }
-        };
 
         let method = {
             up: Symbol(),
             down: Symbol()
         };
+
+        let game = {
+            name: '俄罗斯方块',
+            up: function () {
+                console.log('game 内部的 up 方法');
+            },
+            [method.down]: function () {
+                console.log('down down down');
+            }
+        };
+
 
         // 添加 up 方法
         game[method.up] = function () {
@@ -28,6 +33,7 @@
 
         game[method.up](); // 添加的 up 方法
 
+        game[method.down](); // down down down
     </script>
 </body>
 </html>
