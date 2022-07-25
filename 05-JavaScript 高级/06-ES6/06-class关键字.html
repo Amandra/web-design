@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        class Phone {
+            // 通过构造方法进行实例化
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+            }
+
+            // 方法
+            call(someone) {
+                console.log(`给${someone}打电话`);
+            }
+
+            sendMessage(someone) {
+                console.log(`给${someone}发短信`);
+            }
+        }
+
+        class applePhone extends Phone {
+            // 通过构造方法进行实例化
+            constructor(brand, price, storage, pixel) {
+                super(brand, price);
+                this.storage = storage;
+                this.pixel = pixel;
+            }
+        }
+
+        const apple = new applePhone('苹果手机', 200, '64G', '200万像素');
+        console.log(apple);
+        apple.call('许大仙');
+        apple.sendMessage('许大仙');
+
+    </script>
+</body>
+</html>
