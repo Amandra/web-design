@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        // rest 参数
+        function fn(...nums) {
+            console.log(nums);
+        }
+
+        fn(1, 2, 3); // 1,2,3 ==> [1,2,3]
+
+        // spread 扩展运算符就是 rest 参数的逆运算 ...[1,2,3] => 1,2,3
+        // 数组的展开
+        let arr = [1, 2, 3];
+
+        function fn1() {
+            console.log(arguments);
+        }
+
+        fn1(...arr); // ...[1, 2, 3] => 1, 2, 3
+        fn1(1, 2, 3);
+
+        // 对象的展开 ...nameObj => name: '许大仙'
+        const nameObj = {
+            name: '许大仙'
+        };
+        const ageObj = {
+            age: 18
+        };
+        const subObj = {
+            sub: ['Java', 'C++', 'C--', 'C']
+        };
+
+        const obj = {...nameObj, ...ageObj, ...subObj};
+        // {name: '许大仙', age: 18, sub: Array(4)}
+        console.log(obj);
+
+    </script>
+
+</body>
+</html>
