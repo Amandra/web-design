@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>get 和 set </title>
+</head>
+<body>
+    <script>
+        class Phone {
+            static get size() {
+                console.log('静态属性 size 被设置了');
+                return 20;
+            }
+
+            static set size(v) {
+                this.sizeV = v;
+                console.log(this.sizeV);
+                console.log('静态属性 size 被设置了');
+            }
+
+            get price() {
+                console.log('实例属性 price 被获取了');
+                return 200;
+            };
+
+            set price(val) {
+                this.jiage = val;
+                console.log(this.jiage);
+                console.log('我被设置了' + val);
+            }
+        }
+
+        let iphone = new Phone();
+        // 实例属性的获取
+        console.log(iphone.price);
+        // 实例属性的设置
+        iphone.price = 100;
+        // 静态属性的获取
+        console.log(Phone.size);
+        // 静态属性的设置
+        Phone.size = 200;
+    </script>
+</body>
+</html>
