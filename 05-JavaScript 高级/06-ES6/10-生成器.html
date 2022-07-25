@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 生成器其实就是一个特殊的函数，用于异步编程。
+        function* gen() {
+            console.log('我是生成器函数');
+        }
+
+        let iterator = gen();
+        // console.log(iterator);
+        iterator.next();
+    </script>
+</body>
+</html>
