@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 创建 xhr 对象
+        const xhr = new XMLHttpRequest();
+        // 调用 open 函数，指定请求方式和 URL 地址
+        xhr.open('POST', 'https://api.uomg.com/api/entry.sm');
+        // 设置 content-type 属性
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        // 调用 send 函数，发起 Ajax 请求，同时指定要发送的数据（以查询字符串的形式）
+        xhr.send('domain=qrpay.uomg.com');
+        // 监听 onreadystatechange 事件
+        xhr.onreadystatechange = function () {
+            // 监听 xhr 对象的请求状态 readyState 和服务器响应的状态 status
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 获取服务器响应的数据
+                console.log(xhr.response);
+            }
+        };
+    </script>
+</body>
+</html>
