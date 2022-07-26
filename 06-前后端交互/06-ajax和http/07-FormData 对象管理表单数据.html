@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // ① 创建 FormData 对象
+        const formData = new FormData();
+        // ② 为 FormData 对象 对象添加数据
+        formData.append('domain', 'baidu.com');
+        // ③ 创建 xhr 对象
+        const xhr = new XMLHttpRequest();
+        // ④ 调用 open 函数，指定请求方式和 URL 地址
+        xhr.open('POST', 'https://api.uomg.com/api/entry.sm');
+        // ⑤ 直接提交 FormData 对象，和提交网页表单效果一样
+        xhr.send(formData);
+        // 监听 onreadystatechange 事件
+        xhr.onreadystatechange = function () {
+            // 监听 xhr 对象的请求状态 readyState 和服务器响应的状态 status
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // 获取服务器响应的数据
+                console.log(xhr.response);
+            }
+        };
+    </script>
+</body>
+</html>
