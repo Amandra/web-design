@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 接口地址 https://tenapi.cn/wyyinfo/?id=400162138
+        const promise = new Promise((resolve, reject) => {
+            // ① 创建对象
+            const xhr = new XMLHttpRequest();
+            // ② 初始化
+            xhr.open('GET', 'https://tenapi.cn/wyyinfo/?id=400162138');
+            // ③ 发送
+            xhr.send();
+            // ④ 绑定事件，处理响应结果
+            xhr.onreadystatechange = function () {
+                // 判断
+                if (xhr.readyState === 4) {
+                    // 判断响应状态码
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 表示成功
+                        // console.log(xhr.response);
+                        resolve(xhr.response);
+                    } else {
+                        // 表示失败
+                        // console.error('请求失败');
+                        reject('请求失败');
+                    }
+                }
+            };
+        });
+
+        promise.then(value => {
+            console.log(value);
+        }, reason => {
+            console.error(reason);
+        });
+
+    </script>
+</body>
+</html>
