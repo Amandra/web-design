@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <!-- 文件选择框 -->
+    <input id="file" name="file" type="file">
+    <!-- 上传按钮 -->
+    <button id="uploadBtn">上传文件</button>
+    <!-- 显示上传到服务器上的图片 -->
+    <img alt="" id="img" src="">
+
+    <script>
+        let file = document.querySelector('#file');
+        // 获取上传文件的按钮
+        let uploadBtn = document.querySelector('#uploadBtn');
+        let img = document.querySelector('#img');
+        // 为上传文件按钮添加点击事件
+        uploadBtn.addEventListener('click', function () {
+            // 获取选择的文件列表
+            let files = file.files;
+            console.log(files);
+            if (files.length <= 0) {
+                return alert('请选择要上传的文件');
+            }
+            // 上传文件
+            const formData = new FormData();
+            formData.append('file', files[0]);
+            const xhr = new XMLHttpRequest();
+            // 监听 xhr.upload 的 onprogress 事件
+            xhr.upload.onprogress = function (e) {
+                // e.lengthComputable 是一个布尔值，表示当前上传的资源是否具有可计算的长度
+                if (e.lengthComputable) {
+                    // e.loaded 已传输的字节
+                    // e.total 需要传输的字节
+                    let percent = Math.ceil((e.loaded / e.total) * 100);
+                    console.log(percent);
+                }
+            };
+            xhr.open('POST', 'https://imgkr.com/api/v2/files/upload');
+            xhr.send(formData);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.response);
+                }
+            };
+
+        });
+    </script>
+</body>
+</html>
