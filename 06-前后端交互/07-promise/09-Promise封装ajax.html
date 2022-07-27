@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Promise封装ajax</title>
+</head>
+<body>
+    <script>
+        /*
+        * 定义一个 sendAjax 函数，对 xhr 的get 请求进行封装。
+        * ① 该函数接收两个参数：url 和 data (参数对象)
+        * ③ 该函数返回一个 Promise 实例。
+        */
+        function sendAjax(url, data) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            resolve(xhr.response);
+                        } else {
+                            reject('请求出现问题');
+                        }
+                    }
+                };
+                xhr.open('GET', url + '?' + new URLSearchParams(data));
+                xhr.send();
+            });
+        }
+
+        const promise = sendAjax('https://api.uomg.com/api/get.qqdj', {
+            qq: '774740085&skey',
+            skey: '@surhcc2'
+        });
+        promise.then(value => {
+            console.log(value);
+        }, reason => {
+            console.error(reason);
+        });
+
+    </script>
+</body>
+</html>
