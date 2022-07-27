@@ -9,16 +9,16 @@
 <body>
     <script>
         /* Promise.all 方法 */
-        const p1 = Promise.reject(-1);
-        const p2 = Promise.resolve(-2);
+        const p1 = Promise.resolve(1);
+        const p2 = Promise.reject(-2);
         const p3 = Promise.resolve(3);
 
         const p = Promise.all([p1, p2, p3]);
         p.then(value => {
-            // -1
-            console.log(value);
+            console.log('value', value);
         }, reason => {
-            console.log(reason);
+            // reason -2
+            console.log('reason', reason);
         });
     </script>
 </body>
