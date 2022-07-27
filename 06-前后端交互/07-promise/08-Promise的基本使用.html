@@ -29,7 +29,7 @@
         *       pending --> fulfilled
         *       pending --> rejected
         *   ③ 状态只能修改一次！！
-        *   ④ 一个 Promise 实例只能指定一个成功和失败的回调函数。
+        *   ④ 一个 Promise 实例指定了多个成功/失败的回调函数，都会调用。
         */
         // 创建一个 Promise 实例对象
         const promise = new Promise((resolve, reject) => {
@@ -49,10 +49,18 @@
 
         promise.then(value => {
             // 成功的回调--异步
-            console.log('成功的回调', value);
+            console.log('成功的回调1', value);
         }, reason => {
             // 失败的回调--异步
-            console.error('失败的回调', reason);
+            console.error('失败的回调1', reason);
+        });
+
+        promise.then(value => {
+            // 成功的回调--异步
+            console.log('成功的回调2', value);
+        }, reason => {
+            // 失败的回调--异步
+            console.error('失败的回调2', reason);
         });
 
     </script>
