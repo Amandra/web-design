@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+
+    <button id="btn">点我</button>
+
+    <script>
+        // 如果将函数 A 作为参数传递给函数 B 时，我们就称函数 A 为 `回调函数` 。换言之，如果一个函数定义了，我们没有调用，但是最终却执行了，那么这个函数就可以称为回调函数。
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click', function () {
+            // 回调函数
+            console.log('大胆，谁让你点我的~');
+        });
+    </script>
+</body>
+</html>
