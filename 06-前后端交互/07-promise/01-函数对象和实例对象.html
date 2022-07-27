@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        * 函数对象：将函数作为对象使用，简称函数对象。
+        * 实例对象：new 构造函数或类产生的对象，称为实例对象。
+        */
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 此时 的 Person 就是函数对象，其实就和 ES6 中的静态属性和静态方法原理上是一样的。
+        Person.country = '中国';
+        console.log(Person.country); // 中国
+
+        // 通过 new 构造函数产生的对象，称为实例对象
+        const p = new Person('许大仙', 18);
+        console.log(p); // Person {name: '许大仙', age: 18}
+    </script>
+</body>
+</html>
