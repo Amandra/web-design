@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /* Promise.reject 方法 */
+        const p = Promise.reject(100);
+        p.then(value => {
+            console.log(value);
+        }, reason => {
+            // 100
+            console.error(reason);
+        });
+    </script>
+</body>
+</html>
