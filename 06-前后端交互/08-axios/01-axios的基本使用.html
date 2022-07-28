@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <script src="./js/axios.min.js"></script>
+</head>
+<body>
+
+    <button id="btn">点我获取天气</button>
+
+    <script>
+        // 获取按钮
+        const btn = document.querySelector('#btn');
+        // 点击
+        btn.addEventListener('click', function () {
+            axios({
+                // 请求方式
+                method: 'GET',
+                url: 'https://www.tianqiapi.com/api?version=v9&appid=23035354&appsecret=8YvlPNrz',
+                // data: {
+                //     qq: '12345'
+                // }
+            }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+        });
+    </script>
+</body>
+</html>
