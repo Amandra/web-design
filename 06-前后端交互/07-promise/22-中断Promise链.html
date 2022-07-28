@@ -27,7 +27,7 @@
             });
         }, reason => {
             console.error('第一次请求失败', reason);
-            return new Promise((resolve, reject) => {
+            return new Promise(() => {
             });
         }).then(value => {
             console.log('第二次请求成功', value);
@@ -38,7 +38,7 @@
             });
         }, reason => {
             console.error('第二次请求失败', reason);
-            return new Promise((resolve, reject) => {
+            return new Promise(() => {
             });
         }).then(value => {
             console.log('第三次请求成功', value);
