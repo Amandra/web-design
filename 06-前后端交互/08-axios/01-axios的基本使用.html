@@ -16,6 +16,11 @@
         const btn = document.querySelector('#btn');
         // 点击
         btn.addEventListener('click', function () {
+            /*
+            * ① axios 调用的返回值是 Promise 实例。
+            * ② 成功的值叫做 response 。
+            * ③ 失败的值叫做 error 。
+            */
             axios({
                 // 请求方式
                 method: 'GET',
@@ -23,10 +28,10 @@
                 // data: {
                 //     qq: '12345'
                 // }
-            }).then(function (response) {
+            }).then(response => {
                 console.log(response);
-            }).catch(function (error) {
-                console.log(error);
+            }).catch(error => {
+                console.error(error);
             });
 
         });
