@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>完整版 GET 请求携带参数</title>
+    <title>精简版 GET 携带参数</title>
     <script src="./js/axios.min.js"></script>
 </head>
 <body>
@@ -21,10 +21,7 @@
             * ② 成功的值叫做 response ，失败的值叫做 error 。
             * ③ axios 成功的值是一个 axios 封装的 response 对象，服务器返回的真正数据在 response 对象的 data 属性中。
             */
-            axios({
-                // 请求方式
-                method: 'GET',
-                url: 'https://www.tianqiapi.com/api',
+            axios.get('https://www.tianqiapi.com/api', {
                 params: {
                     version: 'v9',
                     appid: '23035354',
@@ -37,7 +34,6 @@
             }).catch(error => {
                 console.error(error);
             });
-
         });
     </script>
 </body>
