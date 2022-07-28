@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>await 原理</title>
+</head>
+<body>
+    <script>
+
+        const p = new Promise((resolve, reject) => {
+            // 函数体
+            setTimeout(() => {
+                resolve(1);
+            }, 2000);
+        });
+
+        async function demo() {
+            // 相当于 p.then(value=>{  console.log(result) })
+            const result = await p;
+            console.log(result);
+        }
+
+        demo();
+
+    </script>
+</body>
+</html>
