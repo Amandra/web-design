@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 只要有一个请求出现问题，就不再发送请求：用户数据 ==> 订单数据 ==> 商品数据
+
+        // 当使用 Promise 实例的 then 链式调用时，需要在中间中断，不再调用后面的回调函数？
+        // 在回调函数中返回一个 pending 状态的 Promise 对象。
+
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('用户数据');
+            }, 1000);
+        });
+        p.then(value => {
+            console.log('第一次请求成功', value);
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('订单数据');
+                }, 1000);
+            });
+        }, reason => {
+            console.error('第一次请求失败', reason);
+            return new Promise((resolve, reject) => {
+            });
+        }).then(value => {
+            console.log('第二次请求成功', value);
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('商品数据');
+                }, 1000);
+            });
+        }, reason => {
+            console.error('第二次请求失败', reason);
+            return new Promise((resolve, reject) => {
+            });
+        }).then(value => {
+            console.log('第三次请求成功', value);
+        }, reason => {
+            console.error('第三次请求失败', reason);
+        });
+    </script>
+</body>
+</html>
