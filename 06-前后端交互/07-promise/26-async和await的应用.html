@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>使用 async 和 await 解决回调地狱</title>
+</head>
+<body>
+    <script>
+        // 用户数据 ==> 订单数据 ==> 商品数据
+
+        ;(async () => {
+            try {
+                let value = await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('用户数据');
+                    }, 1000);
+                });
+                console.log('第一次请求成功', value);
+                value = await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('订单数据');
+                    }, 1000);
+                });
+                console.log('第二次请求成功', value);
+                value = await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        reject('商品数据');
+                    }, 1000);
+                });
+                console.log('第三次请求成功', value);
+            } catch (e) {
+                console.error('请求失败', e);
+            }
+        })();
+
+
+    </script>
+</body>
+</html>
