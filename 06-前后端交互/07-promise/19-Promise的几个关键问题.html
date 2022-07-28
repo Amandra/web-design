@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *『问』Promise实例.then() 返回的是一个新的 Promise 实例，它和值和状态由什么决定？
+        *『答』：
+        * ① 简单表达：由 then() 所指定的回调函数执行的结果决定的。
+        * ② 详细表达：
+        *    如果 then 所指定的回调返回的是 `非Promise 值 a` ，那么`新 Promise 实例`状态为成功（fulfilled），成功的 value 为 a。
+        *    如果 then 所指定的回调返回的是一个 `Promise 实例 p` ，那么`新 Promise 实例`的状态和值都和 p 一致。
+        *    如果 then 所指定的回调`抛出异常`，那么`新Promise实例`状态为 rejected ，reason 为抛出的异常。
+        */
+        const p = new Promise((resolve, reject) => {
+            // 函数体
+            setTimeout(() => {
+                resolve('a');
+            }, 1000);
+        });
+        const x = p.then(value => {
+            // 函数体
+            console.log('成功1', value); // 成功1 a
+        }, reason => {
+            // 函数体
+            console.log('失败1', reason);
+        });
+
+        x.then(value => {
+            // 函数体
+            console.log('成功2', value); // 成功2 undefined
+        }, reason => {
+            // 函数体
+            console.log('失败2', reason);
+        });
+
+    </script>
+</body>
+</html>
