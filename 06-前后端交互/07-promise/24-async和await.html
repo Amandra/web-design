@@ -17,6 +17,7 @@
 
         async function demo() {
             try {
+                // await 只能返回 Promise 实例对象成功的值
                 const result = await p;
                 console.log(result);
             } catch (e) {
