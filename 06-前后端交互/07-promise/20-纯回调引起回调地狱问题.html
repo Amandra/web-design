@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // 用户数据 ==> 订单数据 ==> 商品数据
+        setTimeout(() => {
+            console.log('用户数据');
+            setTimeout(() => {
+                console.log('订单数据');
+                setTimeout(() => {
+                    console.log('商品数据');
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    </script>
+</body>
+</html>

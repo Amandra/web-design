@@ -23,15 +23,15 @@
                 resolve('a');
             }, 1000);
         });
-        const x = p.then(value => {
+
+        // 链式调用
+        p.then(value => {
             // 函数体
             console.log('成功1', value); // 成功1 a
         }, reason => {
             // 函数体
             console.log('失败1', reason);
-        });
-
-        x.then(value => {
+        }).then(value => {
             // 函数体
             console.log('成功2', value); // 成功2 undefined
         }, reason => {
