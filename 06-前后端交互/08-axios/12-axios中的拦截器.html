@@ -48,7 +48,9 @@
         }, error => {
             // 超出 2xx 范围的状态码都会触发该函数。
             // 对响应错误做点什么
-            return Promise.reject(error);
+            console.error('响应拦截器失败的回调执行了', error);
+            return new Promise(() => {
+            });
         });
 
         btn.addEventListener('click', function () {
@@ -70,9 +72,7 @@
             }).then(response => {
                 console.log(response);
                 const {data} = response;
-                console.log(data);
-            }).catch(error => {
-                console.error(error);
+                console.log('成功', data);
             });
         });
 
