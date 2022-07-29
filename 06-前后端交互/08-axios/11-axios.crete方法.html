@@ -12,6 +12,13 @@
     <button id="btn">点我获取天气</button>
     <button id="btn1">点我获取笑话</button>
 
+    <!--
+        axios.create(config)
+        ① 根据指定的配置创建一个新的 axios ，也就是每个 axios 都有自己的配置。
+        ② 新的 axios 没有取消请求和批量发送请求的方法，其他语法都是一致的。
+        ③ 为什么要设计这个语法？因为项目中可能有部分接口需要的配置和另一部分接口需要的配置不一样。
+    -->
+
     <script>
         const btn = document.querySelector('#btn');
         const btn1 = document.querySelector('#btn1');
