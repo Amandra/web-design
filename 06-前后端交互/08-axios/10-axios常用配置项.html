@@ -14,6 +14,11 @@
     <script>
         // 获取按钮
         const btn = document.querySelector('#btn');
+
+        // 给 axios 配置全局默认值
+        axios.defaults.timeout = 3000;
+        axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
         // 点击
         btn.addEventListener('click', function () {
             axios({
