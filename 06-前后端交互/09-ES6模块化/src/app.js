@@ -3,7 +3,9 @@ import {age, showAge, showUname, uname} from './m1'; // 引入【分别暴露】
 import {uname as name} from './m2'; // 引入【分别暴露】的模块+重命名
 import * as m3 from './m3'; // 引入统一暴露的模块
 import {person, school, work} from './m3'; // 引入统一暴露的模块
+import m4 from './m4'; // 移入默认暴露
 
+console.log('m4',m4);
 console.log(m1);
 console.log(m3);
 console.log(school);
