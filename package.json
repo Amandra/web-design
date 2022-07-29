@@ -2,6 +2,7 @@
   "name": "web-design",
   "version": "1.0.0",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
     "express": "^4.17.1",
     "moment": "^2.29.4"
   }
