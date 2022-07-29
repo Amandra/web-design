@@ -9,7 +9,7 @@ function work() {
     console.log('工作');
 }
 
-// 精简写法
+// 【统一暴露】精简写法
 // export {school, person, work};
-// 完整写法
+// 【统一暴露】完整写法
 export {school as school, person as person, work as work};
