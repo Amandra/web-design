@@ -11,6 +11,15 @@
 
     <button id="btn">点我获取天气</button>
 
+    <!--
+        axios 的请求拦截器：
+            定义：是真正在发送请求之前执行的一个回调函数。
+            作用：对所有的请求做统一的处理，如：追加请求头、追加请求参数、界面 loading 提示等。
+        axios 的响应拦截器：
+            定义：得到响应之后执行的一个回调函数。
+            作用：如果请求成功，对成功的数据进行处理；如果请求失败，对失败进行进一步处理。
+    -->
+
     <script>
         const btn = document.querySelector('#btn');
 
@@ -18,6 +27,28 @@
         axios.defaults.baseURL = 'https://www.tianqiapi.com'; // `baseURL` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
         axios.defaults.timeout = 3000;
         axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+        // 添加请求拦截器
+        axios.interceptors.request.use(config => {
+            // 在发送请求之前做些什么
+            config.headers.common['Authorization'] = `Bearer ${localStorage.getItem('access_token')}`;
+            console.log('config', config);
+            return config;
+        }, error => {
+            // 对请求错误做些什么
+            return Promise.reject(error);
+        });
+
+        // 添加响应拦截器
+        axios.interceptors.response.use(response => {
+            // 2xx 范围内的状态码都会触发该函数。
+            // 对响应数据做点什么
+            return response;
+        }, error => {
+            // 超出 2xx 范围的状态码都会触发该函数。
+            // 对响应错误做点什么
+            return Promise.reject(error);
+        });
 
         btn.addEventListener('click', function () {
             axios({
