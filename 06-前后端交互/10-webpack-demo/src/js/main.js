@@ -1,3 +1,6 @@
+/*
+* main.js 是 webpack 的入口，所有外部文件（js、json、css、less等）都需要在这里引入使用
+*/
 import {add, sub} from './m1';
 import {age, name} from './m2';
 import m3 from './m3';
