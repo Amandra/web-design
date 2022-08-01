@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // flat 将多维数组转换为低维数组
+        let arr = [1,2,3,4,[5,6]]
+        console.log(arr.flat()); // [1, 2, 3, 4, 5, 6]
+        // flatmap
+        const arr2 = [1,2,3,4]
+        const result = arr2.flatMap(item => [item * 2])
+        console.log(result); // [2, 4, 6, 8]
+    </script>
+</body>
+</html>
