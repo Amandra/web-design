@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function main(config){
+            const dbHost = config?.db?.host;
+            console.log(dbHost); // undefined
+        }
+
+        main({
+            db:{
+                // host: '192.168.0.10',
+                username:'root'
+            },
+            cache:{
+                host: '192.168.0.11',
+                username:'admin'
+            }
+        })
+    </script>
+</body>
+</html>
