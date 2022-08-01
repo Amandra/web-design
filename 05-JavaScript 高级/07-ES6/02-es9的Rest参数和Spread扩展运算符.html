@@ -24,6 +24,24 @@
             username: 'root',
             password: '123456'
         })
+
+
+        const nameObj = {
+            name: '许大仙'
+        }
+
+        const ageObj = {
+            age: 18
+        }
+
+        const person = {
+            ...nameObj,
+            ...ageObj
+        }
+
+        // {name: '许大仙', age: 18}
+        console.log(person);
+
     </script>
 </body>
 </html>
