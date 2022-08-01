@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Title</title>
+    <title>使用 async 和 await 简化 axios 调用</title>
     <script src="./js/axios.min.js"></script>
 </head>
 <body>
 
-    <button id="btn">点我获取天气</button>
+    <button id="btn">点我获取人员列表</button>
 
     <script>
         // 获取按钮
@@ -22,7 +22,11 @@
             * ③ axios 成功的值是一个 axios 封装的 response 对象，服务器返回的真正数据在 response 对象的 data 属性中。
             */
             try {
-                const response = await axios.get('https://www.tianqiapi.com/api?version=v9&appid=23035354&appsecret=8YvlPNrz');
+                const response = await axios({
+                    // 请求方式
+                    method: 'GET',
+                    url: 'http://localhost:5000/persons',
+                });
                 console.log(response);
                 const {data} = response;
                 console.log(data);
