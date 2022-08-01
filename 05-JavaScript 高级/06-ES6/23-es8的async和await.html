@@ -13,39 +13,39 @@
     <script>
         /* 用户数据 ==> 订单数据 ==> 商品数据 */
         let btn = document.querySelector('#btn');
-        btn.addEventListener('click',async function () {
+        btn.addEventListener('click', async function () {
             try {
-                let p = await new Promise((resolve,reject) =>{
+                let p = await new Promise((resolve, reject) => {
                     // 函数体
                     setTimeout(() => {
-                        resolve("用户数据")
-                    },1000)
+                        resolve('用户数据');
+                    }, 1000);
                 });
 
-                console.log(p)
+                console.log(p);
 
-                p = await new Promise((resolve,reject) =>{
+                p = await new Promise((resolve, reject) => {
                     // 函数体
                     setTimeout(() => {
-                        resolve("订单数据")
-                    },1000)
+                        resolve('订单数据');
+                    }, 1000);
                 });
 
-                console.log(p)
+                console.log(p);
 
-                p = await new Promise((resolve,reject) =>{
+                p = await new Promise((resolve, reject) => {
                     // 函数体
                     setTimeout(() => {
-                        resolve("商品数据")
-                    },1000)
+                        resolve('商品数据');
+                    }, 1000);
                 });
 
-                console.log(p)
+                console.log(p);
 
             } catch (e) {
                 console.error('出错了');
             }
-        })
+        });
     </script>
 
 </body>
