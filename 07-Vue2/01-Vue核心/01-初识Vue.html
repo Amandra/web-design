@@ -12,6 +12,7 @@
 
     <!-- 准备好容器 -->
     <div id="root">
+        <!-- 插值语法 -->
         <h1>你好，{{school}}！！！</h1>
     </div>
 
@@ -22,7 +23,7 @@
         // 创建 Vue 实例
         const vm = new Vue({
             el: '#root', // el 用于指定当前 Vue 实例为哪个容器服务，值通常为 CSS 选择器字符串。
-            data: {
+            data: { // data 中用于存储数据，数据供 el 所指定的容器使用。值暂时先写成对象的形式。相当于 React 中的 state 。
                 school: '苏州大学'
             }
         });
