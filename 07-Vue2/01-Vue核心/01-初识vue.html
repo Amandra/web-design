@@ -5,14 +5,14 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>初识Vue</title>
-    <!-- 引入vue -->
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
     <script src="./js/vue.js"></script>
 </head>
 <body>
 
     <!-- 准备好容器 -->
     <div id="root">
-        <h1>你好，世界！！！</h1>
+        <h1>你好，{{school}}！！！</h1>
     </div>
 
     <script>
@@ -21,8 +21,10 @@
 
         // 创建 Vue 实例
         const vm = new Vue({
-            el: '#root',
-            data: {}
+            el: '#root', // el 用于指定当前 Vue 实例为哪个容器服务，值通常为 CSS 选择器字符串。
+            data: {
+                school: '苏州大学'
+            }
         });
         console.log(vm);
     </script>
