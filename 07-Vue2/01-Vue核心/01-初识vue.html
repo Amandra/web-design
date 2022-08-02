@@ -9,14 +9,21 @@
     <script src="./js/vue.js"></script>
 </head>
 <body>
+
     <!-- 准备好容器 -->
-    <div id="root"></div>
+    <div id="root">
+        <h1>你好，世界！！！</h1>
+    </div>
 
     <script>
         /* 阻止 Vue 在启动时生成生产提示 */
         Vue.config.productionTip = false
+
         const vm = new Vue({
-            el: '#root'
+            el: '#root',
+            data: {
+
+            }
         });
         console.log(vm);
     </script>
