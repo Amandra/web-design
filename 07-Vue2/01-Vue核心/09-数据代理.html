@@ -14,8 +14,15 @@
         };
 
         Object.defineProperty(person, 'age', {
-            value: 18
+            value: 18,
+            enumerable: true, // 控制属性是否可以枚举，默认为 false
+            writable: true,// 控制属性是否可以修改，默认为 false
+            configurable: true // 控制属性是否可以删除，默认为 false
         });
+
+        for (let key in person) {
+            console.log(person[key]);
+        }
 
         console.log(person);
     </script>
