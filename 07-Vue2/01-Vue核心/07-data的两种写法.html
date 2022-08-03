@@ -25,7 +25,8 @@
             /*data: { // 第一种写法：对象式
                 name: '许大仙'
             }*/
-            data: function () { // 第二种写法：函数式
+            data() { // 第二种写法：函数式
+                console.log(this); // 此处的 this 是 Vue 实例对象
                 return {
                     name: '许大仙'
                 };
