@@ -13,15 +13,15 @@
     <!-- 数据代理：通过一个对象属性代理对另一个对象中属性的操作（读和写）-->
 
     <script>
-        let obj1 = {x: 100};
+        let obj = {x: 100};
         let obj2 = {y: 200};
 
         Object.defineProperty(obj2, 'x', {
             get() {
-                return obj1.x;
+                return obj.x;
             },
             set(value) {
-                obj1.x = value;
+                obj.x = value;
             }
         });
     </script>
