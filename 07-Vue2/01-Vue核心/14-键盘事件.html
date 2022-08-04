@@ -12,7 +12,9 @@
 
     <!-- 准备好容器 -->
     <div id="root">
-
+        <input @keyup="showInfo" placeholder="按下回车提示输入" type="text">
+        <!-- 按键别名 -->
+        <input @keyup.enter="showInfo2" placeholder="按下回车提示输入" type="text">
     </div>
 
     <script>
@@ -22,7 +24,18 @@
         // 创建 Vue 实例
         const vm = new Vue({
             el: '#root',
-            data: {}
+            data: {},
+            methods: {
+                showInfo(event) {
+                    if (event.key !== 'Enter') {
+                        return;
+                    }
+                    console.log(event.target.value);
+                },
+                showInfo2(event) {
+                    console.log(event.target.value);
+                }
+            }
         });
         console.log(vm);
     </script>
