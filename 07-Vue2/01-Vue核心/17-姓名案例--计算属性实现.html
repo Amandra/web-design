@@ -14,7 +14,8 @@
     <div id="root">
         姓：<input type="text" v-model="firstName"> <br>
         名：<input type="text" v-model="lastName"> <br>
-        全名：
+        全名：{{fullName}} <br>
+        全名：<input type="text" v-model="fullName">
     </div>
 
     <script>
@@ -29,7 +30,22 @@
                 lastName: '三'
             },
             methods: {},
-            computed: {}
+            computed: {
+                fullName: {
+                    // 当有人读取 fullName 的时候，get 就会被调用，且返回值就作为 fullName 的值
+                    // get 什么时候调用？① 初次读取 fullName 时 ② 所依赖的数据发生变化时
+                    get() {
+                        console.log('@', 'get被调用了');
+                        return this.firstName + '-' + this.lastName;
+                    },
+                    // set 什么时候调用？当 fullName 被修改的时候，set就会被调用，
+                    set(value) {
+                        let [firstName, lastName] = value.split('-');
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                    }
+                }
+            }
         });
         console.log(vm);
     </script>
