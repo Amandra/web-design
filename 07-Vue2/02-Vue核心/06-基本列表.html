@@ -12,11 +12,17 @@
 
     <!-- 准备好容器 -->
     <div id="root">
+        <!-- 遍历数组 -->
         <h2>人员列表</h2>
         <ul>
             <li :key="p.id" v-for="(p,index) in persons">
                 {{index}} - {{p.name}} - {{p.age}}
             </li>
+        </ul>
+        <!-- 遍历对象 -->
+        <h2>汽车信息</h2>
+        <ul>
+            <li :key="key" v-for="(c,key) in car">{{key}}--{{c}}</li>
         </ul>
     </div>
 
@@ -33,7 +39,12 @@
                     {id: '002', name: '李四', age: 19},
                     {id: '003', name: '王五', age: 20},
                     {id: '004', name: '赵六', age: 21}
-                ]
+                ],
+                car: {
+                    name: '自行车',
+                    price: '200',
+                    color: '黑色'
+                }
             }
         });
         console.log(vm);
