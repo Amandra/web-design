@@ -14,7 +14,9 @@
     <div id="root">
         <h2>人员列表</h2>
         <ul>
-            <li :key="p.id" v-for="p in persons">{{p.name}}-{{p.age}}</li>
+            <li :key="p.id" v-for="(p,index) in persons">
+                {{index}} - {{p.name}} - {{p.age}}
+            </li>
         </ul>
     </div>
 
