@@ -45,13 +45,29 @@
                         console.log(newValue, oldValue);
                     }
                 }*/
-                // 简写
-                isHot(newValue, oldValue) {
-                    console.log('isHot被修改了', newValue, oldValue);
-                }
+                // 简写，当只有 handler 配置的时候，就可以使用简写形式
+                /*  isHot(newValue, oldValue) {
+                      console.log('isHot被修改了', newValue, oldValue);
+                  }*/
             }
         });
         console.log(vm);
+
+        // 完整写法
+        /* vm.$watch('isHot', {
+             // 深度监视
+             deep: true,
+             // 初始化的时候让 handler 调用一下
+             immediate: true,
+             // handler 什么时候调用？当 isHot 发生改变的时候
+             handler(newValue, oldValue) {
+                 console.log(newValue, oldValue);
+             }
+         });*/
+        // 简写
+        vm.$watch('isHot', function (newValue, oldValue) {
+            console.log('isHot被修改了', newValue, oldValue);
+        });
     </script>
 </body>
 </html>
