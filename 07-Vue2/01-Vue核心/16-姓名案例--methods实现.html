@@ -30,7 +30,7 @@
             },
             methods: {
                 fullName() {
-                    return this.firstName + '-' + this.lastName;
+                    return this.firstName.slice(0, 3) + '-' + this.lastName;
                 }
             }
         });

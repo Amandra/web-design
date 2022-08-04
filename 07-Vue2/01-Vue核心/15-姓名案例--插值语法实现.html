@@ -14,6 +14,7 @@
     <div id="root">
         姓：<input type="text" v-model="firstName"> <br>
         名：<input type="text" v-model="lastName"> <br>
+        <!-- 组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。 -->
         全名：{{firstName.slice(0, 3) }} - {{lastName}}
     </div>
 
