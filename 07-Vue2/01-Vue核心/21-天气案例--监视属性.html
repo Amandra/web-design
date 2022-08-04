@@ -13,7 +13,8 @@
     <!-- 准备好容器 -->
     <div id="root">
         <h2>今天天气很{{info}} </h2>
-        <button @click="changeWeather()">切换天气</button>
+        <!-- @xxx="yyy"，其中 yyy 可以写一些简单的语句 -->
+        <button @click="isHot = !isHot">切换天气</button>
     </div>
 
     <script>
@@ -26,15 +27,20 @@
             data: {
                 isHot: true
             },
-            methods: {
-                // 切换天气
-                changeWeather() {
-                    this.isHot = !this.isHot;
-                }
-            },
+            methods: {},
             computed: {
                 info() {
                     return this.isHot ? '炎热' : '凉爽';
+                }
+            },
+            watch: {
+                isHot: {
+                    // 初始化的时候让 handler 调用一下
+                    immediate: true,
+                    // handler 什么时候调用？当 isHot 发生改变的时候
+                    handler(newValue, oldValue) {
+                        console.log(newValue, oldValue);
+                    }
                 }
             }
         });
