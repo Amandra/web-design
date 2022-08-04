@@ -32,7 +32,9 @@
             watch: {
                 firstName(newValue, oldValue) {
                     console.log('firstName', newValue, oldValue);
-                    this.fullName = newValue + '-' + this.lastName;
+                    setTimeout(() => {
+                        this.fullName = newValue + '-' + this.lastName;
+                    }, 1000);
                 },
                 lastName(newValue, oldValue) {
                     console.log('lastName', newValue, oldValue);
