@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>class绑定--对象写法</title>
+    <style>
+        .basic {
+            width: 400px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+
+        .happy {
+            background-color: red;
+        }
+
+        .sad {
+            background-color: green;
+        }
+
+        .normal {
+            background-color: skyblue;
+        }
+
+        .demo1 {
+            background-color: #55a532;
+        }
+
+        .demo2 {
+            font-size: 18px;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .demo3 {
+            border-radius: 25px;
+        }
+
+    </style>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        <!-- 绑定 class 样式：对象写法，适用于要绑定的样式个数确定、名字也确定，但是要动态决定用不用 -->
+        <div :class="mood" @click="changeMood" class="basic">{{name}}</div>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: '许大仙',
+                mood: {
+                    demo1: false,
+                    demo2: false
+                }
+            },
+            methods: {
+                changeMood() {
+
+                }
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>
