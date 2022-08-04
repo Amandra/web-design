@@ -58,13 +58,11 @@
             el: '#root',
             data: {
                 name: '许大仙',
-                mood: 'normal'
+                mood: ['demo1', 'demo2', 'demo3']
             },
             methods: {
                 changeMood() {
-                    const arr = ['happy', 'sad', 'normal'];
-                    let randomIndex = Math.floor(Math.random() * arr.length);
-                    this.mood = arr[randomIndex];
+
                 }
             }
         });
