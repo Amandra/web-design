@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>内置指令</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+
+    <!--
+        之前学过的指令：
+            v-bind：单向绑定解析表达式，可以简写为 :xxx
+            v-model：双向数据绑定。
+            v-for：遍历数组、对象或字符串。
+            v-on：绑定事件监听，可以简写为 @
+            v-if：条件渲染（动态控制节点是否存在）
+            v-else：条件渲染（动态控制节点是否存在）
+            v-show：条件渲染（动态控制节点是否存在）
+    -->
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        <div>你好，{{name}}</div>
+        <div v-text="name">你好，</div>
+        <div v-text="str"></div>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: '许大仙',
+                str: '<h3>呵呵哒</h3>'
+            },
+            methods: {}
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>
