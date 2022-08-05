@@ -19,7 +19,7 @@
         <h1>学生信息</h1>
         <button @click="addSex">添加一个性别属性，默认为男</button>
         <h2>学生姓名：{{student.name}}</h2>
-        <h2>学生性别：{{student.sex}}</h2>
+        <h2 v-if="student.sex">学生性别：{{student.sex}}</h2>
         <h2>学生的真实年龄：{{student.age.rAge}}</h2>
         <h2>学生的对外年龄：{{student.age.sAge}}</h2>
         <h2>学生的朋友</h2>
@@ -55,8 +55,8 @@
             },
             methods: {
                 addSex() {
-                    // Vue.set(vm.student, 'sex', '男');
-                    vm.$set(vm.student, 'sex', '男');
+                    // Vue.set(this.student, 'sex', '男');
+                    this.$set(this.student, 'sex', '男');
                 }
             }
         });
