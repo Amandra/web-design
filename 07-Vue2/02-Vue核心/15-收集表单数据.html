@@ -14,21 +14,21 @@
     <div id="root">
         <form>
             <label>
-                账号：<input type="text">
+                账号：<input type="text" v-model="account">
             </label> <br>
             <label>
-                密码：<input type="password">
+                密码：<input type="password" v-model="password">
             </label> <br>
             <label>
                 性别：
-                <input name="sex" type="radio" value="男"> 男
-                <input name="sex" type="radio" value="女"> 女
+                <input name="sex" type="radio" v-model="sex" value="男"> 男
+                <input name="sex" type="radio" v-model="sex" value="女"> 女
             </label> <br>
             <label>
                 爱好：
-                <input name="hobby" type="checkbox"> 抽烟
-                <input name="hobby" type="checkbox"> 喝酒
-                <input name="hobby" type="checkbox"> 烫头
+                <input type="checkbox" v-model="hobby" value="抽烟"> 抽烟
+                <input type="checkbox" v-model="hobby" value="喝酒"> 喝酒
+                <input type="checkbox" v-model="hobby" value="烫头"> 烫头
             </label> <br>
             <label>
                 所属地区：
@@ -44,7 +44,8 @@
             </label> <br>
             <label>
                 <input type="checkbox"> 阅读并接收 <a href="#">《用户协议》</a>
-            </label>
+            </label> <br>
+            <button>注册</button>
         </form>
     </div>
 
@@ -55,7 +56,12 @@
         // 创建 Vue 实例
         const vm = new Vue({
             el: '#root',
-            data: {}
+            data: {
+                account: '',
+                password: '',
+                sex: '',
+                hobby: []
+            }
         });
         console.log(vm);
     </script>
