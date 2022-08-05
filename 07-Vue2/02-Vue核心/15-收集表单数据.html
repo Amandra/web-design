@@ -46,7 +46,7 @@
                 其他信息：<textarea v-model="userInfo.other"></textarea>
             </label> <br>
             <label>
-                <input type="checkbox" v-model="userInfo.agree"> 阅读并接收 <a href="#">《用户协议》</a>
+                <input type="checkbox" v-model.lazy="userInfo.agree"> 阅读并接收 <a href="#">《用户协议》</a>
             </label> <br>
             <button>注册</button>
         </form>
