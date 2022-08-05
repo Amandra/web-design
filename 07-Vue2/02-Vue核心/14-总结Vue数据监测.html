@@ -13,8 +13,21 @@
     <!-- 准备好容器 -->
     <div id="root">
         <h2>学生信息</h2>
+        <button @click="student.age ++">年龄+1岁</button>
+        <br>
+        <button @click="addSex">添加性别属性，默认值为男</button>
+        <br>
+        <button>在列表首位添加一个朋友</button>
+        <br>
+        <button>修改第一个朋友的名字为：张三</button>
+        <br>
+        <button>添加一个爱好</button>
+        <br>
+        <button>修改第一个爱好为：开车</button>
+        <br>
         <h3>姓名：{{student.name}}</h3>
         <h3>年龄：{{student.age}}</h3>
+        <h3 v-if="student.sex">性别：{{student.sex}}</h3>
         <h3>爱好</h3>
         <ul>
             <li :key="index" v-for="(h,index) in student.hobby">
@@ -48,6 +61,11 @@
 
                 }
             },
+            methods: {
+                addSex() { // 添加性别属性
+                    Vue.set(this.student, 'sex', '男');
+                }
+            }
         });
         console.log(vm);
     </script>
