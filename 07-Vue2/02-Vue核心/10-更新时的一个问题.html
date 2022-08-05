@@ -13,6 +13,7 @@
     <!-- 准备好容器 -->
     <div id="root">
         <h2>人员列表</h2>
+        <button @click="updateMei">更新马冬梅的信息</button>
         <ul>
             <li :key="p.id" v-for="(p) in persons">
                 {{p.name}} - {{p.age}} -{{p.sex}}
@@ -35,6 +36,16 @@
                     {id: '004', name: '温兆伦', age: 46, sex: '男'},
                 ],
             },
+            methods: {
+                updateMei() {
+                    // this.persons[0].name = '马老师'; // 起效
+                    // this.persons[0].age = 50;  // 起效
+                    // this.persons[0].sex = '男'; // 起效
+
+                    // 不起效
+                    this.persons[0] = {id: '001', name: '马老师', age: 50, sex: '男'};
+                }
+            }
         });
         console.log(vm);
     </script>
