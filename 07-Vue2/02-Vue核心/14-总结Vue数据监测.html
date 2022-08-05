@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>更新时的一个问题</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        <h2>学生信息</h2>
+        <h3>姓名：{{student.name}}</h3>
+        <h3>年龄：{{student.age}}</h3>
+        <h3>爱好</h3>
+        <ul>
+            <li :key="index" v-for="(h,index) in student.hobby">
+                {{h}}
+            </li>
+        </ul>
+        <h3>朋友：</h3>
+        <ul>
+            <li :key="f.id" v-for="(f) in student.friends">
+                {{f.name}} -- {{f.age}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                student: {
+                    name: 'tom',
+                    age: 18,
+                    hobby: ['抽烟', '喝酒', '烫头'],
+                    friends: [
+                        {id: '001', name: 'jerry', age: 20},
+                        {id: '002', name: 'tony', age: 25},
+                    ]
+
+                }
+            },
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>
