@@ -43,10 +43,11 @@
             },
             computed: {
                 fmtPersons() {
-                    const fmtPersons = this.persons.filter(item => item.name.indexOf(this.keyword) !== -1);
+                    let {keyword, persons, sortType} = this;
+                    const fmtPersons = persons.filter(item => item.name.indexOf(keyword) !== -1);
                     // 判断是否排序
-                    if (this.sortType) {
-                        fmtPersons.sort((a, b) => (this.sortType === 2) ? (a.age - b.age) : (b.age - a.age));
+                    if (sortType) {
+                        fmtPersons.sort((a, b) => (sortType === 2) ? (a.age - b.age) : (b.age - a.age));
                     }
                     return fmtPersons;
                 }
