@@ -32,7 +32,7 @@
             </label> <br>
             <label>
                 所属地区：
-                <select>
+                <select v-model="area">
                     <option>请选择地区</option>
                     <option value="北京">北京</option>
                     <option value="上海">上海</option>
@@ -40,10 +40,10 @@
                 </select>
             </label> <br>
             <label>
-                其他信息：<textarea></textarea>
+                其他信息：<textarea v-model="other"></textarea>
             </label> <br>
             <label>
-                <input type="checkbox"> 阅读并接收 <a href="#">《用户协议》</a>
+                <input type="checkbox" v-model="accept"> 阅读并接收 <a href="#">《用户协议》</a>
             </label> <br>
             <button>注册</button>
         </form>
@@ -57,10 +57,13 @@
         const vm = new Vue({
             el: '#root',
             data: {
-                account: '',
-                password: '',
-                sex: '',
-                hobby: []
+                account: '', // 账号
+                password: '', // 密码
+                sex: '', // 性别
+                hobby: [], // 爱好
+                area: '', // 所属地区
+                other: '', // 其他信息
+                accept: false // 是否同意用户协议
             }
         });
         console.log(vm);
