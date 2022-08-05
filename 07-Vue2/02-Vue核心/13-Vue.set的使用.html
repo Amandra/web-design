@@ -12,9 +12,12 @@
 
     <!-- 准备好容器 -->
     <div id="root">
+        <h1>学校信息</h1>
         <h2>学校名称：{{name}}</h2>
         <h2>学校地址：{{address}}</h2>
         <hr>
+        <h1>学生信息</h1>
+        <button @click="addSex">添加一个性别属性，默认为男</button>
         <h2>学生姓名：{{student.name}}</h2>
         <h2>学生性别：{{student.sex}}</h2>
         <h2>学生的真实年龄：{{student.age.rAge}}</h2>
@@ -49,11 +52,16 @@
                         {id: '003', name: '赵六', age: 20},
                     ]
                 }
+            },
+            methods: {
+                addSex() {
+                    // Vue.set(vm.student, 'sex', '男');
+                    vm.$set(vm.student, 'sex', '男');
+                }
             }
         });
         console.log(vm);
-        // Vue.set(vm.student, 'sex', '男');
-        vm.$set(vm.student, 'sex', '男');
+
     </script>
 </body>
 </html>
