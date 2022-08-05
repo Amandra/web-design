@@ -23,7 +23,7 @@
         <br>
         <button @click="student.hobby.push('打豆豆')">添加一个爱好</button>
         <br>
-        <button>修改第一个爱好为：开车</button>
+        <button @click="student.hobby.splice(0,1,'开车')">修改第一个爱好为：开车</button>
         <br>
         <h3>姓名：{{student.name}}</h3>
         <h3>年龄：{{student.age}}</h3>
