@@ -19,9 +19,9 @@
         <br>
         <button @click.once="addFriend">在列表首位添加一个朋友</button>
         <br>
-        <button>修改第一个朋友的名字为：张三</button>
+        <button @click="modifyFirstFriendName">修改第一个朋友的名字为：张三</button>
         <br>
-        <button>添加一个爱好</button>
+        <button @click="student.hobby.push('打豆豆')">添加一个爱好</button>
         <br>
         <button>修改第一个爱好为：开车</button>
         <br>
@@ -66,6 +66,9 @@
                 },
                 addFriend() { // 添加朋友
                     this.student.friends.unshift({id: '000', name: 'marry', age: 16});
+                },
+                modifyFirstFriendName() { // 修改第一个朋友的名字为：张三
+                    this.student.friends[0].name = '张三';
                 }
             }
         });
