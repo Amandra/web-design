@@ -20,6 +20,9 @@
                 密码：<input type="password" v-model="userInfo.password">
             </label> <br>
             <label>
+                年龄：<input type="number" v-model.number="userInfo.age">
+            </label> <br>
+            <label>
                 性别：
                 <input name="sex" type="radio" v-model="userInfo.sex" value="男"> 男
                 <input name="sex" type="radio" v-model="userInfo.sex" value="女"> 女
@@ -60,6 +63,7 @@
                 userInfo: {
                     account: '', // 账号
                     password: '', // 密码
+                    age: '', // 年龄
                     sex: '', // 性别
                     hobby: [], // 爱好
                     area: '', // 所属地区
