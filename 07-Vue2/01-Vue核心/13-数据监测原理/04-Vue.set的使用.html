@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Vue监测数据变化的原理</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="../../02-Vue核心/js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        <h1>学校信息</h1>
+        <h2>学校名称：{{name}}</h2>
+        <h2>学校地址：{{address}}</h2>
+        <hr>
+        <h1>学生信息</h1>
+        <button @click="addSex">添加一个性别属性，默认为男</button>
+        <h2>学生姓名：{{student.name}}</h2>
+        <h2 v-if="student.sex">学生性别：{{student.sex}}</h2>
+        <h2>学生的真实年龄：{{student.age.rAge}}</h2>
+        <h2>学生的对外年龄：{{student.age.sAge}}</h2>
+        <h2>学生的朋友</h2>
+        <ul>
+            <li :key="f.id" v-for="f in student.friends">
+                {{f.name}} === {{f.age}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: '苏州大学',
+                address: '江苏省苏州市工业园区仁爱路199号',
+                student: {
+                    name: '张三',
+                    age: {
+                        rAge: 40,
+                        sAge: 29
+                    },
+                    friends: [
+                        {id: '001', name: '李四', age: 18},
+                        {id: '002', name: '王五', age: 19},
+                        {id: '003', name: '赵六', age: 20},
+                    ]
+                }
+            },
+            methods: {
+                addSex() {
+                    // Vue.set(this.student, 'sex', '男');
+                    this.$set(this.student, 'sex', '男');
+                }
+            }
+        });
+        console.log(vm);
+        // Vue.set(vm._data.student, 'sex', '男');
+        // vm.$set(vm._data.student, 'sex', '男');
+    </script>
+</body>
+</html>

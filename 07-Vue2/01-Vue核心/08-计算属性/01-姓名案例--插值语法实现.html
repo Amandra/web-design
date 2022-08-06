@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>姓名案例--插值语法实现</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        姓：<input type="text" v-model="firstName"> <br>
+        名：<input type="text" v-model="lastName"> <br>
+        <!-- 组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。 -->
+        全名：{{firstName.slice(0, 3) }} - {{lastName}}
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三'
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>

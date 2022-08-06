@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>单向数据绑定</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        单向数据绑定：<input type="text" v-bind:value="msg">
+        单向数据绑定简写：<input :value="msg" type="text">
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                msg: '许大仙'
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>

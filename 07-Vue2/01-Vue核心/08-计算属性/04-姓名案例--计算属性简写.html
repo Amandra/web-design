@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>姓名案例--计算属性简写</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        姓：<input type="text" v-model="firstName"> <br>
+        名：<input type="text" v-model="lastName"> <br>
+        全名：{{fullName}} <br>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三'
+            },
+            methods: {},
+            computed: {
+                fullName() { // 相当于 getter 函数
+                    return this.firstName + this.lastName;
+                }
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>

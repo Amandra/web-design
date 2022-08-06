@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title></title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="../../02-Vue核心/js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        <h2>今天天气很{{isHot ? '炎热' : '凉爽'}}</h2>
+        <button @click="isHot = !isHot">切换天气</button>
+        <!-- 只有天气炎热才会展示下面的div -->
+        <div v-show="isHot">
+            <img alt="" src="https://img.doutula.com/production/uploads/image/2018/05/22/20180522962632_UORJdn.jpg">
+            <div>建议：心静自然凉</div>
+        </div>
+        <!-- 只有天气凉爽才会展示下面的div -->
+        <div v-show="!isHot">
+            <img alt="" src="https://img.doutula.com/production/uploads/image/2018/01/08/20180108418828_ZoDrFE.gif">
+            <div>建议：要穿秋裤了</div>
+        </div>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                isHot: true
+            }
+        });
+        console.log(vm);
+    </script>
+</body>
+</html>
