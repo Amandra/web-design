@@ -17,6 +17,11 @@
         <xuesheng></xuesheng>
     </div>
 
+    <div id="root2">
+        <!-- ③ 使用组件标签 -->
+        <hello></hello>
+    </div>
+
     <script>
         /* 阻止 Vue 在启动时生成生产提示 */
         Vue.config.productionTip = false;
@@ -51,7 +56,21 @@
                 };
             }
         });
-        // 注册组件
+        // ① 创建 hello 组件
+        const hello = Vue.extend({
+            template: `
+              <div>
+              <h2>你好啊，{{ name }}</h2>
+              </div>
+            `,
+            data() {
+                return {
+                    name: '许大仙'
+                };
+            }
+        });
+        // ② 注册组件（全局注册）
+        Vue.component('hello', hello);
 
         // 创建 Vue 实例
         const vm = new Vue({
@@ -62,6 +81,11 @@
             }
         });
         console.log(vm);
+
+        const vm2 = new Vue({
+            el: '#root2'
+        });
+        console.log(vm2);
     </script>
 </body>
 </html>
