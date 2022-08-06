@@ -24,16 +24,24 @@
             el: '#root',
             data: {
                 opacity: 1
+            },
+            mounted() { // Vue 完成模板的解析，并将初始的真实的 DOM 元素放入页面后（挂载完毕）再调用 mounted
+                console.log('mounted');
+                this.timer = setInterval(() => {
+                    console.log('@');
+                    if (this.opacity <= 0) {
+                        this.opacity = 1;
+                    }
+                    this.opacity -= 0.01;
+                }, 16);
+            },
+            beforeDestroy() {
+                clearInterval(this.timer);
             }
         });
         console.log(vm);
 
-        setInterval(() => {
-            if (vm.opacity <= 0) {
-                vm.opacity = 1;
-            }
-            vm.opacity -= 0.01;
-        }, 16);
+
     </script>
 </body>
 </html>
