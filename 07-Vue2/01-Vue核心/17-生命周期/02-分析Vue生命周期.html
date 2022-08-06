@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>引出Vue生命周期</title>
+    <!-- 引入vue https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js -->
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 准备好容器 -->
+    <div id="root">
+        <h2>当前的n值是 {{n}}</h2>
+        <button @click="add">点我n+1</button>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            // template: `
+            //   <div>
+            //   <h2>当前的n值是 {{ n }}</h2>
+            //   <button @click="add">点我n+1</button>
+            //   </div>
+            // `,
+            data: {
+                n: 1
+            },
+            methods: {
+                add() {
+                    this.n++;
+                }
+            },
+            // 挂载流程开始
+            beforeCreate() {
+                console.log('beforeCreate');
+            },
+            created() {
+                console.log('created');
+            },
+            beforeMount() {
+                console.log('beforeMount');
+            },
+            mounted() {
+                // 一般在此阶段：开启定时器、发送网络请求、订阅消息、绑定自定义事件等初始化操作
+                console.log('mounted');
+            },
+            // 挂载流程结束
+            // 更新流程开始
+            beforeUpdate() {
+                console.log('beforeUpdate');
+            },
+            updated() {
+                console.log('updated');
+            },
+            // 更新流程结束
+            // 销毁流程开始
+            beforeDestroy() {
+                // 一般在此阶段：关闭定时器、取消订阅消息、解绑自定义事件等收尾操作
+                console.log('beforeDestroy');
+            },
+            destroyed() {
+                console.log('destroyed');
+            }
+            // 销毁流程结束
+
+        });
+        console.log(vm);
+
+
+    </script>
+</body>
+</html>
