@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <school></school>
+    </div>
+
+    <script>
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+        // 创建 student 组件
+        const student = Vue.extend({
+            template: `
+              <div>
+              <h2>学生信息</h2>
+              <h2>学生姓名：{{ name }}</h2>
+              <h2>学生年龄：{{ age }}</h2>
+              </div>
+            `,
+            data() { // 之所以写成函数，是为了每次调用的时候都返回一个新的对象
+                return {
+                    name: '许大仙',
+                    age: 18
+                };
+            }
+        });
+        // 创建 school 组件
+        const school = Vue.extend({
+            template: `
+              <div>
+              <h2>学校信息</h2>
+              <h2>学校名称：{{ name }}</h2>
+              <h2>学校地址：{{ address }}</h2>
+              <student></student>
+              </div>
+            `,
+            data() { // 之所以写成函数，是为了每次调用的时候都返回一个新的对象
+                return {
+                    name: '苏州大学',
+                    address: '江苏省苏州市工业园区仁爱路199号',
+                };
+            },
+            components: {
+                student
+            }
+        });
+
+
+        // 创建 Vue 实例
+        const vm = new Vue({
+            el: '#root',
+            components: { // 注册组件（局部注册）
+                school
+            }
+        });
+        console.log(vm);
+    </script>
+
+</body>
+</html>
