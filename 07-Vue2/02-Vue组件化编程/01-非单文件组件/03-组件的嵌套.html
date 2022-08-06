@@ -9,9 +9,8 @@
 </head>
 <body>
 
-    <div id="root">
-        <school></school>
-    </div>
+    <!-- 准备一个容器 -->
+    <div id="root"></div>
 
     <script>
         /* 阻止 Vue 在启动时生成生产提示 */
@@ -53,11 +52,25 @@
             }
         });
 
+        // 创建 app 组件
+        const app = {
+            template: `
+              <div>
+              <school></school>
+              </div>
+            `,
+            components: {
+                school
+            }
+        };
         // 创建 Vue 实例
         const vm = new Vue({
+            template: `
+              <app></app>
+            `,
             el: '#root',
             components: { // 注册组件（局部注册）
-                school
+                app
             }
         });
         console.log(vm);
