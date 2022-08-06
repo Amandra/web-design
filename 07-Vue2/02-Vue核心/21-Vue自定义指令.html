@@ -33,6 +33,7 @@
                 n: 1
             },
             directives: {
+                // big 函数何时会被调用？指令和元素成功绑定的时候。
                 big(element, binding) {
                     let {value} = binding;
                     element.innerText = value * 10;
