@@ -7,6 +7,7 @@ function resolve(dir) {
 
 module.exports = defineConfig({
     transpileDependencies: true,
+    lintOnSave: false,　　// 关闭语法检查
     chainWebpack: config => {
         config.resolve.alias // 配置别名
             .set('@', resolve('src'))
