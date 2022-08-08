@@ -8,10 +8,44 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
+    <!--
+        一个重要的内置关系：VueComponent.prototype.__proto__ === Vue.prototype
+        为什么要有这样的关系：让组件实例对象（vc）可以访问到 Vue 原型对象上的属性和方法。
+    -->
+
     <!-- 准备一个容器 -->
-    <div id="root"></div>
+    <div id="root">
+
+    </div>
+
     <script>
-        
+        /* 阻止 Vue 在启动时生成生产提示 */
+        Vue.config.productionTip = false;
+        // 创建组件
+        const school = Vue.extend({
+            name: 'School',
+            template: `
+              <div>
+              <h2>学校名称：{{ name }}</h2>
+              <h2>学校地址：{{ address }}</h2>
+              </div>
+            `,
+            data() {
+                return {
+                    name: '苏州大学',
+                    address: '江苏省苏州市工业园区仁爱路199号',
+                };
+            }
+        });
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                msg: '你好啊'
+            }
+        });
+
+        console.log(school.prototype.__proto__ === Vue.prototype); // true
+
     </script>
 </body>
 </html>
