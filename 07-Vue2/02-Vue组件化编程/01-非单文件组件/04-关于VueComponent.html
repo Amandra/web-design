@@ -9,15 +9,38 @@
 </head>
 <body>
     <!-- 准备一个容器 -->
-    <div id="root"></div>
+    <div id="root">
+        <School></School>
+    </div>
 
     <script>
-        new Vue({
-            el: '#root',
+        // 创建组件
+        const School = Vue.extend({
+            name: 'School',
+            template: `
+              <div>
+              <h2>学校名称：{{ name }}</h2>
+              <h2>学校地址：{{ address }}</h2>
+              </div>
+            `,
             data() {
-                
+                return {
+                    name: '苏州大学',
+                    address: '江苏省苏州市工业园区仁爱路199号',
+                };
             }
         });
+        console.log('School', School);
+        const vm = new Vue({
+            el: '#root',
+            template: `
+              <School></School>
+            `,
+            components: {
+                School
+            }
+        });
+        console.log('vm', vm);
 
     </script>
 </body>
