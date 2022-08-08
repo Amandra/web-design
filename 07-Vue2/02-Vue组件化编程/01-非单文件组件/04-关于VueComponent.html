@@ -10,12 +10,13 @@
 <body>
     <!-- 准备一个容器 -->
     <div id="root">
-        <School></School>
+        <school></school>
+        <hello></hello>
     </div>
 
     <script>
         // 创建组件
-        const School = Vue.extend({
+        const school = Vue.extend({
             name: 'School',
             template: `
               <div>
@@ -30,11 +31,27 @@
                 };
             }
         });
-        console.log('School', School);
+
+        const hello = Vue.extend({
+            name: 'Hello',
+            template: `<h2>{{ msg }}</h2>`,
+            data() {
+                return {
+                    msg: '你好啊'
+                };
+            }
+        });
+
+        console.log('school', school);
+        console.log('hello', hello);
+
+        console.log(school === hello); // false
+
         const vm = new Vue({
             el: '#root',
             components: {
-                School
+                school,
+                hello
             }
         });
         console.log('vm', vm);
