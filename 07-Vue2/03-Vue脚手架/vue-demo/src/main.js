@@ -10,5 +10,5 @@ Vue.config.productionTip = false;
 
 // 创建 Vue 实例对象 -- vm
 new Vue({
-    render: h => h(App),
+    render: h => h(App), // 将 App 组件放入到容器中
 }).$mount('#app');
