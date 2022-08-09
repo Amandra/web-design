@@ -16,7 +16,7 @@ export default {
       msg: '学生',
     };
   },
-  // props: ['name', 'sex', 'age'] // 简单声明接收
+  // props: ['name', 'sex', 'age'] // 简单声明接收，开发中常用
 
   /*props: { // 接收的同时对数据进行类型限制
     name: String,
