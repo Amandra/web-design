@@ -68,7 +68,7 @@ body {
   width: 600px;
   margin: 0 auto;
 
-  &.todo-wrap {
+  .todo-wrap {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
