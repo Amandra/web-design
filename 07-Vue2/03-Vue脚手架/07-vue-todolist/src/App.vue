@@ -3,7 +3,7 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <!-- 头部组件 -->
-        <Top/>
+        <Top :addTodo="addTodo"/>
         <!-- 列表组件 -->
         <List :todoList="todoList"/>
         <!-- 底部组件 -->
@@ -28,6 +28,11 @@ export default {
         {id: '003', name: '烫头', done: true},
       ]
     };
+  },
+  methods: {
+    addTodo(todo) {
+      this.todoList.unshift(todo);
+    }
   },
   components: {
     Top,

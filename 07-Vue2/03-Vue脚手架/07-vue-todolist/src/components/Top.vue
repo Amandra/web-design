@@ -1,6 +1,6 @@
 <template>
   <div class="todo-header">
-    <input placeholder="请输入你的任务名称，按回车键确认" type="text" @keyup.enter="addTodo"/>
+    <input placeholder="请输入你的任务名称，按回车键确认" type="text" @keyup.enter="add"/>
   </div>
 </template>
 
@@ -10,12 +10,16 @@ import {nanoid} from 'nanoid';
 export default {
   name: 'Header',
   methods: {
-    addTodo(event) {
+    add(event) {
       // 将用户的输入包装成为一个 todo 对象
       const todo = {id: nanoid(), name: event.target.value, done: false};
-      console.log(todo);
+      // 添加 todo
+      this.addTodo(todo);
+      // 清空
+      event.target.value = '';
     }
-  }
+  },
+  props: ['addTodo']
 };
 </script>
 
