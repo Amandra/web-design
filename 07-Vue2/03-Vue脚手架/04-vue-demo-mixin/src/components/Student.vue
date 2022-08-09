@@ -6,6 +6,9 @@
 </template>
 
 <script>
+// 引入混合
+import Mixin from '@/mixin';
+
 export default {
   name: 'Student',
   data() {
@@ -14,11 +17,7 @@ export default {
       age: 18
     };
   },
-  methods: {
-    showName() {
-      alert(this.name);
-    }
-  }
+  mixins: [Mixin]
 };
 </script>
 

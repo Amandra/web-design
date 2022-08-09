@@ -6,6 +6,9 @@
 </template>
 
 <script>
+// 引入混合
+import Mixin from '@/mixin';
+
 export default {
   name: 'School',
   data() {
@@ -14,11 +17,7 @@ export default {
       address: '江苏省苏州市工业园区仁爱路199号',
     };
   },
-  methods: {
-    showName() {
-      alert(this.name);
-    }
-  }
+  mixins: [Mixin]
 };
 </script>
 
