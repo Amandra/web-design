@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+/* lang 表示 css 预处理器，需要安装对应的 loader */
 .demo {
   background-color: pink;
 }
