@@ -1,19 +1,15 @@
 <template>
   <div>
-    <img alt="Vue logo" src="@/assets/logo.png">
-    <Student/>
-    <School/>
+    <Student :age="19" name="李四" sex="女"/>
   </div>
 </template>
 
 <script>
-import School from '@/components/School';
 import Student from '@/components/Student';
 
 export default {
   name: 'App',
   components: {
-    School,
     Student
   }
 };
