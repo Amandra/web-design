@@ -9,18 +9,10 @@ import Item from '@/components/Item';
 
 export default {
   name: 'List',
-  data() {
-    return {
-      todoList: [
-        {id: '001', name: '抽烟', done: true},
-        {id: '002', name: '喝酒', done: false},
-        {id: '003', name: '烫头', done: true},
-      ]
-    };
-  },
   components: {
     Item
-  }
+  },
+  props: ['todoList']
 };
 </script>
 

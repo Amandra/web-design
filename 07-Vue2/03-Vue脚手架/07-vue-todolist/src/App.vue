@@ -5,7 +5,7 @@
         <!-- 头部组件 -->
         <Top/>
         <!-- 列表组件 -->
-        <List/>
+        <List :todoList="todoList"/>
         <!-- 底部组件 -->
         <Bottom/>
       </div>
@@ -21,7 +21,13 @@ import Bottom from '@/components/Bottom';
 export default {
   name: 'App',
   data() {
-    return {};
+    return {
+      todoList: [
+        {id: '001', name: '抽烟', done: true},
+        {id: '002', name: '喝酒', done: false},
+        {id: '003', name: '烫头', done: true},
+      ]
+    };
   },
   components: {
     Top,
