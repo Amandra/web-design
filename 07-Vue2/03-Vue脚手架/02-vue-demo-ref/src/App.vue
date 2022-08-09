@@ -18,9 +18,9 @@ export default {
   },
   methods: {
     showDom() {
-      console.log(this.$refs.title);
-      console.log(this.$refs.btn);
-      console.log(this.$refs.sch);
+      console.log(this.$refs.title); // 获取真实 DOM 元素
+      console.log(this.$refs.btn); // 获取真实 DOM 元素
+      console.log(this.$refs.sch); // 获取 School 组件实例对象，即 vc
     }
   },
   components: {
