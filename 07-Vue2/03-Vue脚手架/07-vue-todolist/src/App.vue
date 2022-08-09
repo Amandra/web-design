@@ -3,24 +3,31 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <!-- 头部组件 -->
-        <Header/>
+        <Top/>
         <!-- 列表组件 -->
         <List/>
         <!-- 底部组件 -->
-        <Footer/>
+        <Bottom/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header';
+import Top from '@/components/Top';
 import List from '@/components/List';
-import Footer from '@/components/Footer';
+import Bottom from '@/components/Bottom';
 
 export default {
   name: 'App',
-  components: {Header, List, Footer}
+  data() {
+    return {};
+  },
+  components: {
+    Top,
+    List,
+    Bottom
+  }
 };
 </script>
 
