@@ -1,7 +1,7 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input type="checkbox"/>
+      <input :checked="checkedTodoNum === totalTodoNum" type="checkbox" @click="checkAll"/>
     </label>
     <span>
           <span>已完成{{ checkedTodoNum }}</span> / 全部{{ totalTodoNum }}
@@ -14,6 +14,11 @@
 export default {
   name: 'Footer',
   props: ['todoList'],
+  methods: {
+    checkAll() {
+      this.todoList.map(x => x.done = true);
+    }
+  },
   computed: {
     totalTodoNum() {
       return this.todoList.length;
