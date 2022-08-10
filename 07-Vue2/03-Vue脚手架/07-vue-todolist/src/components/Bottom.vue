@@ -1,10 +1,10 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input :checked="checkedTodoNum === totalTodoNum" type="checkbox" @click="checkAll"/>
+      <input :checked="doneTotal === total && total >0" type="checkbox" @click="checkAll"/>
     </label>
     <span>
-          <span>已完成{{ checkedTodoNum }}</span> / 全部{{ totalTodoNum }}
+          <span>已完成{{ doneTotal }}</span> / 全部{{ total }}
         </span>
     <button class="btn btn-danger">清除已完成任务</button>
   </div>
@@ -13,17 +13,17 @@
 <script>
 export default {
   name: 'Footer',
-  props: ['todoList'],
+  props: ['todoList', 'checkAllTodo'],
   methods: {
-    checkAll() {
-      this.todoList.map(x => x.done = true);
+    checkAll(e) {
+      this.checkAllTodo(e.target.checked);
     }
   },
   computed: {
-    totalTodoNum() {
+    total() {
       return this.todoList.length;
     },
-    checkedTodoNum() {
+    doneTotal() {
       return this.todoList.filter(x => x.done).length;
     }
   }

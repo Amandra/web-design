@@ -7,7 +7,7 @@
         <!-- 列表组件 -->
         <List :checkTodo="checkTodo" :deleteTodo="deleteTodo" :todoList="todoList"/>
         <!-- 底部组件 -->
-        <Bottom :todoList="todoList"/>
+        <Bottom :checkAllTodo="checkAllTodo" :todoList="todoList"/>
       </div>
     </div>
   </div>
@@ -45,6 +45,10 @@ export default {
           todo.done = !todo.done;
         }
       });
+    },
+    // 全选
+    checkAllTodo(done) {
+      this.todoList.map(x => x.done = done);
     }
   },
   components: {
