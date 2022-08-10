@@ -4,7 +4,7 @@
       <input :checked="todo.done" type="checkbox"/>
       <span>{{ todo.name }}</span>
     </label>
-    <button class="btn btn-danger" style="display:none">删除</button>
+    <button class="btn btn-danger">删除</button>
   </li>
 </template>
 
@@ -22,35 +22,32 @@ li {
   line-height: 36px;
   padding: 0 5px;
   border-bottom: 1px solid #ddd;
+}
 
-  label {
-    float: left;
-    cursor: pointer;
+li label {
+  float: left;
+  cursor: pointer;
+}
 
-    li {
-      input {
-        vertical-align: middle;
-        margin-right: 6px;
-        position: relative;
-        top: -1px;
-      }
+li label li input {
+  vertical-align: middle;
+  margin-right: 6px;
+  position: relative;
+  top: -1px;
+}
 
-      &:before {
-        content: initial;
-      }
+li button {
+  float: right;
+  //display: none;
+  margin-top: 3px;
+}
 
-      &:last-child {
-        border-bottom: none;
-      }
-    }
+li:before {
+  content: initial;
+}
 
-    button {
-      float: right;
-      display: none;
-      margin-top: 3px;
-    }
-
-  }
+li:last-child {
+  border-bottom: none;
 }
 
 </style>

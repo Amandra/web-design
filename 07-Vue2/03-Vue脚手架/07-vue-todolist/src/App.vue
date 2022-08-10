@@ -30,6 +30,7 @@ export default {
     };
   },
   methods: {
+    // 新增 todo
     addTodo(todo) {
       this.todoList.unshift(todo);
     }
