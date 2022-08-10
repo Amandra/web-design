@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <School/>
+    <School :getSchoolName="getSchoolName"/>
     <Student/>
   </div>
 </template>
@@ -16,6 +16,11 @@ export default {
     return {
       msg: '你好啊'
     };
+  },
+  methods: {
+    getSchoolName(name) {
+      console.log('App收到了学校的名称：', name);
+    }
   },
   components: {
     School,
