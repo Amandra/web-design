@@ -7,7 +7,7 @@
         <!-- 列表组件 -->
         <List :checkTodo="checkTodo" :deleteTodo="deleteTodo" :todoList="todoList"/>
         <!-- 底部组件 -->
-        <Bottom/>
+        <Bottom :todoList="todoList"/>
       </div>
     </div>
   </div>

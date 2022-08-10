@@ -4,7 +4,7 @@
       <input type="checkbox"/>
     </label>
     <span>
-          <span>已完成0</span> / 全部2
+          <span>已完成{{ checkedTodoNum }}</span> / 全部{{ totalTodoNum }}
         </span>
     <button class="btn btn-danger">清除已完成任务</button>
   </div>
@@ -12,7 +12,16 @@
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  props: ['todoList'],
+  computed: {
+    totalTodoNum() {
+      return this.todoList.length;
+    },
+    checkedTodoNum() {
+      return this.todoList.filter(x => x.done).length;
+    }
+  }
 };
 </script>
 
