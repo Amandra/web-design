@@ -11,8 +11,12 @@ export default {
   name: 'Header',
   methods: {
     add(event) {
+      let name = event.target.value;
+      if (!name.trim()) {
+        return alert('输入不能为空');
+      }
       // 将用户的输入包装成为一个 todo 对象
-      const todo = {id: nanoid(), name: event.target.value, done: false};
+      const todo = {id: nanoid(), name: name, done: false};
       // 添加 todo
       this.addTodo(todo);
       // 清空
