@@ -4,14 +4,19 @@
       <input :checked="todo.done" type="checkbox"/>
       <span>{{ todo.name }}</span>
     </label>
-    <button class="btn btn-danger">删除</button>
+    <button class="btn btn-danger" @click="remove(todo.id)">删除</button>
   </li>
 </template>
 
 <script>
 export default {
   name: 'Item',
-  props: ['todo']
+  props: ['todo', 'deleteTodo'],
+  methods: {
+    remove(id) {
+      this.deleteTodo(id);
+    }
+  }
 };
 </script>
 

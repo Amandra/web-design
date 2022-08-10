@@ -5,7 +5,7 @@
         <!-- 头部组件 -->
         <Top :addTodo="addTodo"/>
         <!-- 列表组件 -->
-        <List :todoList="todoList"/>
+        <List :deleteTodo="deleteTodo" :todoList="todoList"/>
         <!-- 底部组件 -->
         <Bottom/>
       </div>
@@ -33,6 +33,10 @@ export default {
     // 新增 todo
     addTodo(todo) {
       this.todoList.unshift(todo);
+    },
+    // 删除 todo
+    deleteTodo(id) {
+      this.todoList.splice(this.todoList.findIndex(x => x.id === id), 1);
     }
   },
   components: {
