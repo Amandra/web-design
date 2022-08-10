@@ -5,7 +5,7 @@
         <!-- 头部组件 -->
         <Top :addTodo="addTodo"/>
         <!-- 列表组件 -->
-        <List :deleteTodo="deleteTodo" :todoList="todoList"/>
+        <List :checkTodo="checkTodo" :deleteTodo="deleteTodo" :todoList="todoList"/>
         <!-- 底部组件 -->
         <Bottom/>
       </div>
@@ -37,6 +37,14 @@ export default {
     // 删除 todo
     deleteTodo(id) {
       this.todoList.splice(this.todoList.findIndex(x => x.id === id), 1);
+    },
+    // 勾选或取消勾选 todo
+    checkTodo(id) {
+      this.todoList.forEach(todo => {
+        if (todo.id === id) {
+          todo.done = !todo.done;
+        }
+      });
     }
   },
   components: {
