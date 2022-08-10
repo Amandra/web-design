@@ -22,12 +22,16 @@ export default {
   name: 'App',
   data() {
     return {
-      todoList: [
-        {id: '001', name: '抽烟', done: true},
-        {id: '002', name: '喝酒', done: false},
-        {id: '003', name: '烫头', done: true},
-      ]
+      todoList: JSON.parse(localStorage.getItem('todos')) || []
     };
+  },
+  watch: {
+    todoList: {
+      deep: true,
+      handler(value) {
+        localStorage.setItem('todos', JSON.stringify(value));
+      }
+    }
   },
   methods: {
     // 新增 todo
