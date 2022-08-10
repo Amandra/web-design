@@ -1,8 +1,10 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
+    <!-- 通过父组件给子组件传递函数类型的 props ，实现子组件给父组件传递数据。 -->
     <School :getSchoolName="getSchoolName"/>
-    <Student/>
+    <!-- 通过父组件给子组件绑定一个自定义事件，实现子组件给父组件传递数据。 -->
+    <Student v-on:demo="getStudentName"/>
   </div>
 </template>
 
@@ -20,6 +22,9 @@ export default {
   methods: {
     getSchoolName(name) {
       console.log('App收到了学校的名称：', name);
+    },
+    getStudentName(name) {
+      console.log('App收到了学生的姓名：', name);
     }
   },
   components: {
