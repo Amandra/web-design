@@ -19,7 +19,7 @@ export default {
       const todo = {id: nanoid(), name: name, done: false};
       // 添加 todo
       this.addTodo(todo);
-      // 清空
+      // 清空输入
       event.target.value = '';
     }
   },
