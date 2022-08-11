@@ -28,14 +28,16 @@ export default {
     getSchoolName(name) {
       console.log('App收到了学校的名称：', name);
     },
-    getStudentName(name) {
-      console.log('App收到了学生的姓名：', name);
-      this.studentName = name;
-    }
+    // getStudentName(name) {
+    //   console.log('App收到了学生的姓名：', name);
+    //   this.studentName = name;
+    // }
   },
   mounted() {
     // 绑定自定义事件
-    this.$refs.student.$on('demo', this.getStudentName);
+    this.$refs.student.$on('demo', (name) => {
+      this.studentName = name;
+    });
     // 绑定自定义事件一次性
     // this.$refs.student.$once('demo', this.getStudentName);
   },
