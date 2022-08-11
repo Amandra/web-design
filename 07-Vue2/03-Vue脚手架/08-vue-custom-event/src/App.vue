@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }},学生姓名是 {{ studentName }}</h1>
     <!-- 通过父组件给子组件传递函数类型的 props ，实现子组件给父组件传递数据。 -->
     <School :getSchoolName="getSchoolName"/>
 
@@ -20,7 +20,8 @@ export default {
   name: 'App',
   data() {
     return {
-      msg: '你好啊'
+      msg: '你好啊',
+      studentName: ''
     };
   },
   methods: {
@@ -29,6 +30,7 @@ export default {
     },
     getStudentName(name) {
       console.log('App收到了学生的姓名：', name);
+      this.studentName = name;
     }
   },
   mounted() {
