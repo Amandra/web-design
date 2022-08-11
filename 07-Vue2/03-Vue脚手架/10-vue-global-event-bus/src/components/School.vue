@@ -18,6 +18,9 @@ export default {
     this.$bus.$on('SENT_NAME', (data) => {
       console.log('School组件接收到的学生姓名是：', data);
     });
+  },
+  beforeDestroy() {
+    this.$bus.$off('SENT_NAME');
   }
 };
 </script>
