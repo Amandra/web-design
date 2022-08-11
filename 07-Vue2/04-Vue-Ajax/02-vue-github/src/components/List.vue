@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
   name: 'List',
@@ -19,22 +18,13 @@ export default {
       users: []
     };
   },
-  async mounted() {
-    try {
-      const keyword = await new Promise((resolve, reject) => {
-        this.$bus.$on('keyword', (data) => {
-          resolve(data);
-        });
-      });
-      console.log(keyword);
-      const {data: {items}} = await axios.get(`/github/search/users?q=${keyword}`);
-      this.users = items;
-    } catch (e) {
-      console.error(e);
-    }
+  mounted() {
+    this.$bus.$on('users', (data) => {
+      this.users = data;
+    });
   },
   beforeDestroy() {
-    this.$bus.$off('keyword');
+    this.$bus.$off('users');
   }
 };
 </script>
