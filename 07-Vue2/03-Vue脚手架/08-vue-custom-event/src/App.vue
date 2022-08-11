@@ -8,7 +8,7 @@
     <!--<Student v-on:demo="getStudentName"/>-->
 
     <!--  通过父组件给子组件绑定一个自定义事件，实现子组件给父组件传递数据。第二种写法：使用 ref  -->
-    <Student ref="student"/>
+    <Student ref="student" @click.native="show"/>
   </div>
 </template>
 
@@ -32,6 +32,9 @@ export default {
     //   console.log('App收到了学生的姓名：', name);
     //   this.studentName = name;
     // }
+    show() {
+      alert('show');
+    }
   },
   mounted() {
     // 绑定自定义事件
