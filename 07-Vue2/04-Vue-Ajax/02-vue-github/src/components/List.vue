@@ -32,7 +32,7 @@ export default {
   },
   mounted() {
     this.$bus.$on('updateListData', (obj) => {
-      this.info = obj;
+      this.info = {...this.info, ...obj};
     });
   },
   beforeDestroy() {
