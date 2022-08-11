@@ -1,20 +1,28 @@
 <template>
   <div>
-    <Student/>
-    <School/>
+    <input v-show="show" ref="input" type="text">
+    <button @click="showInput">点我显示输入框，并获取焦点</button>
   </div>
 </template>
 
 <script>
-import School from '@/components/School';
-import Student from '@/components/Student';
 
 export default {
   name: 'App',
-  components: {
-    School,
-    Student
-  }
+  data() {
+    return {
+      show: false
+    };
+  },
+  methods: {
+    showInput() {
+      this.show = true;
+      this.$nextTick(() => {
+        this.$refs.input.focus();
+      });
+    }
+  },
+  components: {}
 };
 </script>
 
