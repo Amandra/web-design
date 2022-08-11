@@ -3,6 +3,7 @@
     <h2>学生姓名：{{ name }}</h2>
     <h2>学生年龄：{{ age }}</h2>
     <button @click="sendStudentName">将学生姓名给 App 组件</button>
+    <button @click="unbind">解绑 demo 事件</button>
   </div>
 </template>
 
@@ -20,6 +21,11 @@ export default {
       console.log('Student', this);
       // 触发 Student 组件实例身上的 demo 事件
       this.$emit('demo', this.name);
+    },
+    unbind() {
+      this.$off('demo'); // 解绑一个自定义事件
+      // this.$off(['demo', 'hehe']); // 解绑多个自定义事件
+      // this.$off();// 解绑所有的自定义事件
     }
   }
 };

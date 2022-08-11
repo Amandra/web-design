@@ -34,6 +34,7 @@ export default {
   mounted() {
     // 绑定自定义事件
     this.$refs.student.$on('demo', this.getStudentName);
+    // 绑定自定义事件一次性
     // this.$refs.student.$once('demo', this.getStudentName);
   },
   components: {
