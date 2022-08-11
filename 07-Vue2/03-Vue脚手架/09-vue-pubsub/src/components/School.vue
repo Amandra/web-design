@@ -17,7 +17,7 @@ export default {
     };
   },
   mounted() {
-    this.token = PubSub.subscribe('SENT_NAME', function (msgName, data) {
+    this.token = PubSub.subscribe('SENT_NAME', (msgName, data) => {
       console.log('School 组件收到的消息：', data);
     });
   },
