@@ -26,7 +26,7 @@ export default {
         return alert('输入不能为空');
       }
       try {
-        // 更新前更新 List 中的数据
+        // 请求成功前更新 List 中的数据
         this.$bus.$emit('updateListData', {
           isFirst: false,
           isLoading: true,
@@ -34,6 +34,7 @@ export default {
           users: []
         });
         const {data: {items}} = await axios.get(`/github/search/users?q=${this.keyword}`);
+        // 请求成功后更新 List 的数据
         this.$bus.$emit('updateListData', {
           isFirst: false,
           isLoading: false,
@@ -41,6 +42,7 @@ export default {
           users: items
         });
       } catch (e) {
+        // 请求失败后更新 List 的数据
         console.error(e);
         this.$bus.$emit('updateListData', {
           isFirst: false,
