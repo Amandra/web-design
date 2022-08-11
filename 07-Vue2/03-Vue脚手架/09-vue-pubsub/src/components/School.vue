@@ -1,14 +1,12 @@
 <template>
-  <!-- 组件的结构 -->
   <div class="demo">
     <h2>学校名称：{{ name }}</h2>
     <h2>学校地址：{{ address }}</h2>
-    <button @click="showName">点我提示学校名称</button>
   </div>
 </template>
 
 <script>
-// 组件交互相关的代码(数据、方法等)
+
 export default {
   name: 'School',
   data() {
@@ -17,16 +15,18 @@ export default {
       address: '江苏省苏州市工业园区仁爱路199号',
     };
   },
-  methods: {
-    showName() {
-      alert(this.name);
-    }
+  mounted() {
+    this.token = PubSub.subscribe('SENT_NAME', function (msgName, data) {
+      console.log('School 组件收到的消息：', data);
+    });
+  },
+  beforeDestroy() {
+    PubSub.unsubscribe(this.token);
   }
 };
 </script>
 
 <style>
-/* 组件的样式 */
 .demo {
   background-color: pink;
 }
