@@ -8,7 +8,9 @@
         <li v-for="(item,index) in games" :key="index">{{ item }}</li>
       </ul>
     </Category>
-    <Category title="电影"></Category>
+    <Category title="电影">
+      <video controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+    </Category>
   </div>
 </template>
 
