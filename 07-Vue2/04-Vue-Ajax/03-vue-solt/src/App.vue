@@ -5,7 +5,7 @@
     </Category>
     <Category title="游戏">
       <ul>
-        <li v-for="(item,index) in games" :key="index">{{ item }}</li>
+        <li v-for="(game,index) in games" :key="index">{{ game }}</li>
       </ul>
     </Category>
     <Category title="电影">
