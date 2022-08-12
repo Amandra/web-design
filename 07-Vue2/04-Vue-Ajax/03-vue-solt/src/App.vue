@@ -50,7 +50,13 @@ export default {
 </script>
 
 <style>
-.container, .foot {
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.foot {
   display: flex;
   justify-content: space-around;
 }
