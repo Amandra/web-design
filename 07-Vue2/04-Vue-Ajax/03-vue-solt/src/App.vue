@@ -1,15 +1,31 @@
 <template>
   <div class="container">
     <Category title="美食">
-      <img alt="" src="https://dts0r5oeqkedm.cloudfront.net/2015/04/c.jpg">
+      <img slot="center" alt="" src="https://dts0r5oeqkedm.cloudfront.net/2015/04/c.jpg">
+      <a slot="footer" class="foot" href="#">更多美食</a>
     </Category>
     <Category title="游戏">
-      <ul>
+      <ul slot="center">
         <li v-for="(game,index) in games" :key="index">{{ game }}</li>
       </ul>
+      <template slot="footer">
+        <div class="foot">
+          <a href="#">单机游戏</a>
+          <a href="#">网络游戏</a>
+        </div>
+      </template>
     </Category>
     <Category title="电影">
-      <video controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+      <video slot="center" controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+      <template slot="footer">
+        <div class="foot">
+          <a href="#">经典</a>
+          <a href="#">热门</a>
+          <a href="#">推荐</a>
+        </div>
+        <h4>欢迎前来观影！！！</h4>
+      </template>
+
     </Category>
   </div>
 </template>
@@ -34,10 +50,9 @@ export default {
 </script>
 
 <style>
-.container {
-  margin-top: 100px;
+.container, .foot {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 img {
@@ -46,5 +61,9 @@ img {
 
 video {
   width: 100%;
+}
+
+h4 {
+  text-align: center;
 }
 </style>
