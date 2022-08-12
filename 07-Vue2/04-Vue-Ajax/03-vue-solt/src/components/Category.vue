@@ -13,7 +13,7 @@ export default {
   data() {
     return {};
   },
-  props: ['listData', 'title']
+  props: ['title']
 };
 </script>
 
