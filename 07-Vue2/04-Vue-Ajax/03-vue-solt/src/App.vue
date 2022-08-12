@@ -15,7 +15,7 @@
       </template>
     </Category>
     <Category title="游戏">
-      <template scope="{games}">
+      <template slot-scope="{games}">
         <h4 v-for="(game,index) in games" :key="index">{{ game }}</h4>
       </template>
     </Category>
