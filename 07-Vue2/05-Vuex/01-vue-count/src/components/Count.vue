@@ -37,7 +37,7 @@ export default {
     incrementWait() {
       setTimeout(() => {
         this.sum += this.n;
-      }, 2000);
+      }, 1000);
     }
   }
 };
