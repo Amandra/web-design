@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Category title="美食">
-      <img alt="" src="https://s3.ax1x.com/2021/01/16/srJlq0.jpg">
+      <img alt="" src="https://dts0r5oeqkedm.cloudfront.net/2015/04/c.jpg">
     </Category>
     <Category title="游戏">
       <ul>
