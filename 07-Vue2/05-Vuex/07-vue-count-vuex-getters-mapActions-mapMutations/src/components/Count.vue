@@ -9,15 +9,15 @@
       <option value="2">2</option>
       <option value="3">3</option>
     </select>
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
-    <button @click="incrementOdd">当前求和为奇数再加</button>
-    <button @click="incrementWait">等一等再加</button>
+    <button @click="increment(n)">+</button>
+    <button @click="decrement(n)">-</button>
+    <button @click="incrementOdd(n)">当前求和为奇数再加</button>
+    <button @click="incrementWait(n)">等一等再加</button>
   </div>
 </template>
 
 <script>
-import {mapActions, mapGetters, mapState} from 'vuex';
+import {mapActions, mapGetters, mapMutations, mapState} from 'vuex';
 
 export default {
   name: 'Count',
@@ -32,19 +32,36 @@ export default {
     ...mapGetters({bigSum: 'bigSum'}),
   },
   methods: {
+    /*
     increment() {
       this.$store.commit('INCREMENT', this.n);
     },
     decrement() {
       this.$store.commit('DECREMENT', this.n);
     },
-    ...mapActions({incrementOdd: 'incrementOdd'}),
+    */
+    /* increment(value) {
+       this.$store.commit('INCREMENT', value);
+     },*/
+    // 借助 mapMutations 生成对应的方法，方法中会调用 commit 去联系 mutations (对象写法)
+    ...mapMutations({increment: 'INCREMENT', decrement: 'DECREMENT'}),
+    // 借助 mapMutations 生成对应的方法，方法中会调用 commit 去联系 mutations (数组写法)
+    // ...mapMutations(['INCREMENT', 'DECREMENT']),
+
+    /* ******************************************* */
+
+    /*
     incrementOdd() {
       this.$store.dispatch('incrementOdd', this.n);
     },
     incrementWait() {
       this.$store.dispatch('incrementWait', this.n);
-    }
+    },
+    */
+    // 借助 mapActions 生成对应的方法，方法中会调用 dispatch 去联系 actions (对象写法)
+    // ...mapActions({incrementOdd: 'incrementOdd', incrementWait: 'incrementWait'})
+    // 借助 mapActions 生成对应的方法，方法中会调用 dispatch 去联系 actions (数组写法)
+    ...mapActions(['incrementOdd', 'incrementWait'])
   },
   mounted() {
     console.log('Count组件', mapState({sum: 'sum', name: 'name', age: 'age'}));
