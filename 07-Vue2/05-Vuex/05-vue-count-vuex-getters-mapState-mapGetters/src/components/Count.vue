@@ -30,15 +30,15 @@ export default {
     sum() {
       return this.$store.state.sum;
     },
-    bigSum() {
-      return this.$store.getters.bigSum;
-    },
     name() {
       return this.$store.state.name;
     },
     age() {
       return this.$store.state.age;
-    }
+    },
+    bigSum() {
+      return this.$store.getters.bigSum;
+    },
   },
   methods: {
     increment() {
