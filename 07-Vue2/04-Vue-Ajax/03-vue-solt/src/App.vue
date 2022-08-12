@@ -1,31 +1,9 @@
 <template>
   <div class="container">
-    <Category title="美食">
-      <img slot="center" alt="" src="https://dts0r5oeqkedm.cloudfront.net/2015/04/c.jpg">
-      <a slot="footer" class="foot" href="#">更多美食</a>
-    </Category>
     <Category title="游戏">
-      <ul slot="center">
+      <ul>
         <li v-for="(game,index) in games" :key="index">{{ game }}</li>
       </ul>
-      <template v-slot:footer>
-        <div class="foot">
-          <a href="#">单机游戏</a>
-          <a href="#">网络游戏</a>
-        </div>
-      </template>
-    </Category>
-    <Category title="电影">
-      <video slot="center" controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-      <template v-slot:footer>
-        <div class="foot">
-          <a href="#">经典</a>
-          <a href="#">热门</a>
-          <a href="#">推荐</a>
-        </div>
-        <h4>欢迎前来观影！！！</h4>
-      </template>
-
     </Category>
   </div>
 </template>
