@@ -1,9 +1,23 @@
 <template>
   <div class="container">
     <Category title="游戏">
-      <ul>
-        <li v-for="(game,index) in games" :key="index">{{ game }}</li>
-      </ul>
+      <template scope="{games}">
+        <ul>
+          <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+        </ul>
+      </template>
+    </Category>
+    <Category title="游戏">
+      <template scope="{games}">
+        <ol>
+          <li v-for="(game,index) in games" :key="index">{{ game }}</li>
+        </ol>
+      </template>
+    </Category>
+    <Category title="游戏">
+      <template scope="{games}">
+        <h4 v-for="(game,index) in games" :key="index">{{ game }}</h4>
+      </template>
     </Category>
   </div>
 </template>
@@ -13,13 +27,7 @@ import Category from '@/components/Category';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      foods: ['火锅', '烧烤', '小龙虾', '牛排'],
-      games: ['红色警戒', '穿越火线', '劲舞团', '超级玛丽'],
-      films: ['《教父》', '《拆弹专家》', '《你好，李焕英》', '《你好，世界》']
-    };
-  },
+
   components: {
     Category
   }
