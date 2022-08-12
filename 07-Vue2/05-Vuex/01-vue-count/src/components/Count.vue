@@ -30,10 +30,14 @@ export default {
       this.sum -= this.n;
     },
     incrementOdd() {
-
+      if (this.sum % 2 !== 0) {
+        this.sum += this.n;
+      }
     },
     incrementWait() {
-
+      setTimeout(() => {
+        this.sum += this.n;
+      }, 2000);
     }
   }
 };
