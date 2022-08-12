@@ -16,6 +16,16 @@ export default new Vuex.Store({
         decrement(context, value) {
             context.commit('DECREMENT', value);
         },
+        incrementOdd(context, value) {
+            if (context.state.sum % 2 !== 0) {
+                context.commit('INCREMENT', value);
+            }
+        },
+        incrementWait(context, value) {
+            setTimeout(() => {
+                context.commit('INCREMENT', value);
+            }, 1000);
+        }
     },
     mutations: { // 准备 mutations ，用于操作数据（state）
         INCREMENT(state, value) {

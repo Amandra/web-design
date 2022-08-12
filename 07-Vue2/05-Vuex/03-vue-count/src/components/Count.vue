@@ -24,20 +24,16 @@ export default {
   },
   methods: {
     increment() {
-      this.$store.dispatch('increment', this.n);
+      this.$store.commit('INCREMENT', this.n);
     },
     decrement() {
-      this.$store.dispatch('decrement', this.n);
+      this.$store.commit('DECREMENT', this.n);
     },
     incrementOdd() {
-      if (this.$store.state.sum % 2 !== 0) {
-        this.$store.dispatch('increment', this.n);
-      }
+      this.$store.dispatch('incrementOdd', this.n);
     },
     incrementWait() {
-      setTimeout(() => {
-        this.$store.dispatch('increment', this.n);
-      }, 1000);
+      this.$store.dispatch('incrementWait', this.n);
     }
   },
   mounted() {
