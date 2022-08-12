@@ -8,7 +8,7 @@
       <ul slot="center">
         <li v-for="(game,index) in games" :key="index">{{ game }}</li>
       </ul>
-      <template slot="footer">
+      <template v-slot:footer>
         <div class="foot">
           <a href="#">单机游戏</a>
           <a href="#">网络游戏</a>
@@ -17,7 +17,7 @@
     </Category>
     <Category title="电影">
       <video slot="center" controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
-      <template slot="footer">
+      <template v-slot:footer>
         <div class="foot">
           <a href="#">经典</a>
           <a href="#">热门</a>
