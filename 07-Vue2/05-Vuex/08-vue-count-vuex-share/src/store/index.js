@@ -17,12 +17,6 @@ export default new Vuex.Store({
         ]
     },
     actions: { // 准备 actions ，用于响应组件中的动作
-        // increment(context, value) {
-        //     context.commit('INCREMENT', value);
-        // },
-        // decrement(context, value) {
-        //     context.commit('DECREMENT', value);
-        // },
         incrementOdd(context, value) {
             if (context.state.sum % 2 !== 0) {
                 context.commit('INCREMENT', value);

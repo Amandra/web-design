@@ -24,7 +24,6 @@ export default {
   name: 'Count',
   data() {
     return {
-      // sum: 0, // 当前的和
       n: 1 // 用户选择的数字
     };
   },
