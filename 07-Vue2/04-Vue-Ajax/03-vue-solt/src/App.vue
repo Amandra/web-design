@@ -35,8 +35,9 @@ export default {
 
 <style>
 .container {
+  margin-top: 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 img {
