@@ -28,10 +28,11 @@ export default {
       this.addPerson(person);
       this.name = '';
     },
-    ...mapMutations({addPerson: 'ADD_PERSON'})
+    ...mapMutations('personAbout', {addPerson: 'ADD_PERSON'})
   },
   computed: {
-    ...mapState(['personList', 'sum'])
+    ...mapState('personAbout', ['personList']),
+    ...mapState('countAbout', ['sum'])
   }
 };
 </script>
