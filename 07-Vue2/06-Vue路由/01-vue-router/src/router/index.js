@@ -8,10 +8,12 @@ import Home from '@/components/Home';
 export default new VueRouter({
     routes: [
         {
-            path: '/about', component: About
+            path: '/about',
+            component: About
         },
         {
-            path: '/home', component: Home
+            path: '/home',
+            component: Home
         },
     ]
 });
