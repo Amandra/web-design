@@ -11,7 +11,8 @@
           <!-- 原始 HTML 中我们使用 a 标签实现页面的跳转 -->
           <!--<a class="list-group-item active" href="./about.html">About</a>-->
           <!--<a class="list-group-item" href="./home.html">Home</a>-->
-          <!--  -->
+          
+          <!-- Vue 中借助 router-link 实现路由的切换  -->
           <router-link active-class="active" class="list-group-item" to="/about">About</router-link>
           <router-link active-class="active" class="list-group-item" to="/home">Home</router-link>
         </div>
