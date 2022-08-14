@@ -10,11 +10,7 @@
           <router-link active-class="active" class="list-group-item" to="/home/message">Message</router-link>
         </li>
       </ul>
-      <ul>
-        <li>news001</li>
-        <li>news002</li>
-        <li>news003</li>
-      </ul>
+      <router-view></router-view>
     </div>
   </div>
 

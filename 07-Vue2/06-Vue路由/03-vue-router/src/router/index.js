@@ -11,13 +11,13 @@ export default new VueRouter({
         {
             path: '/home',
             component: /* webpackChunkName: "home" */  () => import('@/pages/Home'),
-            children: [
+            children: [ // 通过 children 配置多级路由
                 {
-                    path: '/news',
+                    path: 'news', // 此处一定不要写 /news
                     component: /* webpackChunkName: "news" */  () => import('@/pages/News'),
                 },
                 {
-                    path: '/message',
+                    path: 'message', // 此处一定不要写 /message
                     component: /* webpackChunkName: "message" */  () => import('@/pages/Message'),
                 },
             ]
