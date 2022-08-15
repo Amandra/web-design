@@ -15,17 +15,17 @@ export default new VueRouter({
             component: /* webpackChunkName: "home" */  () => import('@/pages/Home'),
             children: [ // 通过 children 配置多级路由
                 {
-                    path: 'news', // 此处一定不要写 /news
+                    path: 'news',
                     name: 'news', // 给路由命名
                     component: /* webpackChunkName: "news" */  () => import('@/pages/News'),
                 },
                 {
-                    path: 'message', // 此处一定不要写 /message
+                    path: 'message',
                     name: 'message', // 给路由命名
                     component: /* webpackChunkName: "message" */  () => import('@/pages/Message'),
                     children: [
                         {
-                            path: 'detail/:id/:title', // 此处一定不要写 /detail
+                            path: 'detail/:id/:title', // 使用占位符声明接收params参数
                             name: 'detail', // 给路由命名
                             component: /* webpackChunkName: "detail" */  () => import('@/pages/Detail'),
                         },
