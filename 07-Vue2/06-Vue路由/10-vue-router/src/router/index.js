@@ -53,11 +53,18 @@ const router = new VueRouter({
         },
     ]
 });
-
-// 全局后置路由守卫：初始化的时候被调用、每次路由切换之后被调用
-router.afterEach((to, from) => {
-    console.log('全局后置路由守卫', to, from);
-    document.title = to.meta.title || '后台管理系统';
+// 全局前置路由守卫：初始化的时候被调用、每次路由切换之前被调用
+router.beforeEach((to, from, next) => {
+    console.log('全局前置路由守卫', to, from);
+    if (to.meta.isAuth) { // 判断是否鉴权
+        if (localStorage.getItem('school') === 'suzhoudaxue') {
+            next();
+        } else {
+            alert('学校名称不对，没有权限~');
+        }
+    } else {
+        next();
+    }
 });
 
 export default router;
