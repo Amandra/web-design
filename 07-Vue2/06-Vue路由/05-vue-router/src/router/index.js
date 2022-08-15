@@ -6,27 +6,27 @@ export default new VueRouter({
     routes: [
         {
             path: '/about',
-            name: 'about', // 命名路由
+            name: 'about', // 给路由命名
             component: /* webpackChunkName: "about" */  () => import('@/pages/About')
         },
         {
             path: '/home',
-            name: 'home', // 命名路由
+            name: 'home', // 给路由命名
             component: /* webpackChunkName: "home" */  () => import('@/pages/Home'),
             children: [ // 通过 children 配置多级路由
                 {
                     path: 'news', // 此处一定不要写 /news
-                    name: 'news', // 命名路由
+                    name: 'news', // 给路由命名
                     component: /* webpackChunkName: "news" */  () => import('@/pages/News'),
                 },
                 {
                     path: 'message', // 此处一定不要写 /message
-                    name: 'message', // 命名路由
+                    name: 'message', // 给路由命名
                     component: /* webpackChunkName: "message" */  () => import('@/pages/Message'),
                     children: [
                         {
                             path: 'detail', // 此处一定不要写 /detail
-                            name: 'detail', // 命名路由
+                            name: 'detail', // 给路由命名
                             component: /* webpackChunkName: "detail" */  () => import('@/pages/Detail'),
                         },
                     ]
