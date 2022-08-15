@@ -2,7 +2,17 @@
   <div>
     <ul>
       <li v-for="item in messageList" :key="item.id">
-        <router-link :to="`/home/message/detail?id=${item.id}&title=${item.title}`">{{ item.title }}</router-link>&nbsp;&nbsp;
+        <!-- 跳转路由，并携带 query 参数，to 的字符串写法 -->
+        <!--<router-link :to="`/home/message/detail?id=${item.id}&title=${item.title}`">{{ item.title }}</router-link>&nbsp;&nbsp;-->
+        <!-- 跳转路由，并携带 query 参数，to 的对象 -->
+        <router-link :to="{
+          path: '/home/message/detail',
+          query:{
+            id: item.id,
+            title: item.title
+          }
+        }">{{ item.title }}
+        </router-link>&nbsp;&nbsp;
       </li>
     </ul>
     <router-view></router-view>
