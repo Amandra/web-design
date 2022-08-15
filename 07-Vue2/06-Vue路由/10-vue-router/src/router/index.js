@@ -8,7 +8,8 @@ const router = new VueRouter({
             path: '/about',
             name: 'about', // 给路由命名
             meta: {
-                isAuth: false
+                isAuth: false,
+                title: '关于'
             },
             component: /* webpackChunkName: "about" */  () => import('@/pages/About')
         },
@@ -16,7 +17,8 @@ const router = new VueRouter({
             path: '/home',
             name: 'home', // 给路由命名
             meta: {
-                isAuth: false
+                isAuth: false,
+                title: '主页'
             },
             component: /* webpackChunkName: "home" */  () => import('@/pages/Home'),
             children: [ // 通过 children 配置多级路由
@@ -24,7 +26,8 @@ const router = new VueRouter({
                     path: 'news',
                     name: 'news', // 给路由命名
                     meta: {
-                        isAuth: true
+                        isAuth: true,
+                        title: '新闻'
                     },
                     component: /* webpackChunkName: "news" */  () => import('@/pages/News'),
                 },
@@ -32,7 +35,8 @@ const router = new VueRouter({
                     path: 'message',
                     name: 'message', // 给路由命名
                     meta: {
-                        isAuth: true
+                        isAuth: true,
+                        title: '消息'
                     },
                     component: /* webpackChunkName: "message" */  () => import('@/pages/Message'),
                     children: [
@@ -50,20 +54,10 @@ const router = new VueRouter({
     ]
 });
 
-// 全局前置路由守卫：初始化的时候被调用、每次路由切换之前被调用
-router.beforeEach((to, from, next) => {
-    console.log('全局前置路由守卫', to, from);
-    if (to.meta.isAuth) { // 判断是否鉴权
-        if (localStorage.getItem('school') === 'suzhoudaxue') {
-            next();
-        } else {
-            alert('学校名称不对，没有权限~');
-        }
-    } else {
-        next();
-    }
-
-
+// 全局后置路由守卫：初始化的时候被调用、每次路由切换之后被调用
+router.afterEach((to, from) => {
+    console.log('全局后置路由守卫', to, from);
+    document.title = to.meta.title || '后台管理系统';
 });
 
 export default router;
