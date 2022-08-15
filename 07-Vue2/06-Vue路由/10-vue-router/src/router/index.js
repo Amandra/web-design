@@ -3,6 +3,7 @@
 import VueRouter from 'vue-router';
 // 创建并暴露一个路由器
 const router = new VueRouter({
+    mode: 'history', // 默认是 hash
     routes: [
         {
             path: '/about',
