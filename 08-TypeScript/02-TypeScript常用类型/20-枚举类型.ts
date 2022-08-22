@@ -1,9 +1,9 @@
 // 定义枚举
 enum Direction {
-    Up = 2,
-    Down = 4,
-    Left = 6,
-    Right
+    Up = 'UP',
+    Down = 'DOWN',
+    Left = 'LEFT',
+    Right = 'RIGHT'
 }
 
 // 直接使用枚举名称作为类型注解
