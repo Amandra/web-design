@@ -1,4 +1,4 @@
-const obj: { name: string; age: number; say(): void; } = {
+const person: { name: string; age: number; say(): void; } = {
     name: '许大仙',
     age: 18,
     say() {
@@ -6,5 +6,5 @@ const obj: { name: string; age: number; say(): void; } = {
     }
 };
 
-console.log(obj);
-obj.say();
+console.log(person);
+person.say();
