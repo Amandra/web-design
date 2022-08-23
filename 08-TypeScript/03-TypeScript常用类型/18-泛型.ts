@@ -1,9 +1,12 @@
+// 创建泛型函数
 function fn<Type>(value: Type): Type {
     return value;
 }
 
-const num = fn<number>(1);
+// 简化调用泛型函数
+let num = fn(1);
 console.log(num)
 
-const str = fn<string>('a')
+// 简化调用泛型函数
+let str = fn('a')
 console.log(str)
