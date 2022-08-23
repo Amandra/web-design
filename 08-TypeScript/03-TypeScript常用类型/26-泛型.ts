@@ -1,16 +1,12 @@
 interface Props {
     id: string,
+    title: string,
     children: number[]
 }
 
-// ReadonlyProps 和 Props 的结构相同，但是属性都是只读的
-type ReadonlyProps = Readonly<Props>
+// Pick 从 Type 中选择一组属性来构造新类型
+type PickProps = Pick<Props, 'id' | 'title'>
 
-let obj: ReadonlyProps = {
-    id: "001",
-    children: [1, 2, 3]
-}
+let obj: PickProps = {id: "001", title: "中国人"}
 
-console.log(obj.id);
-
-
+console.log(obj)

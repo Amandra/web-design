@@ -1,5 +1,2 @@
-var obj = {
-    id: "001",
-    children: [1, 2, 3]
-};
-console.log(obj.id);
+var obj = { id: "001", title: "中国人" };
+console.log(obj);
