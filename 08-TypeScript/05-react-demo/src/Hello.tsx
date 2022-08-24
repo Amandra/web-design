@@ -1,24 +1,21 @@
-import React from "react";
+import React from 'react';
 
-type Props = { name: string, age?: number }
+type State = { count: number }
 
-const Hello = ({name, age = 18}: Props) => {
+class Hello extends React.Component<{}, State> {
 
-    const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log('button', e)
-    };
+    state: State = {
+        count: 0
+    }
 
-    return (
-        <div>
-            <div>大家好，我的名字是 {name} ，我今年 {age} 岁</div>
-            <button onClick={onClick}>
-                点赞
-            </button>
-            <input type="text" onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                console.log('input', e)
-            }}/>
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <div>{this.state.count}</div>
+                <button onClick={() => this.setState({count: this.state.count + 1})}>点我+1</button>
+            </div>
+        );
+    }
 }
 
-export default Hello
+export default Hello;
