@@ -15,9 +15,9 @@ export default {
   name: 'App',
   setup() {
     // 数据
-    let name = ref('张三');
-    let age = ref(18);
-    let job = ref({
+    const name = ref('张三');
+    const age = ref(18);
+    const job = ref({
       type: '前端工程师',
       salary: '30k'
     });
