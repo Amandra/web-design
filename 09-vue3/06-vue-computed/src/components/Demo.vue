@@ -1,37 +1,43 @@
 <template>
   <h1>我是 Demo 组件</h1>
-  <h2>姓名：{{ person.name }}</h2>
-  <h2>年龄：{{ person.age }}</h2>
-  <button @click="test">测试触发一下自定义hello事件</button>
+  <div>姓：<input v-model="person.firstName" type="text"></div>
+  <div>名：<input v-model="person.lastName" type="text"></div>
+  <div>全名：{{ person.fullName }}</div>
+  <div>全名：<input v-model="person.fullName" type="text"></div>
 </template>
 
 <script>
-import {reactive} from 'vue';
+import {computed, reactive} from 'vue';
 
 export default {
   name: 'Demo',
-  beforeCreate() {
-    console.log('beforeCreate');
-  },
-  props: ['msg'],
-  emits: ['hello'],
-  setup(props, context) {
-    console.log('setup', this); // setup undefined
-    console.log('props', props);
-    console.log('context.attrs', context.attrs); // 相当于 Vue2 中的 $attrs
-    console.log('context.emit', context.emit); // 相当于 Vue2 中的 $emit
+  setup() {
+    // 数据
     const person = reactive({
-      name: '张三',
-      age: 18
+      firstName: '张',
+      lastName: '三'
+    });
+    // 计算属性（简写）
+    /*
+        person.fullName = computed(() => {
+          return person.firstName + '-' + person.lastName;
+        });
+    */
+
+    // 计算属性（完整写法）
+    person.fullName = computed({
+      get() {
+        return person.firstName + '-' + person.lastName;
+      },
+      set(value) {
+        const [firstName, lastName] = value.split('-');
+        person.firstName = firstName;
+        person.lastName = lastName;
+      }
     });
 
-    function test() {
-      context.emit('hello', 666);
-    }
-
-    return {
+    return { // 返回一个对象
       person,
-      test
     };
   }
 };
