@@ -1,5 +1,5 @@
 <template>
-  <Demo msg="你好啊" @hello="showHelloMsg"/>
+  <Demo/>
 </template>
 
 <script>
@@ -9,15 +9,6 @@ export default {
   name: 'App',
   components: {
     Demo
-  },
-  setup() {
-    function showHelloMsg(value) {
-      console.log(`触发了 hello 事件，收到的参数是 ${value}`);
-    }
-
-    return {
-      showHelloMsg
-    };
   }
 };
 </script>

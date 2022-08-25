@@ -1,37 +1,33 @@
 <template>
-  <h1>我是 Demo 组件</h1>
-  <h2>姓名：{{ person.name }}</h2>
-  <h2>年龄：{{ person.age }}</h2>
-  <button @click="test">测试触发一下自定义hello事件</button>
+  <h2>当前求和为：{{ sum }}</h2>
+  <button @click="add">点我+1</button>
+  <br>
+  <h2>当前的信息为：{{ msg }}</h2>
+  <button @click="msg+='!'">修改信息</button>
 </template>
 
 <script>
-import {reactive} from 'vue';
+import {ref, watch} from 'vue';
 
 export default {
   name: 'Demo',
-  beforeCreate() {
-    console.log('beforeCreate');
-  },
-  props: ['msg'],
-  emits: ['hello'],
-  setup(props, context) {
-    console.log('setup', this); // setup undefined
-    console.log('props', props);
-    console.log('context.attrs', context.attrs); // 相当于 Vue2 中的 $attrs
-    console.log('context.emit', context.emit); // 相当于 Vue2 中的 $emit
-    const person = reactive({
-      name: '张三',
-      age: 18
+  setup() {
+    let sum = ref(0);
+    let msg = ref('你好啊');
+
+    // 情况①：监视 ref 所定义的响应式数据
+    watch(sum, (newValue, oldValue) => {
+      console.log(newValue, oldValue);
     });
 
-    function test() {
-      context.emit('hello', 666);
+    function add() {
+      sum.value++;
     }
 
     return {
-      person,
-      test
+      sum,
+      msg,
+      add
     };
   }
 };
