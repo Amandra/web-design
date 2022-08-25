@@ -16,11 +16,11 @@ export default function () {
 
     // 生命周期钩子
     onMounted(() => {
-        window.addEventListener('click', savePoint);
+        window.addEventListener('mousemove', savePoint);
     });
 
     onBeforeUnmount(() => {
-        window.removeEventListener('click', savePoint);
+        window.removeEventListener('mousemove', savePoint);
     });
 
     return point;
