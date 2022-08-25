@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {ref, watch} from 'vue';
+import {ref} from 'vue';
 
 export default {
   name: 'Demo',
@@ -16,9 +16,19 @@ export default {
     let msg = ref('你好啊');
 
     // 情况①：监视 ref 所定义的响应式数据
-    watch(sum, (newValue, oldValue) => {
+    /* watch(sum, (newValue, oldValue) => {
       console.log(newValue, oldValue);
-    });
+    }); */
+
+    // 情况②：监视 ref 所定义多个的响应式数据
+    /*watch([sum, msg], (newValue, oldValue) => {
+      console.log(newValue, oldValue);
+    });*/
+
+    // 情况③：监视 ref 所定义的响应式数据
+    watch(person, (newValue, oldValue) => {
+      console.log('person变化了', newValue, oldValue);
+    }, {immediate: true});
 
     function add() {
       sum.value++;
