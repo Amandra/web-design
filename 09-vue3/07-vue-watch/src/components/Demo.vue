@@ -4,16 +4,25 @@
   <br>
   <h2>当前的信息为：{{ msg }}</h2>
   <button @click="msg+='!'">修改信息</button>
+  <br>
+  <h2>姓名：{{ person.name }}</h2>
+  <h2>年龄：{{ person.age }}</h2>
+  <button @click="person.name = '李四'">修改姓名</button>
+  <button @click="person.age = 40">修改年龄</button>
 </template>
 
 <script>
-import {ref, watch} from 'vue';
+import {reactive, ref, watch} from 'vue';
 
 export default {
   name: 'Demo',
   setup() {
     let sum = ref(0);
     let msg = ref('你好啊');
+    const person = reactive({
+      name: '张三',
+      age: 20,
+    });
 
     // 情况①：监视 ref 所定义的响应式数据
     /* watch(sum, (newValue, oldValue) => {
@@ -37,6 +46,7 @@ export default {
     return {
       sum,
       msg,
+      person,
       add
     };
   }
