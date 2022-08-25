@@ -1,14 +1,14 @@
 <template>
   <h2>姓名：{{ name }}</h2>
   <h2>年龄：{{ age }}</h2>
-  <h2>薪水：{{ salary }}</h2>
+  <h2>薪水：{{ job.salary }}</h2>
   <button @click="name = '李四'">修改姓名</button>
   <button @click="age = 40">修改年龄</button>
-  <button @click="salary++">修改薪水</button>
+  <button @click="job.salary++">修改薪水</button>
 </template>
 
 <script>
-import {reactive, toRef} from 'vue';
+import {reactive, toRefs} from 'vue';
 
 export default {
   name: 'Demo',
@@ -21,12 +21,8 @@ export default {
       }
     });
 
-    console.log(toRef(person, 'name'));
-
     return {
-      name: toRef(person, 'name'),
-      age: toRef(person, 'age'),
-      salary: toRef(person.job, 'salary'),
+      ...toRefs(person)
     };
   }
 };
