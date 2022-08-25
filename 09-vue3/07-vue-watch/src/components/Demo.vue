@@ -34,7 +34,9 @@ export default {
       console.log(newValue, oldValue);
     });*/
 
-    // 情况③：监视 ref 所定义的响应式数据
+    // 情况③：监视 reactive 所定义的响应式数据
+    // 若 watch 监视的是 reactive 定义的响应式数据，则无法正确获得 oldValue！！
+    // 若 watch 监视的是 reactive 定义的响应式数据，则强制开启了深度监视
     watch(person, (newValue, oldValue) => {
       console.log('person变化了', newValue, oldValue);
     }, {immediate: true});
