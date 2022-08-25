@@ -37,9 +37,14 @@ export default {
     // 情况③：监视 reactive 所定义的响应式数据
     // 若 watch 监视的是 reactive 定义的响应式数据，则无法正确获得 oldValue！！
     // 若 watch 监视的是 reactive 定义的响应式数据，则强制开启了深度监视
-    watch(person, (newValue, oldValue) => {
+    /*watch(person, (newValue, oldValue) => {
       console.log('person变化了', newValue, oldValue);
-    }, {immediate: true});
+    }, {immediate: true});*/
+
+    //情况④：监视 reactive 定义的响应式数据中的某个属性
+    watch(() => person.age, (newValue, oldValue) => {
+      console.log('person的age变化了', newValue, oldValue);
+    }, {immediate: true, deep: true});
 
     function add() {
       sum.value++;
