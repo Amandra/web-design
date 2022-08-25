@@ -35,7 +35,11 @@ export default {
      });
     */
 
-    watchEffect();
+    // watchEffect 所指定的回调中用到的数据只要发生变化，则直接重新执行回调。
+    watchEffect(() => {
+      const x1 = sum.value;
+      console.log('@', x1);
+    });
 
     function add() {
       sum.value++;
