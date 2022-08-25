@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {reactive, ref, watchEffect} from 'vue';
+import {onBeforeUnmount, onMounted, onUnmounted, reactive, ref} from 'vue';
 
 export default {
   name: 'Demo',
@@ -29,21 +29,22 @@ export default {
       }
     });
 
-    // 监视 ref 所定义的响应式数据
-    /* watch(sum, (newValue, oldValue) => {
-       console.log(newValue, oldValue);
-     });
-    */
-
-    // watchEffect 所指定的回调中用到的数据只要发生变化，则直接重新执行回调。
-    watchEffect(() => {
-      const x1 = sum.value;
-      console.log('@', x1);
-    });
-
     function add() {
       sum.value++;
     }
+
+    // 生命周期钩子
+    onMounted(() => {
+      console.log(`组件挂载完毕`);
+    });
+
+    onBeforeUnmount(() => {
+      console.log(`组件卸载之前`);
+    });
+
+    onUnmounted(() => {
+      console.log(`组件卸载完毕`);
+    });
 
     return {
       sum,
