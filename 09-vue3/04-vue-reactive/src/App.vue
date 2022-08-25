@@ -9,7 +9,7 @@
 
 <script>
 
-import {ref} from 'vue';
+import {reactive, ref} from 'vue';
 
 export default {
   name: 'App',
@@ -17,7 +17,7 @@ export default {
     // 数据
     const name = ref('张三');
     const age = ref(18);
-    const job = ref({
+    const job = reactive({
       type: '前端工程师',
       salary: '30k'
     });
@@ -25,9 +25,9 @@ export default {
     function changeInfo() {
       name.value = '李四';
       age.value = 20;
-      job.value.type = 'Java工程师';
-      job.value.salary = '60k';
-      console.log('changeInfo', job.value);
+      job.type = 'Java工程师';
+      job.salary = '60k';
+      console.log('changeInfo', job);
     }
 
     return { // 返回一个对象（常用）
