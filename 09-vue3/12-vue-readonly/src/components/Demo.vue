@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import {reactive, readonly, ref, toRefs} from 'vue';
+import {reactive, ref, shallowReadonly, toRefs} from 'vue';
 
 export default {
   name: 'Demo',
@@ -27,8 +27,11 @@ export default {
       }
     });
 
-    // 深只读
-    person = readonly(person);
+    // 深只读：让一个响应式数据变为只读的
+    // person = readonly(person);
+
+    // 浅只读：让一个响应式数据变为只读的
+    person = shallowReadonly(person);
 
     return {
       sum,
