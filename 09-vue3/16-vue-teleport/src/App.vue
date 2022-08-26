@@ -1,18 +1,18 @@
 <template>
   <div class="app">
     <h2>我是 App 组件</h2>
-    <Demo/>
+    <Child/>
   </div>
 </template>
 
 <script>
-import Demo from '@/components/Demo';
 import {provide, reactive} from 'vue';
+import Child from '@/components/Child';
 
 export default {
   name: 'App',
   components: {
-    Demo
+    Child
   },
   setup() {
 
