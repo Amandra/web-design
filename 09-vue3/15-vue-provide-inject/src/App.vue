@@ -1,11 +1,11 @@
 <template>
-  <button @click="isShow = !isShow">显示/隐藏 Demo 组件</button>
-  <Demo v-if="isShow"/>
+  <div>
+    <h2>我是 App 组件</h2>
+  </div>
 </template>
 
 <script>
 import Demo from '@/components/Demo';
-import {ref} from 'vue';
 
 export default {
   name: 'App',
@@ -13,10 +13,7 @@ export default {
     Demo
   },
   setup() {
-    let isShow = ref(true);
-    return {
-      isShow
-    };
+    return {};
   }
 };
 </script>
