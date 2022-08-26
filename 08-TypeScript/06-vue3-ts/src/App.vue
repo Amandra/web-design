@@ -4,9 +4,10 @@
 </template>
 
 <script lang="ts">
+// defineComponent 函数目的是定义一个组件
 import {defineComponent} from "vue";
 import HelloWorld from "@/components/HelloWorld.vue";
-
+// 暴露一个定义好的组件
 export default defineComponent({
   name: "App",
   components: {
