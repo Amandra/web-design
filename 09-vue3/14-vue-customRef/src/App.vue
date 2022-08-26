@@ -16,6 +16,7 @@ export default {
       return customRef((track, trigger) => {
         return {
           get() {
+            // 通过 Vue 追踪 value 的变化
             track();
             return value;
           },
