@@ -1,5 +1,8 @@
 <template>
-  <h2 class="son">我是孙组件</h2>
+  <div class="son">
+    <h2>我是孙组件</h2>
+  </div>
+
 </template>
 
 <script>
