@@ -1,13 +1,19 @@
 <template>
   <div class="son">
     <h2>我是孙组件</h2>
+    <Dialog/>
   </div>
 
 </template>
 
 <script>
+import Dialog from '@/components/Dialog';
+
 export default {
-  name: 'Son'
+  name: 'Son',
+  components: {
+    Dialog
+  }
 };
 </script>
 

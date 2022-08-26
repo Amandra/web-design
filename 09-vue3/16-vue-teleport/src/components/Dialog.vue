@@ -1,11 +1,13 @@
 <template>
   <div>
     <button @click="isShow = true">点我弹个窗</button>
-    <div v-if="isShow" class="dialog">
-      <h2>我是一个弹窗</h2>
-      <h4>一些内容</h4>
-      <button @click="isShow=false">关闭弹窗</button>
-    </div>
+    <teleport to="html">
+      <div v-if="isShow" class="dialog">
+        <h2>我是一个弹窗</h2>
+        <h4>一些内容</h4>
+        <button @click="isShow=false">关闭弹窗</button>
+      </div>
+    </teleport>
   </div>
 </template>
 
@@ -15,6 +17,7 @@ import {ref} from 'vue';
 export default {
   name: 'Dialog',
   setup() {
+
     let isShow = ref(false);
 
     return {isShow};
